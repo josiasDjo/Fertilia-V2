@@ -19,3 +19,6 @@
   },
   "homepage": "https://github.com/josiasDjo/Fertilia-V2#readme",
   "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
