@@ -1,0 +1,21 @@
+{
+  "name": "fertilia-v2",
+  "version": "1.0.0",
+  "description": "La version 2 de FERTILIA n utilisant REACT.JS pour le front",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josiasDjo/Fertilia-V2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/josiasDjo/Fertilia-V2/issues"
+  },
+  "homepage": "https://github.com/josiasDjo/Fertilia-V2#readme",
+  "devDependencies": {
