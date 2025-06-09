@@ -16,7 +16,7 @@ function NavBar() {
             </ul>
 
             <ul>
-                <button className="w-44 pr-4 px-3 py-2 text-lg rounded-lg">Se connecter</button>
+                <button className="w-44 pr-4 bg-yellow-600 px-3 py-2 text-lg rounded-lg">Se connecter</button>
             </ul>
         </nav>
     </Fragment>
