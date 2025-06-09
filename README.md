@@ -1,1 +1,0 @@
-La version 2 de FERTILIA n utilisant REACT.JS pour le front
