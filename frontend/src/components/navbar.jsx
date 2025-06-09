@@ -14,6 +14,10 @@ function NavBar() {
                 <li className="px-2">A propos</li>
                 <li className="px-2">Contact</li>
             </ul>
+
+            <ul>
+                <button>Se connecter</button>
+            </ul>
         </nav>
     </Fragment>
 }
