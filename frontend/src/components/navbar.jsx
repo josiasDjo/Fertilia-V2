@@ -9,14 +9,14 @@ function NavBar() {
             </ul>
 
             <ul className="flex flex-row font-sans">
-                <li className="px-2">Accueil</li>
-                <li className="px-2">Fonctionnalités</li>
-                <li className="px-2">A propos</li>
-                <li className="px-2">Contact</li>
+                <li className="px-2 cursor-pointer">Accueil</li>
+                <li className="px-2 cursor-pointer">Fonctionnalités</li>
+                <li className="px-2 cursor-pointer">A propos</li>
+                <li className="px-2 cursor-pointer">Contact</li>
             </ul>
 
             <ul>
-                <button>Se connecter</button>
+                <button className="w-44 pr-4 px-3 py-2 text-lg rounded-lg">Se connecter</button>
             </ul>
         </nav>
     </Fragment>
