@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font_header {
+  font-family: shader-inline, monospace;
+  font-style: normal;
+  font-weight: 100
+}
+
+.font_header {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+} 
+/* cyrillic */
+.Oswald {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/oswald/v53/TK3IWkUHHAIjg75cFRf3bXL8LICs1_Fv40pKlN4NNSeSASz7FmlWHYg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+#header {
+  height: 35rem;
+  background-image: url('/images/bg-hero-header2.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.blue_color_text {
+  color: #00B8F5;
+}
+.blue_color_btn {
+  background-color: #00B8F5;
+}
+.backgroud_btn_h{
+  background-color: rgb(255, 181, 42);
+}
+.green_color_text {
+  color: #009444;
+}
+.green_color_bg {
+  background-color: #009444;
+}
+.backgroud_text_h{
+  color: rgb(255, 181, 42);
+}
+
+.taille_conn {
+  height: 35rem;  
+} 
+.backdrop-blur {
+  backdrop-filter: blur(5px); 
+}
+hr {
+  width: 40%;
+}
+
+.width_nav {
+  width: calc(100vw - 14rem);
+}
+.height_sign {
+  height: calc(100vh - 4px);
+}
+.height_sign_lg {
+  height: 100vh - (300px);
+}
+.height_sign_sm {
+  height: 100vh - (50px);
+}
+.animate_nav {
+  transition-delay: 10ms;
+  transition: ease-in;
+}
+
+/* Bordures du tableaux */
+
+table td, th {
+  border: 2px solid black;
+  padding: 4px;
+  text-align: left;
+}
+
+/* Loading page */
+
+#loaderContainer .loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #00B8F5;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+  margin: 10px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* DashBoard SideBar */
+@media screen and (min-width: 1024px) { /* Minimum lg */
+  aside button:hover {
+    box-shadow: 20px;
+    border: 2px solid rgba(188, 214, 255, 0.973);
+    background-color: rgba(188, 214, 255, 0.973);
+    font-weight: 500;
+  }
+  .aside_btn {
+    color: #000000;
+  }
+}
+
+/* .aside_btn.active {
+  border: 2px solid #000000;
+  background-color: #000000;
+  font-weight: 500;
+  color: #ffb52a;
+}
+.aside_option_set_sm:hover {
+  box-shadow: 20px;
+  border: 2px solid #000000;
+  background-color: #000000;
+  color: rgb(255, 181, 42);
+  font-weight: 500;
+} */
