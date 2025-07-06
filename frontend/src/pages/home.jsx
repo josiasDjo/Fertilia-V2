@@ -1,5 +1,6 @@
 import NavBar from "../components/navbar";
-
+import { motion } from "framer-motion"
+import { FadeItem } from "../hooks/animations";
 
 export function Home() {
     return <>
@@ -34,7 +35,7 @@ function Header() {
 
 function Avantages() {
     return <section id="avantages" className="p-2 lg:p-7 w-full lg:p-20">
-      <h3 className="text-3xl mt-8 font-bold lg:text-3xl text-center">Avantages</h3>
+      <motion.h3 variants={FadeItem} className="text-3xl mt-8 font-bold lg:text-3xl text-center">Avantages</motion.h3>
   
       <div className="w-full flex flex-wrap items-center justify-center my:2 lg:my-10">
         <div className="w-96 lg:w-80 h-auto bg-white m-2 lg:m-5 rounded-lg shadow-xl p-2">
