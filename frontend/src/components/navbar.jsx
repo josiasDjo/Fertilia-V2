@@ -1,5 +1,5 @@
 import { Fragment } from "react"
-import { motion } from 'framer-motion'
+import { motion } from "motion/react"
 import { FadeContainer, FadeItem } from "../hooks/animations"
 
 function NavBar() {

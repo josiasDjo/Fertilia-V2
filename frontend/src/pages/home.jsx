@@ -1,5 +1,5 @@
 import NavBar from "../components/navbar";
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import { FadeItem } from "../hooks/animations";
 
 export function Home() {
