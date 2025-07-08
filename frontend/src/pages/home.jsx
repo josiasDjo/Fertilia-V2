@@ -77,3 +77,7 @@ function Avantages() {
       
     </section>
 }
+
+function Autres() {
+  
+}
