@@ -1,6 +1,6 @@
 import NavBar from "../components/navbar";
 import { motion } from "motion/react"
-import { FadeItem } from "../hooks/animations";
+import { FadeContainer, FadeItem } from "../hooks/animations";
 
 export function Home() {
     return <>
@@ -12,33 +12,52 @@ export function Home() {
 
 function Header() {
     return <>
-        <div className="text-right px-7 py-6 flex flex-row relative mt-28 lg:px-20" id="header">
+        <motion.div 
+        variants={FadeContainer} 
+        initial="hidden"
+        whileInView="show"
+        className="text-right px-7 py-6 flex flex-row relative mt-28 lg:px-20" id="header">
             <div className="hidden lg:block lg:w-5/12"></div>
             <div className="relative lg:px-6 w-full sm:px-2 lg:w-7/12 flex flex-col lg:items-end">
                 <div className="absolute top-2 right-2 w-16 place-items-end lg:w-full lg:mb-5 lg:relative">
-                <img className="h-auto w-16 lg:w-24 object-contain" src="/images/logo_only.webp" alt="logo de Fertilia" />
+                <motion.img 
+                variants={FadeContainer} 
+                initial="hidden"
+                whileInView="show"
+                className="h-auto w-16 lg:w-24 object-contain" src="/images/logo_only.webp" alt="logo de Fertilia" />
                 </div>
-                <h1 className="font_header mt-8 text-3xl text-center z-10 lg:text-5xl text-white lg:mb-3 ">La technologie au <br /> service de<span class="backgroud_text_h bg-opacity-60 text-3xl"> <br /> votre terre</span></h1>
+                <motion.h1 variants={FadeItem}                 
+                initial="hidden"
+                whileInView="show" 
+                className="font_header mt-8 text-3xl text-center z-10 lg:text-5xl text-white lg:mb-3 ">La technologie au <br /> service de<span class="backgroud_text_h bg-opacity-60 text-3xl"> <br /> votre terre</span></motion.h1>
                 
-                <div className="bg-black bg-opacity-30 p-2 relative lg:overflow-hidden">
-                <p classclassName="text-white text-xl font-light"> <span className="text-lg"><i class="fas fa-quote-left"></i></span> Transformez votre exploitation 
+                <motion.div variants={FadeContainer} className="bg-black bg-opacity-30 p-2 relative lg:overflow-hidden">
+                <motion.p variants={FadeItem} classclassName="text-white text-xl font-light"> <span className="text-lg"><i class="fas fa-quote-left"></i></span> Transformez votre exploitation 
                     grâce à <span class="backgroud_text_h font-medium">notre plateforme innovante</span>. Surveillez en 
                     temps réel vos cultures et optimisez l'irrigation. Découvrez 
                     comment la technologie peut <span class="backgroud_text_h font-medium">redonner vie à votre terre</span> et propulser votre agriculture vers de <span class="backgroud_text_h font-medium">nouveaux sommets.</span> <span class="text-lg"><i class="fas fa-quote-right"></i></span><br />
-                </p>
-                <button className="openSignup w-44 pr-4 backgroud_btn_h mt-2 px-3 py-2 text-lg rounded-lg" id="openSignup">Nous réjoindre <i class="fa-solid fa-arrow-right"></i></button> 
-                </div>
+                </motion.p>
+                <motion.button variants={FadeItem} className="openSignup w-44 pr-4 backgroud_btn_h mt-2 px-3 py-2 text-lg rounded-lg" id="openSignup">Nous réjoindre <i class="fa-solid fa-arrow-right"></i></motion.button> 
+                </motion.div>
             </div>
-        </div>
+        </motion.div>
     </>
 }
 
 function Avantages() {
     return <section id="avantages" className="p-2 lg:p-7 w-full lg:p-20">
-      <motion.h3 variants={FadeItem} className="text-3xl mt-8 font-bold lg:text-3xl text-center">Avantages</motion.h3>
+      <motion.h3 
+      variants={FadeItem} 
+      initial="hidden"
+      whileInView="show"
+      className="text-3xl mt-8 font-bold lg:text-3xl text-center">Avantages</motion.h3>
   
-      <div className="w-full flex flex-wrap items-center justify-center my:2 lg:my-10">
-        <div className="w-96 lg:w-80 h-auto bg-white m-2 lg:m-5 rounded-lg shadow-xl p-2">
+      <motion.div 
+      variants={FadeContainer} 
+      initial="hidden"
+      whileInView="show"
+      className="w-full flex flex-wrap items-center justify-center my:2 lg:my-10">
+        <motion.div variants={FadeItem} initial="hidden" whileInView="show" className="w-96 lg:w-80 h-auto bg-white m-2 lg:m-5 rounded-lg shadow-xl p-2">
           <div id="" className="w-full h-48">
             <img src="/images/gestion_culture/image1.webp" alt="Femmes cultuvant ensemble" class="object-cover h-48 w-full" />
           </div>
@@ -48,8 +67,8 @@ function Avantages() {
             agricoles et améliorer vos rendements.
           </p>
           <button className="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg text-lg text-white font-bold w-full">Voir Plus   <i class="fa-solid fa-circle-plus"></i></button>
-        </div>
-        <div class="w-96 lg:w-80 h-auto bg-white m-5 rounded-lg shadow-xl p-2">
+        </motion.div>
+        <motion.div variants={FadeItem} initial="hidden" whileInView="show" class="w-96 lg:w-80 h-auto bg-white m-5 rounded-lg shadow-xl p-2">
           <div id="" class="w-full h-48">
             <img src="/images/irrigations/irrigation.webp" alt="irrigation automatique" className="object-cover h-48 w-full" />
           </div>
@@ -60,8 +79,8 @@ function Avantages() {
             utilisation efficace de l'eau et favorisant une croissance optimale des cultures.
           </p>
           <button className="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg text-lg text-white font-bold w-full">Voir Plus   <i class="fa-solid fa-circle-plus"></i></button>
-        </div>
-        <div className="w-96 lg:w-80 h-auto bg-white m-5 rounded-lg shadow-xl p-2">
+        </motion.div>
+        <motion.div variants={FadeItem} initial="hidden" whileInView="show" className="w-96 lg:w-80 h-auto bg-white m-5 rounded-lg shadow-xl p-2">
           <div id="" className="w-full h-48">
             <img src="/images/image2.webp" alt="Personnes analysant les courbes de croissance" className="object-cover h-48 w-full" />
           </div>
@@ -72,8 +91,8 @@ function Avantages() {
             maximiser vos profits et pérenniser la performance de votre exploitation.
           </p>
           <button className="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg text-lg text-white font-bold w-full">Voir Plus   <i class="fa-solid fa-circle-plus"></i></button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
       
     </section>
 }

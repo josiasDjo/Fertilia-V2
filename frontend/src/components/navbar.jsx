@@ -6,6 +6,8 @@ function NavBar() {
     return <Fragment>
         <motion.nav 
         variants={FadeContainer}
+        initial="hidden"
+        whileInView="show"
         id="navbar" className="animate_nav w-full flex flex-col px-10 py-2 bg-white text-gray-900 bg-opacity-90 h-16 
     lg:text-center lg:items-center lg:justify-center lg:w-full lg:flex lg:flex-row lg:px-10 z-20 fixed top-0 inset-0 shadow-lg blur backdrop-blur-lg">
 
