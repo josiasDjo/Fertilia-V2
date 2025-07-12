@@ -3,11 +3,13 @@ import { motion } from "motion/react"
 import { FadeContainer, FadeItem } from "../hooks/animations";
 
 export function Home() {
-    return <>
+    return <div className="scroll-smooth text-gray-900">
         < NavBar />
         <Header />
         <Avantages />
-    </>
+        <Avis />
+        <Footer />
+    </div>
 }
 
 function Header() {
@@ -18,28 +20,30 @@ function Header() {
         whileInView="show"
         className="text-right px-7 py-6 flex flex-row relative mt-28 lg:px-20" id="header">
             <div className="hidden lg:block lg:w-5/12"></div>
-            <div className="relative lg:px-6 w-full sm:px-2 lg:w-7/12 flex flex-col lg:items-end">
-                <div className="absolute top-2 right-2 w-16 place-items-end lg:w-full lg:mb-5 lg:relative">
-                <motion.img 
-                variants={FadeContainer} 
-                initial="hidden"
-                whileInView="show"
-                className="h-auto w-16 lg:w-24 object-contain" src="/images/logo_only.webp" alt="logo de Fertilia" />
+            <motion.div variants={FadeContainer} className="relative lg:px-6 w-full sm:px-2 lg:w-7/12 flex flex-col lg:items-end">
+                <div className="relative w-full h-auto pb-10 place-items-end">
+                  <motion.img 
+                  variants={FadeItem} 
+                  initial="hidden"
+                  whileInView="show"
+                  className="h-auto w-16 lg:w-24 object-contain absolute right-0 top-0" src="/images/logo_only.webp" alt="logo de Fertilia" />
                 </div>
                 <motion.h1 variants={FadeItem}                 
                 initial="hidden"
                 whileInView="show" 
-                className="font_header mt-8 text-3xl text-center z-10 lg:text-5xl text-white lg:mb-3 ">La technologie au <br /> service de<span class="backgroud_text_h bg-opacity-60 text-3xl"> <br /> votre terre</span></motion.h1>
+                className="font_header mt-8 text-3xl pt-10 text-center z-10 lg:text-5xl text-white lg:mb-3 ">
+                  La technologie au service de <span class="backgroud_text_h bg-opacity-60 text-3xl lg:text-5xl">
+                  votre terre</span></motion.h1>
                 
                 <motion.div variants={FadeContainer} className="bg-black bg-opacity-30 p-2 relative lg:overflow-hidden">
-                <motion.p variants={FadeItem} classclassName="text-white text-xl font-light"> <span className="text-lg"><i class="fas fa-quote-left"></i></span> Transformez votre exploitation 
-                    grâce à <span class="backgroud_text_h font-medium">notre plateforme innovante</span>. Surveillez en 
-                    temps réel vos cultures et optimisez l'irrigation. Découvrez 
-                    comment la technologie peut <span class="backgroud_text_h font-medium">redonner vie à votre terre</span> et propulser votre agriculture vers de <span class="backgroud_text_h font-medium">nouveaux sommets.</span> <span class="text-lg"><i class="fas fa-quote-right"></i></span><br />
-                </motion.p>
-                <motion.button variants={FadeItem} className="openSignup w-44 pr-4 backgroud_btn_h mt-2 px-3 py-2 text-lg rounded-lg" id="openSignup">Nous réjoindre <i class="fa-solid fa-arrow-right"></i></motion.button> 
+                  <motion.p variants={FadeItem} className="text-white text-xl font-light"> <span className="text-lg"><i class="fas fa-quote-left"></i></span> Transformez votre exploitation 
+                      grâce à <span class="backgroud_text_h font-medium">notre plateforme innovante</span>. Surveillez en 
+                      temps réel vos cultures et optimisez l'irrigation. Découvrez 
+                      comment la technologie peut <span class="backgroud_text_h font-medium">redonner vie à votre terre</span> et propulser votre agriculture vers de <span class="backgroud_text_h font-medium">nouveaux sommets.</span> <span class="text-lg"><i class="fas fa-quote-right"></i></span><br />
+                  </motion.p>
+                  <motion.button variants={FadeItem} className="openSignup w-44 pr-4 backgroud_btn_h mt-2 px-3 py-2 text-lg rounded-lg" id="openSignup">Nous réjoindre <i class="fa-solid fa-arrow-right"></i></motion.button> 
                 </motion.div>
-            </div>
+            </motion.div>
         </motion.div>
     </>
 }
@@ -97,10 +101,101 @@ function Avantages() {
     </section>
 }
 
-function Autres() {
-  
+function Avis() {
+  return <section id="avis" className="w-full p-10 my-2 lg:p-10 text-center items-center justify-center flex flex-col ">
+      <h3 className="text-2xl lg:text-3xl text-center font-bold m-5">Avis et Notations</h3>
+      <div id="" className="w-full items-center justify-center content-center flex flex-wrap relative lg:w-9/12">
+        {/* <!-- template notation --{">"} */}
+        <div className="w-full lg:w-96 lg:m-3 bg-gray-200 h-auto mb-5 relative p-3 text-left lg:p-5 rounded-tl-3xl rounded-br-3xl border-b-2 border-double border-yellow-500">
+          <div id="ratings" className="w-full flex relative space-x-1 lg:w-2/4">
+            <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
+            </svg>
+            <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="2" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
+            </svg>
+            <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="3" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
+            </svg>
+            <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="4" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
+            </svg>
+            <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
+            </svg>
+          </div>
+          <div className="list-none absolute top-0 right-0">
+            <li className="text-3xl backgroud_text_h"><i class="fas fa-quote-right"></i></li>
+          </div>
+          <p className="font-light m-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptatibus quod obcaecati 
+            soluta corrupti exercitationem animi repudiandae unde suscipit eveniet?
+          </p>
+          <div className="flex flex-row items-center">
+            <div className="h-24 w-24 relative rounded-full overflow-hidden m-4">
+              <img src="/images/asset1.webp" alt="Image d'une personne" className="object-cover w-full h-24" />
+            </div>
+            <div className="">
+              <span className="font-bold text-lg">John Doe</span>
+              <p className="">Lorem ipsum dolor sit amet.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* <!-- template notation --> */}
+        <div className="w-full lg:w-96 lg:m-3 bg-gray-200 h-auto relative p-3 text-left lg:p-5 rounded-tl-3xl rounded-br-3xl border-b-2 border-double border-yellow-500">
+          <div id="ratings" className="w-full flex relative space-x-1 lg:w-2/4">
+            <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
+            </svg>
+            <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="2" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
+            </svg>
+            <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="3" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
+            </svg>
+            <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="4" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
+            </svg>
+            <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
+            </svg>
+          </div>
+          <div className="list-none absolute top-0 right-0">
+            <li className="text-3xl backgroud_text_h"><i class="fas fa-quote-right"></i></li>
+          </div>
+          <p className="font-light m-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptatibus quod obcaecati 
+            soluta corrupti exercitationem animi repudiandae unde suscipit eveniet?
+          </p>
+          <div className="flex flex-row items-center">
+            <div className="h-24 w-24 relative rounded-full overflow-hidden m-4">
+              <img src="/images/asset1.webp" alt="Image d'une personne" className="object-cover w-full h-24" />
+            </div>
+            <div class="">
+              <span className="font-bold text-lg">John Doe</span>
+              <p className="">Lorem ipsum dolor sit amet.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
 }
 
-function ess() {
-  
+function Footer() {
+  return   <footer class="flex flex-row px-10 py-4 h-auto text-center items-center justify-center bg-black bg-opacity-90 text-white relative ">
+    <div id="partnaire" class="w-full h-44 text-center justify-center items-center flex flex-row">
+      <div class="w-16 h-16 rounded-full overflow-hidden relative m-10">
+        <img class="w-full h-16 object-cover" src="/images/Pinterest-logo.webp" alt="pinterest logo" />
+      </div>
+      <div class="w-16 h-16 rounded-full overflow-hidden m-10">
+        <img class="w-full h-16 object-cover" src="/images/images.webp" alt="facebook image" />
+      </div>
+      <div class="w-16 h-16 rounded-full overflow-hidden m-10 border-2 border-solid border-white">
+        <img class="w-full h-16 object-cover" src="/images/images (2).webp" alt="facebook image" />
+      </div>
+      <div class="w-28 h-28 m-10">
+        <img class="w-full h-28 object-cover" src="/images/g-solutech.png" alt="facebook image" />
+      </div>
+    </div>
+  </footer>
 }
