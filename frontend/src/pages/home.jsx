@@ -1,6 +1,7 @@
 import NavBar from "../components/navbar";
 import { motion } from "motion/react"
 import { FadeContainer, FadeItem } from "../hooks/animations";
+import { Button } from "../components/button";
 
 export function Home() {
     return <div className="scroll-smooth text-gray-900">
@@ -78,13 +79,14 @@ function Header() {
             </span>
           </p>
 
-          <motion.button
+          {/* <motion.button
             variants={FadeItem}
             className="openSignup w-44 pr-4 backgroud_btn_h mt-2 px-3 py-2 text-lg rounded-lg"
             id="openSignup"
           >
             Nous rejoindre <i className="fa-solid fa-arrow-right"></i>
-          </motion.button>
+          </motion.button> */}
+          <Button />
         </motion.div>
       </div>
     </motion.div>
