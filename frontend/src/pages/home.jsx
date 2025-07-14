@@ -179,7 +179,7 @@ function HowDoesItWork() {
       <h2 className="text-3xl font-bold text-center text-green-600">Comment ça marche ?</h2>
       <div className="mt-10 flex flex-wrap text-center items-center justify-center">
         <Step number={1} title="Créer votre compte" image="/images/account login.webp" />
-        <Step number={2} title="Configurer votre champ" />
+        <Step number={2} title="Configurer votre champ" image="/images/paramtrer.webp" />
         <Step number={3} title="Suivre vos cultures" />
       </div>
     </section>
