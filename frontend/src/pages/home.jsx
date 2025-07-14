@@ -33,8 +33,6 @@ function Header() {
                   className="h-auto w-16 lg:w-24 object-contain absolute right-0 top-0" src="/images/logo_only.webp" alt="logo de Fertilia" />
                 </div>
                 <motion.h1 variants={FadeItem}                 
-                initial="hidden"
-                whileInView="show" 
                 className="font_header mt-8 text-3xl pt-10 text-center z-10 lg:text-5xl text-white lg:mb-3 ">
                   La technologie au service de <span class="backgroud_text_h bg-opacity-60 text-3xl lg:text-5xl">
                   votre terre</span></motion.h1>
@@ -73,10 +71,11 @@ function Avantages() {
   
       <motion.div 
       variants={FadeContainer} 
-      initial="hidden"
-      whileInView="show"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
       className="w-full flex flex-wrap items-center justify-center my:2 lg:my-10">
-        <motion.div variants={FadeItem} initial="hidden" whileInView="show" className="w-96 lg:w-80 h-auto bg-white m-2 lg:m-5 rounded-lg shadow-xl p-2">
+        <motion.div variants={FadeItem} className="w-96 lg:w-80 h-auto bg-white m-2 lg:m-5 rounded-lg shadow-xl p-2">
           <div id="" className="w-full h-48">
             <img src="/images/gestion_culture/image1.webp" alt="Femmes cultuvant ensemble" class="object-cover h-48 w-full" />
           </div>
@@ -99,7 +98,7 @@ function Avantages() {
           </p>
           <button className="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg text-lg text-white font-bold w-full">Voir Plus   <i class="fa-solid fa-circle-plus"></i></button>
         </motion.div>
-        <motion.div variants={FadeItem} initial="hidden" whileInView="show" className="w-96 lg:w-80 h-auto bg-white m-5 rounded-lg shadow-xl p-2">
+        <motion.div variants={FadeItem} className="w-96 lg:w-80 h-auto bg-white m-5 rounded-lg shadow-xl p-2">
           <div id="" className="w-full h-48">
             <img src="/images/image2.webp" alt="Personnes analysant les courbes de croissance" className="object-cover h-48 w-full" />
           </div>
@@ -117,11 +116,19 @@ function Avantages() {
 }
 
 function Avis() {
-  return <section id="avis" className="w-full p-10 my-2 lg:p-10 text-center items-center justify-center flex flex-col ">
-      <h3 className="text-2xl lg:text-3xl text-center font-bold m-5">Avis et Notations</h3>
+  return <motion.section 
+      variants={FadeContainer}
+        initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }}
+      id="avis" 
+      className="w-full p-10 my-2 lg:p-10 text-center items-center justify-center flex flex-col ">
+      <motion.h3 variants={FadeItem} className="text-2xl lg:text-3xl text-center font-bold m-5">Avis et Notations</motion.h3>
       <div id="" className="w-full items-center justify-center content-center flex flex-wrap relative lg:w-9/12">
         {/* <!-- template notation --{">"} */}
-        <div className="w-full lg:w-96 lg:m-3 bg-gray-200 h-auto mb-5 relative p-3 text-left lg:p-5 rounded-tl-3xl rounded-br-3xl border-b-2 border-double border-yellow-500">
+        <motion.div 
+        variants={FadeItem}
+        className="w-full lg:w-96 lg:m-3 bg-gray-200 h-auto mb-5 relative p-3 text-left lg:p-5 rounded-tl-3xl rounded-br-3xl border-b-2 border-double border-yellow-500">
           <div id="ratings" className="w-full flex relative space-x-1 lg:w-2/4">
             <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
               <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
@@ -154,10 +161,12 @@ function Avis() {
               <p className="">Lorem ipsum dolor sit amet.</p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* <!-- template notation --> */}
-        <div className="w-full lg:w-96 lg:m-3 bg-gray-200 h-auto relative p-3 text-left lg:p-5 rounded-tl-3xl rounded-br-3xl border-b-2 border-double border-yellow-500">
+        <motion.div 
+        variants={FadeItem}
+        className="w-full lg:w-96 lg:m-3 bg-gray-200 h-auto relative p-3 text-left lg:p-5 rounded-tl-3xl rounded-br-3xl border-b-2 border-double border-yellow-500">
           <div id="ratings" className="w-full flex relative space-x-1 lg:w-2/4">
             <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
               <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
@@ -190,10 +199,10 @@ function Avis() {
               <p className="">Lorem ipsum dolor sit amet.</p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
       </div>
-    </section>
+    </motion.section>
 }
 
 function Footer() {
