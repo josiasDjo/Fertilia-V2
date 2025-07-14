@@ -18,14 +18,18 @@ function Header() {
         variants={FadeContainer} 
         initial="hidden"
         whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
         className="text-right px-7 py-6 flex flex-row relative mt-28 lg:px-20" id="header">
             <div className="hidden lg:block lg:w-5/12"></div>
-            <motion.div variants={FadeContainer} className="relative lg:px-6 w-full sm:px-2 lg:w-7/12 flex flex-col lg:items-end">
+            <motion.div 
+              variants={FadeContainer} 
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
+            className="relative lg:px-6 w-full sm:px-2 lg:w-7/12 flex flex-col lg:items-end">
                 <div className="relative w-full h-auto pb-10 place-items-end">
                   <motion.img 
                   variants={FadeItem} 
-                  initial="hidden"
-                  whileInView="show"
                   className="h-auto w-16 lg:w-24 object-contain absolute right-0 top-0" src="/images/logo_only.webp" alt="logo de Fertilia" />
                 </div>
                 <motion.h1 variants={FadeItem}                 
@@ -35,7 +39,12 @@ function Header() {
                   La technologie au service de <span class="backgroud_text_h bg-opacity-60 text-3xl lg:text-5xl">
                   votre terre</span></motion.h1>
                 
-                <motion.div variants={FadeContainer} className="bg-black bg-opacity-30 p-2 relative lg:overflow-hidden">
+                <motion.div
+                variants={FadeContainer} 
+                  initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.3 }}
+                className="bg-black bg-opacity-30 p-2 relative lg:overflow-hidden">
                   <motion.p variants={FadeItem} className="text-white text-xl font-light"> <span className="text-lg"><i class="fas fa-quote-left"></i></span> Transformez votre exploitation 
                       grâce à <span class="backgroud_text_h font-medium">notre plateforme innovante</span>. Surveillez en 
                       temps réel vos cultures et optimisez l'irrigation. Découvrez 
@@ -49,7 +58,13 @@ function Header() {
 }
 
 function Avantages() {
-    return <section id="avantages" className="p-2 lg:p-7 w-full lg:p-20">
+    return <motion.section
+    variants={FadeContainer}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true, amount: 0.3 }}
+    id="avantages" 
+    className="p-2 lg:p-7 w-full lg:p-20">
       <motion.h3 
       variants={FadeItem} 
       initial="hidden"
@@ -98,7 +113,7 @@ function Avantages() {
         </motion.div>
       </motion.div>
       
-    </section>
+    </motion.section>
 }
 
 function Avis() {
