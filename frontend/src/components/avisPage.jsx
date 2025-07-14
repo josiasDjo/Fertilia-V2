@@ -2,6 +2,11 @@ import { motion } from "framer-motion"
 import { FadeItem, FadeContainer } from "../hooks/animations"
 
 export default function Avis() {
+  const temps = [
+    {nameUser: "Mumbere Jean", role: "agriculteur au Congo", text: "Grâce à Fertilia, j’ai doublé ma production en 6 mois."},
+    {nameUser: "Kavira Kav", role: "echnicienne agricole", text: "L’interface est intuitive et vraiment adaptée à notre réalité."},
+    // {nameUser: "Mumbere Jean", role: "agriculteur au Congo", text: "Grâce à Fertilia, j’ai doublé ma production en 6 mois."},
+  ]
     return <motion.section 
         variants={FadeContainer}
         initial="hidden"
