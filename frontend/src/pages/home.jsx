@@ -134,14 +134,30 @@ function Avantages() {
 }
 
 function BringsYou() {
-
+  const adds=[
+    {title: "Suivi des cultures", text: "Surveillez la croissance et la santé de vos plantes en temps réel", icon: "fa-chart-line"},
+    {title: "Gestion de stock", text: "Surveillez la croissance et la santé de vos plantes en temps réel", icon: "fa-chart-line"},
+    {title: "Gestion intelligente de l’irrigation", text: "Économisez l’eau et augmentez la productivité grâce à l’automatisation."},
+    {title: "Prévisions personnalisées", text: "Des recommandations basées sur vos données et votre région.", icon: "fa-chart-line"},
+  ]
 
 
   return (
-    <section className="px-6 py-16 bg-white dark:bg-gray-900 p-2 lg:py-7 w-full lg:px-20">
-      <motion.h3 className="text-3xl mt-8 font-bold lg:text-3xl text-center">Ce que Fertilia vous apporte</motion.h3>
+    <motion.section 
+    variants={FadeContainer}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true, amount: 0.3 }}
+    id="BringsYou" 
+    className="px-6 py-16 bg-white dark:bg-gray-900 p-2 lg:py-7 w-full lg:px-20">
+      <motion.h3 variants={FadeItem} className="text-3xl mt-8 font-bold lg:text-3xl text-center">Ce que Fertilia vous apporte</motion.h3>
       
-    </section>
+      <motion.div 
+      variants={FadeItem}
+      className="w-full h-auto">
+
+      </motion.div>
+    </motion.section>
   )
 }
 
