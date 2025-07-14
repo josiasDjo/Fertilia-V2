@@ -79,14 +79,7 @@ function Header() {
             </span>
           </p>
 
-          {/* <motion.button
-            variants={FadeItem}
-            className="openSignup w-44 pr-4 backgroud_btn_h mt-2 px-3 py-2 text-lg rounded-lg"
-            id="openSignup"
-          >
-            Nous rejoindre <i className="fa-solid fa-arrow-right"></i>
-          </motion.button> */}
-          <Button />
+          <Button titre="Nous rejoindre" icon={<i className="fa-solid fa-arrow-right"></i>} classMa="openSignup w-44 pr-4 backgroud_btn_h mt-2 px-3 py-2 text-lg text-white rounded-lg" />
         </motion.div>
       </div>
     </motion.div>
@@ -94,6 +87,24 @@ function Header() {
 }
 
 function Avantages() {
+
+  const avantangesTab = [
+    {
+      titre: "Gestion Des Cultures", 
+      para: "Optimisez chaque étape de vos plantations avec notre module dédié. Suivez l'évolution de vos cultures en temps réel et recevez des recommandations personnalisées pour adapter vos pratiques agricoles et améliorer vos rendements.",
+      image: "/images/gestion_culture/image1.webp"
+    },
+    {
+      titre: "Irrigation Automatique", 
+      para: "Réalisez une gestion de l'eau intelligente grâce à notre système d'irrigation automatique. Les capteurs mesurent l'humidité du sol et activent l'irrigation au moment optimal, garantissant une utilisation efficace de l'eau et favorisant une croissance optimale des cultures.",
+      image: "/images/irrigations/irrigation.webp"
+    },
+    {
+      titre: "Analyse des rendements", 
+      para: "Transformez vos données en actions concrètes avec notre outil d'analyse des rendements. Visualisez l'évolution de vos récoltes, identifiez les tendances et ajustez vos stratégies pour maximiser vos profits et pérenniser la performance de votre exploitation.",
+      image: "/images/image2.webp"
+    },
+  ]
     return <motion.section
     variants={FadeContainer}
     initial="hidden"
@@ -108,41 +119,20 @@ function Avantages() {
       <motion.div 
       variants={FadeItem} 
       className="w-full flex flex-wrap items-center justify-center my:2 lg:my-10">
-        <motion.div variants={FadeItem} className="w-96 lg:w-80 h-auto bg-white m-2 lg:m-5 rounded-lg shadow-xl p-2">
-          <div id="" className="w-full h-48">
-            <img src="/images/gestion_culture/image1.webp" alt="Femmes cultuvant ensemble" class="object-cover h-48 w-full" />
-          </div>
-          <h4 className="mt-2 font-medium">Gestion Des Cultures</h4>
-          <p className="font-light">Optimisez chaque étape de vos plantations avec notre module dédié. Suivez l'évolution de vos 
-            cultures en temps réel et recevez des recommandations personnalisées pour adapter vos pratiques 
-            agricoles et améliorer vos rendements.
-          </p>
-          <button className="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg text-lg text-white font-bold w-full">Voir Plus   <i class="fa-solid fa-circle-plus"></i></button>
-        </motion.div>
-        <motion.div variants={FadeItem} initial="hidden" whileInView="show" class="w-96 lg:w-80 h-auto bg-white m-5 rounded-lg shadow-xl p-2">
-          <div id="" class="w-full h-48">
-            <img src="/images/irrigations/irrigation.webp" alt="irrigation automatique" className="object-cover h-48 w-full" />
-          </div>
-          <h4 className="mt-2 font-medium">Irrigation Automatique </h4>
-          <p className="font-light">            
-            Réalisez une gestion de l'eau intelligente grâce à notre système d'irrigation automatique. 
-            Les capteurs mesurent l'humidité du sol et activent l'irrigation au moment optimal, garantissant une 
-            utilisation efficace de l'eau et favorisant une croissance optimale des cultures.
-          </p>
-          <button className="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg text-lg text-white font-bold w-full">Voir Plus   <i class="fa-solid fa-circle-plus"></i></button>
-        </motion.div>
-        <motion.div variants={FadeItem} className="w-96 lg:w-80 h-auto bg-white m-5 rounded-lg shadow-xl p-2">
-          <div id="" className="w-full h-48">
-            <img src="/images/image2.webp" alt="Personnes analysant les courbes de croissance" className="object-cover h-48 w-full" />
-          </div>
-          <h4 className="mt-2 font-medium">Analyse des rendements</h4>
-          <p className="font-light">
-            Transformez vos données en actions concrètes avec notre outil d'analyse des rendements. 
-            Visualisez l'évolution de vos récoltes, identifiez les tendances et ajustez vos stratégies pour 
-            maximiser vos profits et pérenniser la performance de votre exploitation.
-          </p>
-          <button className="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg text-lg text-white font-bold w-full">Voir Plus   <i class="fa-solid fa-circle-plus"></i></button>
-        </motion.div>
+        {avantangesTab.map((index, key) => {
+          return (
+            <motion.div key={key} variants={FadeItem} className="w-96 lg:w-80 h-auto bg-white m-2 lg:m-5 rounded-lg shadow-xl p-2">
+              <div id="" className="w-full h-48">
+                <img src={index.image} alt={index} class="object-cover h-48 w-full" />
+              </div>
+              <h4 className="mt-2 font-medium"> {index.titre} </h4>
+              <p className="font-light"> {index.para} </p>
+              {/* <button className="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg text-lg text-white font-bold w-full">Voir Plus   </button> */}
+              <Button titre="Voir Plus  " icon={<i class="fa-solid fa-circle-plus"></i>} classMa="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg text-lg text-white font-bold w-full" />
+            </motion.div>
+          )
+        })}  
+        
       </motion.div>
       
     </motion.section>
@@ -155,7 +145,7 @@ function Avis() {
       whileInView="show"
       viewport={{ once: true, amount: 0.3 }}
       id="avis" 
-      className="w-full p-10 my-2 lg:p-10 text-center items-center justify-center flex flex-col ">
+      className="w-full p-5 my-2 text-center items-center justify-center flex flex-col ">
       <motion.h3 variants={FadeItem} className="text-2xl lg:text-3xl text-center font-bold m-5">Avis et Notations</motion.h3>
       <div id="" className="w-full items-center justify-center content-center flex flex-wrap relative lg:w-9/12">
         {/* <!-- template notation --{">"} */}

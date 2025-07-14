@@ -1,6 +1,7 @@
 import { Fragment } from "react"
 import { motion } from "motion/react"
 import { FadeContainer, FadeItem } from "../hooks/animations"
+import { Button } from "./button"
 
 function NavBar() {
     return <Fragment>
@@ -30,25 +31,25 @@ function NavBar() {
       <motion.ul id="nav_part2" className="relative text-lg text-medium flex-col hidden lg:flex
       lg:text-center lg:items-center lg:flex-row lg:justify-center lg:self-center lg:content-center lg:px-10
       ">
-        <motion.a variants={FadeItem} href="#header" className="my-2 p-2">
+        <motion.a variants={FadeItem} whileHover={{ scale: 0.9 }}  href="#header" className="my-2 p-2">
           <ul className="flex flex-row w-full lg:flex-col lg:pr-4">
             <li className="mr-6"><i className="fa-solid fa-house"></i></li>
             <li className="mr-6">Accueil</li>              
           </ul>
         </motion.a>
-        <motion.a variants={FadeItem} href="#avantages" class="my-2 p-2">
+        <motion.a variants={FadeItem} whileHover={{ scale: 0.9}} href="#avantages" class="my-2 p-2">
           <ul className="lg:pr-4 flex flex-row w-full lg:flex-col">
             <li className="mr-6"><i className="fa-solid fa-chart-simple"></i></li>
             <li className="mr-6">Fonctionnalités</li>
           </ul>
         </motion.a>        
-        <motion.a variants={FadeItem} href="#avis" class="my-2 p-2">
+        <motion.a variants={FadeItem} whileHover={{ scale: 0.9}} href="#avis" class="my-2 p-2">
           <ul className="pr-4 flex flex-row w-full lg:flex-col">
             <li className="mr-6"><i className="fa-solid fa-circle-info"></i></li>
             <li className="mr-6">A propos</li>
           </ul>
         </motion.a>        
-        <motion.a variants={FadeItem} href="#" class="my-2 p-2">
+        <motion.a variants={FadeItem} whileHover={{ scale: 0.9}} href="#" class="my-2 p-2">
           <ul className="pr-4 flex flex-row w-full lg:flex-col">       
             <li className="mr-6"><i className="fa-solid fa-phone-volume"></i></li>
             <li className="mr-6">Contacts</li>
@@ -57,7 +58,11 @@ function NavBar() {
 
       </motion.ul>   
       <motion.ul variants={FadeItem} id="nav_part3" className="lg:flex flex-row relative lg:absolute lg:right-0 lg:px-10 text-lg text-medium text-center items-center hidden">
-        <button id="openSignin" className="openSignin pr-4 backgroud_btn_h text-white px-3 py-2 rounded-lg hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">Se connecter <i class="fa-solid fa-arrow-right-to-bracket"></i></button>
+
+        <Button 
+          titre="Se connecter" 
+          icon={<i class="fa-solid fa-arrow-right-to-bracket"></i>} 
+          classMa="openSignin pr-4 backgroud_btn_h text-white px-3 py-2 rounded-lg hover:bg-yellow-400 focus:outline-none focus:ring-opacity-50" />
       </motion.ul>
     </motion.nav>
     </Fragment>
