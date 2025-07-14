@@ -4,6 +4,7 @@ import { FadeContainer, FadeItem } from "../hooks/animations";
 import { Button } from "../components/button";
 import Avis from "../components/avisPage";
 import { FeatureCard } from "../components/FeatureCard";
+import Step from "../components/step";
 
 export function Home() {
     return <div className="scroll-smooth text-gray-900">
@@ -17,6 +18,7 @@ export function Home() {
         <Header />
         <Avantages />
         <BringsYou />
+        <HowDoesItWork />
         <Avis />
         <Footer />
     </div>
@@ -136,7 +138,7 @@ function Avantages() {
 function BringsYou() {
   const adds=[
     {title: "Suivi des cultures", text: "Surveillez la croissance et la santé de vos plantes en temps réel", icon: "fa-chart-line"},
-    {title: "Gestion de stock", text: "Surveillez la croissance et la santé de vos plantes en temps réel", icon: "fa-chart-line"},
+    {title: "Gestion de stock", text: "Surveillez de pres votre niveau de stock", icon: "fa-chart-line"},
     {title: "Gestion intelligente de l’irrigation", text: "Économisez l’eau et augmentez la productivité grâce à l’automatisation."},
     {title: "Prévisions personnalisées", text: "Des recommandations basées sur vos données et votre région.", icon: "fa-chart-line"},
   ]
@@ -154,13 +156,35 @@ function BringsYou() {
       
       <motion.div 
       variants={FadeItem}
-      className="w-full h-auto">
-
+      className="w-full h-auto flex flex-wrap justify-center items-center my-5">
+        {adds.map((index, key) => {
+          return (
+            <motion.div
+            variants={FadeItem}
+            key={key}
+            className="bg-gray-100 opacity-90 m-3 px-3 py-2 w-96 h-24 flex flex-col text-gray-900 rounded-lg">
+              <motion.h5 className="font-bold text-lg"> {index.title} </motion.h5>
+              <p> {index.text} </p>
+            </motion.div>
+          )
+        })}
       </motion.div>
     </motion.section>
   )
 }
 
+function HowDoesItWork() {
+  return (
+    <section className="py-20 lg:px-20 bg-gray-100 dark:bg-gray-800">
+      <h2 className="text-3xl font-bold text-center text-green-600">Comment ça marche ?</h2>
+      <div className="mt-10 flex flex-wrap text-center items-center justify-center">
+        <Step number={1} title="Créer votre compte" image="/images/account login.webp" />
+        <Step number={2} title="Configurer votre champ" />
+        <Step number={3} title="Suivre vos cultures" />
+      </div>
+    </section>
+  )
+}
 
 function Footer() {
   return   <footer className="flex flex-row px-10 py-4 h-auto text-center items-center justify-center bg-black bg-opacity-90 text-white relative ">
