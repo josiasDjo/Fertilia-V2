@@ -26,6 +26,7 @@ export function Home() {
 
 function Header() {
     return (
+
     <motion.div
       variants={FadeContainer}
       initial="hidden"
@@ -34,6 +35,9 @@ function Header() {
       className="text-right px-7 py-6 flex flex-row relative mt-28 lg:px-20"
       id="header"
     >
+      <div className="w-full h-10 bg-amber-600 dark:bg-green-600">
+        Dark
+      </div>
       <div className="hidden lg:block lg:w-5/12"></div>
 
       <div className="relative lg:px-6 w-full sm:px-2 lg:w-7/12 flex flex-col lg:items-end">
