@@ -175,19 +175,30 @@ function BringsYou() {
 
 function HowDoesItWork() {
   return (
-    <section className="py-20 lg:px-20 bg-gray-100 dark:bg-gray-800">
-      <h2 className="text-3xl font-bold text-center text-green-600">Comment ça marche ?</h2>
-      <div className="mt-10 flex flex-wrap text-center items-center justify-center">
+    <motion.section 
+    variants={FadeContainer} 
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true, amount: 0.3 }}
+    className="py-20 lg:px-20 bg-gray-100 dark:bg-gray-800">
+      <motion.h2 variants={FadeItem} className="text-3xl font-bold text-center text-green-600">Comment ça marche ?</motion.h2>
+      <motion.div variants={FadeItem} className="mt-10 flex flex-wrap text-center items-center justify-center">
         <Step number={1} title="Créer votre compte" image="/images/account login.webp" />
         <Step number={2} title="Configurer votre champ" image="/images/paramtrer.webp" />
         <Step number={3} title="Suivre vos cultures" image="/images/Working_illustration.webp" />
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   )
 }
 
+
 function Footer() {
-  return   <footer className="flex flex-row px-10 py-4 h-auto text-center items-center justify-center bg-black bg-opacity-90 text-white relative ">
+  return   <motion.footer 
+  variants={FadeContainer}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true, amount: 0.3 }}
+  className="flex flex-row px-10 py-4 h-auto text-center items-center justify-center bg-black bg-opacity-90 text-white relative ">
     <div className="flex flex-col sm:flex-row justify-between">
       <div>
         <h3 className="text-lg font-semibold">Fertilia</h3>
@@ -202,5 +213,5 @@ function Footer() {
         </div>
       </div>
     </div>
-  </footer>
+  </motion.footer>
 }
