@@ -4,6 +4,12 @@ import { FadeContainer, FadeItem } from "../hooks/animations";
 
 export function Home() {
     return <div className="scroll-smooth text-gray-900">
+        <img
+          src="/images/bg-hero-header2.webp"
+          alt=""
+          style={{ display: "none" }}
+          loading="eager"
+        />
         < NavBar />
         <Header />
         <Avantages />
@@ -13,46 +19,76 @@ export function Home() {
 }
 
 function Header() {
-    return <>
-        <motion.div 
-        variants={FadeContainer} 
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
-        className="text-right px-7 py-6 flex flex-row relative mt-28 lg:px-20" id="header">
-            <div className="hidden lg:block lg:w-5/12"></div>
-            <motion.div 
-              variants={FadeContainer} 
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.3 }}
-            className="relative lg:px-6 w-full sm:px-2 lg:w-7/12 flex flex-col lg:items-end">
-                <div className="relative w-full h-auto pb-10 place-items-end">
-                  <motion.img 
-                  variants={FadeItem} 
-                  className="h-auto w-16 lg:w-24 object-contain absolute right-0 top-0" src="/images/logo_only.webp" alt="logo de Fertilia" />
-                </div>
-                <motion.h1 variants={FadeItem}                 
-                className="font_header mt-8 text-3xl pt-10 text-center z-10 lg:text-5xl text-white lg:mb-3 ">
-                  La technologie au service de <span class="backgroud_text_h bg-opacity-60 text-3xl lg:text-5xl">
-                  votre terre</span></motion.h1>
-                
-                <motion.div
-                variants={FadeContainer} 
-                  initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, amount: 0.3 }}
-                className="bg-black bg-opacity-30 p-2 relative lg:overflow-hidden">
-                  <motion.p variants={FadeItem} className="text-white text-xl font-light"> <span className="text-lg"><i class="fas fa-quote-left"></i></span> Transformez votre exploitation 
-                      grâce à <span class="backgroud_text_h font-medium">notre plateforme innovante</span>. Surveillez en 
-                      temps réel vos cultures et optimisez l'irrigation. Découvrez 
-                      comment la technologie peut <span class="backgroud_text_h font-medium">redonner vie à votre terre</span> et propulser votre agriculture vers de <span class="backgroud_text_h font-medium">nouveaux sommets.</span> <span class="text-lg"><i class="fas fa-quote-right"></i></span><br />
-                  </motion.p>
-                  <motion.button variants={FadeItem} className="openSignup w-44 pr-4 backgroud_btn_h mt-2 px-3 py-2 text-lg rounded-lg" id="openSignup">Nous réjoindre <i class="fa-solid fa-arrow-right"></i></motion.button> 
-                </motion.div>
-            </motion.div>
+    return (
+    <motion.div
+      variants={FadeContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }}
+      className="text-right px-7 py-6 flex flex-row relative mt-28 lg:px-20"
+      id="header"
+    >
+      <div className="hidden lg:block lg:w-5/12"></div>
+
+      <div className="relative lg:px-6 w-full sm:px-2 lg:w-7/12 flex flex-col lg:items-end">
+        <motion.div
+          variants={FadeItem}
+          className="relative w-full h-auto pb-10 place-items-end"
+        >
+          <img
+            className="h-auto w-16 lg:w-24 object-contain absolute right-0 top-0"
+            src="/images/logo_only.webp"
+            alt="logo de Fertilia"
+          />
         </motion.div>
-    </>
+
+        <motion.h1
+          variants={FadeItem}
+          className="font_header mt-8 text-3xl pt-10 text-center z-10 lg:text-5xl text-white lg:mb-3"
+        >
+          La technologie au service de{" "}
+          <span className="backgroud_text_h bg-opacity-60 text-3xl lg:text-5xl">
+            votre terre
+          </span>
+        </motion.h1>
+
+        <motion.div
+          variants={FadeItem}
+          className="bg-black bg-opacity-30 p-2 relative lg:overflow-hidden"
+        >
+          <p className="text-white text-xl font-light">
+            <span className="text-lg">
+              <i className="fas fa-quote-left"></i>
+            </span>{" "}
+            Transformez votre exploitation grâce à{" "}
+            <span className="backgroud_text_h font-medium">
+              notre plateforme innovante
+            </span>
+            . Surveillez en temps réel vos cultures et optimisez l'irrigation.
+            Découvrez comment la technologie peut{" "}
+            <span className="backgroud_text_h font-medium">
+              redonner vie à votre terre
+            </span>{" "}
+            et propulser votre agriculture vers de{" "}
+            <span className="backgroud_text_h font-medium">
+              nouveaux sommets.
+            </span>{" "}
+            <span className="text-lg">
+              <i className="fas fa-quote-right"></i>
+            </span>
+          </p>
+
+          <motion.button
+            variants={FadeItem}
+            className="openSignup w-44 pr-4 backgroud_btn_h mt-2 px-3 py-2 text-lg rounded-lg"
+            id="openSignup"
+          >
+            Nous rejoindre <i className="fa-solid fa-arrow-right"></i>
+          </motion.button>
+        </motion.div>
+      </div>
+    </motion.div>
+  );
 }
 
 function Avantages() {
@@ -65,15 +101,10 @@ function Avantages() {
     className="p-2 lg:p-7 w-full lg:p-20">
       <motion.h3 
       variants={FadeItem} 
-      initial="hidden"
-      whileInView="show"
       className="text-3xl mt-8 font-bold lg:text-3xl text-center">Avantages</motion.h3>
   
       <motion.div 
-      variants={FadeContainer} 
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
+      variants={FadeItem} 
       className="w-full flex flex-wrap items-center justify-center my:2 lg:my-10">
         <motion.div variants={FadeItem} className="w-96 lg:w-80 h-auto bg-white m-2 lg:m-5 rounded-lg shadow-xl p-2">
           <div id="" className="w-full h-48">
