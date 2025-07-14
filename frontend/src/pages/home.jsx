@@ -2,6 +2,8 @@ import NavBar from "../components/navbar";
 import { motion } from "motion/react"
 import { FadeContainer, FadeItem } from "../hooks/animations";
 import { Button } from "../components/button";
+import Avis from "../components/avisPage";
+import { FeatureCard } from "../components/FeatureCard";
 
 export function Home() {
     return <div className="scroll-smooth text-gray-900">
@@ -14,6 +16,7 @@ export function Home() {
         < NavBar />
         <Header />
         <Avantages />
+        <BringsYou />
         <Avis />
         <Footer />
     </div>
@@ -121,15 +124,7 @@ function Avantages() {
       className="w-full flex flex-wrap items-center justify-center my:2 lg:my-10">
         {avantangesTab.map((index, key) => {
           return (
-            <motion.div key={key} variants={FadeItem} className="w-96 lg:w-80 h-auto bg-white m-2 lg:m-5 rounded-lg shadow-xl p-2">
-              <div id="" className="w-full h-48">
-                <img src={index.image} alt={index} class="object-cover h-48 w-full" />
-              </div>
-              <h4 className="mt-2 font-medium"> {index.titre} </h4>
-              <p className="font-light"> {index.para} </p>
-              {/* <button className="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg text-lg text-white font-bold w-full">Voir Plus   </button> */}
-              <Button titre="Voir Plus  " icon={<i class="fa-solid fa-circle-plus"></i>} classMa="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg text-lg text-white font-bold w-full" />
-            </motion.div>
+            <FeatureCard index={index} key={key} titre={index.titre} image={index.image} para={index.para}  />
           )
         })}  
         
@@ -138,110 +133,30 @@ function Avantages() {
     </motion.section>
 }
 
-function Avis() {
-  return <motion.section 
-      variants={FadeContainer}
-        initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.3 }}
-      id="avis" 
-      className="w-full p-5 my-2 text-center items-center justify-center flex flex-col ">
-      <motion.h3 variants={FadeItem} className="text-2xl lg:text-3xl text-center font-bold m-5">Avis et Notations</motion.h3>
-      <div id="" className="w-full items-center justify-center content-center flex flex-wrap relative lg:w-9/12">
-        {/* <!-- template notation --{">"} */}
-        <motion.div 
-        variants={FadeItem}
-        className="w-full lg:w-96 lg:m-3 bg-gray-200 h-auto mb-5 relative p-3 text-left lg:p-5 rounded-tl-3xl rounded-br-3xl border-b-2 border-double border-yellow-500">
-          <div id="ratings" className="w-full flex relative space-x-1 lg:w-2/4">
-            <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
-            </svg>
-            <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="2" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
-            </svg>
-            <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="3" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
-            </svg>
-            <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="4" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
-            </svg>
-            <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
-            </svg>
-          </div>
-          <div className="list-none absolute top-0 right-0">
-            <li className="text-3xl backgroud_text_h"><i class="fas fa-quote-right"></i></li>
-          </div>
-          <p className="font-light m-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptatibus quod obcaecati 
-            soluta corrupti exercitationem animi repudiandae unde suscipit eveniet?
-          </p>
-          <div className="flex flex-row items-center">
-            <div className="h-24 w-24 relative rounded-full overflow-hidden m-4">
-              <img src="/images/asset1.webp" alt="Image d'une personne" className="object-cover w-full h-24" />
-            </div>
-            <div className="">
-              <span className="font-bold text-lg">John Doe</span>
-              <p className="">Lorem ipsum dolor sit amet.</p>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* <!-- template notation --> */}
-        <motion.div 
-        variants={FadeItem}
-        className="w-full lg:w-96 lg:m-3 bg-gray-200 h-auto relative p-3 text-left lg:p-5 rounded-tl-3xl rounded-br-3xl border-b-2 border-double border-yellow-500">
-          <div id="ratings" className="w-full flex relative space-x-1 lg:w-2/4">
-            <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
-            </svg>
-            <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="2" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
-            </svg>
-            <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="3" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
-            </svg>
-            <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="4" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
-            </svg>
-            <svg className="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
-            </svg>
-          </div>
-          <div className="list-none absolute top-0 right-0">
-            <li className="text-3xl backgroud_text_h"><i class="fas fa-quote-right"></i></li>
-          </div>
-          <p className="font-light m-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptatibus quod obcaecati 
-            soluta corrupti exercitationem animi repudiandae unde suscipit eveniet?
-          </p>
-          <div className="flex flex-row items-center">
-            <div className="h-24 w-24 relative rounded-full overflow-hidden m-4">
-              <img src="/images/asset1.webp" alt="Image d'une personne" className="object-cover w-full h-24" />
-            </div>
-            <div class="">
-              <span className="font-bold text-lg">John Doe</span>
-              <p className="">Lorem ipsum dolor sit amet.</p>
-            </div>
-          </div>
-        </motion.div>
-
-      </div>
-    </motion.section>
+function BringsYou() {
+  return (
+    <section className="px-6 py-16 bg-white dark:bg-gray-900 p-2 lg:p-7 w-full lg:p-20">
+      <motion.h3 className="text-3xl mt-8 font-bold lg:text-3xl text-center">Avantages</motion.h3>
+      
+    </section>
+  )
 }
 
+
 function Footer() {
-  return   <footer class="flex flex-row px-10 py-4 h-auto text-center items-center justify-center bg-black bg-opacity-90 text-white relative ">
-    <div id="partnaire" class="w-full h-44 text-center justify-center items-center flex flex-row">
-      <div class="w-16 h-16 rounded-full overflow-hidden relative m-10">
-        <img class="w-full h-16 object-cover" src="/images/Pinterest-logo.webp" alt="pinterest logo" />
+  return   <footer className="flex flex-row px-10 py-4 h-auto text-center items-center justify-center bg-black bg-opacity-90 text-white relative ">
+    <div id="partnaire" className="w-full h-44 text-center justify-center items-center flex flex-row">
+      <div className="w-16 h-16 rounded-full overflow-hidden relative m-10">
+        <img className="w-full h-16 object-cover" src="/images/Pinterest-logo.webp" alt="pinterest logo" />
       </div>
-      <div class="w-16 h-16 rounded-full overflow-hidden m-10">
-        <img class="w-full h-16 object-cover" src="/images/images.webp" alt="facebook image" />
+      <div className="w-16 h-16 rounded-full overflow-hidden m-10">
+        <img className="w-full h-16 object-cover" src="/images/images.webp" alt="facebook image" />
       </div>
-      <div class="w-16 h-16 rounded-full overflow-hidden m-10 border-2 border-solid border-white">
-        <img class="w-full h-16 object-cover" src="/images/images (2).webp" alt="facebook image" />
+      <div className="w-16 h-16 rounded-full overflow-hidden m-10 border-2 border-solid border-white">
+        <img className="w-full h-16 object-cover" src="/images/images (2).webp" alt="facebook image" />
       </div>
-      <div class="w-28 h-28 m-10">
-        <img class="w-full h-28 object-cover" src="/images/g-solutech.png" alt="facebook image" />
+      <div className="w-28 h-28 m-10">
+        <img className="w-full h-28 object-cover" src="/images/g-solutech.png" alt="facebook image" />
       </div>
     </div>
   </footer>

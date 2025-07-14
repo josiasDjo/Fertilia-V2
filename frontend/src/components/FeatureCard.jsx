@@ -2,11 +2,11 @@ import { motion } from "framer-motion"
 import { FadeItem } from "../hooks/animations"
 import { Button } from "./button"
 
-export function FeatureCard(titre, image, para, index, icon) {
+export function FeatureCard({titre, image, para, index, icon}) {
     return (
         <motion.div variants={FadeItem} className="w-96 lg:w-80 h-auto bg-white m-2 lg:m-5 rounded-lg shadow-xl p-2">
             <div id="" className="w-full h-48">
-                <img src={image} alt={index} class="object-cover h-48 w-full" />
+                <img src={image} alt={index} className="object-cover h-48 w-full" />
             </div>
             <h4 className="mt-2 font-medium"> {titre} </h4>
             <p className="font-light"> {para} </p>
