@@ -1,16 +1,34 @@
-import { Fragment } from "react"
+import { Fragment, useEffect, useState } from "react"
 import { motion } from "motion/react"
 import { FadeContainer, FadeItem } from "../hooks/animations"
 import { Button } from "./button"
 
 function NavBar() {
+    let iconMode
+    const [darkMode, setDarkMode] = useState(false)
+
+    useEffect(() => {
+      const root = window.document.documentElement
+      console.log("Dark mode", darkMode)
+      if(darkMode) {
+        iconMode=<i className='bxr  bx-sun'  ></i>
+        root.classList.add('dark')
+      } else {
+        iconMode=<i className="fa-solid fa-moon"></i>
+        root.classList.remove('dark')
+      }
+    }, [darkMode])
+
+    const toggleDarkMode = () => setDarkMode(prev => !prev)
+
+
     return <Fragment>
         <motion.nav 
         variants={FadeContainer}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
-        id="navbar" className="animate_nav w-full flex flex-col px-10 py-2 bg-white text-gray-900 bg-opacity-90 h-16 
+        id="navbar" className="animate_nav w-full flex flex-col px-10 py-2 bg-white dark:dark_mode_color text-gray-900 dark:text-white bg-opacity-90 h-16 
     lg:text-center lg:items-center lg:justify-center lg:w-full lg:flex lg:flex-row lg:px-10 z-20 fixed top-0 inset-0 shadow-lg blur backdrop-blur-lg">
 
       <motion.button variants={FadeItem} id="hideNav" className="hidden text-black sm:h-12 sm:h-12 md:p-2 md:w-24 md:h-24 sm:justify-center sm:content-center sm:align-center absolute top-4 right-7 z-10">
@@ -56,9 +74,16 @@ function NavBar() {
           </ul>
         </motion.a>
 
-      </motion.ul>   
+      </motion.ul> 
       <motion.ul variants={FadeItem} id="nav_part3" className="lg:flex flex-row relative lg:absolute lg:right-0 lg:px-10 text-lg text-medium text-center items-center hidden">
-
+        <Button 
+        onClick={toggleDarkMode}
+        icon={darkMode ? (
+          <i className='bxr  bx-sun'  ></i>
+        ) : (
+          <i className="fa-solid fa-moon" ></i>
+        )} 
+        classMa="dark_mode_color text-white text-center flex items-center justify-center mx-5 w-10 h-10 rounded-full" />
         <Button 
           titre="Se connecter" 
           icon={<i className="fa-solid fa-arrow-right-to-bracket"></i>} 

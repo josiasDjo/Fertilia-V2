@@ -3,7 +3,7 @@ import NavBar from './components/navbar'
 import { Home } from './pages/home'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [darkMode, setDarkMode] = useState(false)
 
   return (
     <>

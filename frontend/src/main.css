@@ -32,6 +32,9 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.dark_mode_color {
+  background-color: #2a2f36;
+}
 .blue_color_text {
   color: #00B8F5;
 }
@@ -129,3 +132,5 @@ table td, th {
   color: rgb(255, 181, 42);
   font-weight: 500;
 } */
+
+
