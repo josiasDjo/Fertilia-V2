@@ -180,7 +180,7 @@ function HowDoesItWork() {
       <div className="mt-10 flex flex-wrap text-center items-center justify-center">
         <Step number={1} title="Créer votre compte" image="/images/account login.webp" />
         <Step number={2} title="Configurer votre champ" image="/images/paramtrer.webp" />
-        <Step number={3} title="Suivre vos cultures" />
+        <Step number={3} title="Suivre vos cultures" image="/images/Working_illustration.webp" />
       </div>
     </section>
   )
