@@ -114,7 +114,7 @@ function Avantages() {
     whileInView="show"
     viewport={{ once: true, amount: 0.3 }}
     id="avantages" 
-    className="p-2 lg:p-7 w-full lg:p-20">
+    className="p-2 lg:py-7 w-full lg:px-20">
       <motion.h3 
       variants={FadeItem} 
       className="text-3xl mt-8 font-bold lg:text-3xl text-center">Avantages</motion.h3>
@@ -134,9 +134,12 @@ function Avantages() {
 }
 
 function BringsYou() {
+
+
+
   return (
-    <section className="px-6 py-16 bg-white dark:bg-gray-900 p-2 lg:p-7 w-full lg:p-20">
-      <motion.h3 className="text-3xl mt-8 font-bold lg:text-3xl text-center">Avantages</motion.h3>
+    <section className="px-6 py-16 bg-white dark:bg-gray-900 p-2 lg:py-7 w-full lg:px-20">
+      <motion.h3 className="text-3xl mt-8 font-bold lg:text-3xl text-center">Ce que Fertilia vous apporte</motion.h3>
       
     </section>
   )
@@ -145,18 +148,18 @@ function BringsYou() {
 
 function Footer() {
   return   <footer className="flex flex-row px-10 py-4 h-auto text-center items-center justify-center bg-black bg-opacity-90 text-white relative ">
-    <div id="partnaire" className="w-full h-44 text-center justify-center items-center flex flex-row">
-      <div className="w-16 h-16 rounded-full overflow-hidden relative m-10">
-        <img className="w-full h-16 object-cover" src="/images/Pinterest-logo.webp" alt="pinterest logo" />
+    <div className="flex flex-col sm:flex-row justify-between">
+      <div>
+        <h3 className="text-lg font-semibold">Fertilia</h3>
+        <p className="text-sm mt-2">La technologie au service de votre terre.</p>
       </div>
-      <div className="w-16 h-16 rounded-full overflow-hidden m-10">
-        <img className="w-full h-16 object-cover" src="/images/images.webp" alt="facebook image" />
-      </div>
-      <div className="w-16 h-16 rounded-full overflow-hidden m-10 border-2 border-solid border-white">
-        <img className="w-full h-16 object-cover" src="/images/images (2).webp" alt="facebook image" />
-      </div>
-      <div className="w-28 h-28 m-10">
-        <img className="w-full h-28 object-cover" src="/images/g-solutech.png" alt="facebook image" />
+      <div className="mt-6 sm:mt-0">
+        <p>Contact : <a href="mailto:support@fertilia.app" className="underline">support@fertilia.app</a></p>
+        <div className="flex gap-4 mt-2">
+          <i className="fab fa-facebook"></i>
+          <i className="fab fa-twitter"></i>
+          <i className="fab fa-linkedin"></i>
+        </div>
       </div>
     </div>
   </footer>
