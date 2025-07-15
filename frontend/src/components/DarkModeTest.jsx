@@ -17,11 +17,11 @@ export default function DarkTest() {
   }, [darkMode]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center transition-colors duration-500 bg-white text-black dark:bg-black dark:text-white">
+    <div className="bg-white dark:bg-gray-700 rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5">
       <h1 className="text-3xl mb-6">Dark Mode Test</h1>
       <button
         onClick={() => setDarkMode((prev) => !prev)}
-        className="px-6 py-3 rounded bg-gray-300 dark:bg-gray-700"
+        className="px-6 py-3 rounded bg-gray-300 dark:bg-gray-800"
       >
         Toggle Theme ({darkMode ? 'Sombre' : 'Clair'})
       </button>
