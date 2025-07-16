@@ -2,22 +2,25 @@ import { useEffect, useState } from 'react';
 
 export default function DarkTest() {
   const [darkMode, setDarkMode] = useState(() => {
-    const saved = localStorage.getItem('darkMode');
-    return saved === 'true';
+    return localStorage.getItem('theme') === 'dark' ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches &&
+        localStorage.getItem('theme') !== 'light')
   });
 
   useEffect(() => {
     const root = document.documentElement;
     if (darkMode) {
       root.classList.add('dark');
+      localStorage.setItem('theme', 'dark')
     } else {
       root.classList.remove('dark');
+      localStorage.setItem('theme', 'light')
     }
     localStorage.setItem('darkMode', darkMode.toString());
-  }, [darkMode]);
+  }, [darkMode])
 
   return (
-    <div id="testDark" className="bg-white text-slate-500 dark:bg-slate-500 dark:text-white rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5">
+    <div id="testDark" className={`bg-white text-slate-500 ${darkMode ? bg-slate-500 : bg-red-500} dark:text-white rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5`}>
       <h1 className="text-3xl mb-6">Dark Mode Test</h1>
       <button
         onClick={() => setDarkMode((prev) => !prev)}
