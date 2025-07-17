@@ -6,7 +6,7 @@ import Avis from "../components/avisPage";
 import { FeatureCard } from "../components/FeatureCard";
 import Step from "../components/step";
 
-export function Home() {
+export default function Home() {
     return <div className="scroll-smooth text-gray-900">
         <img
           src="/images/bg-hero-header2.webp"

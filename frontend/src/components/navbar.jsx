@@ -3,6 +3,7 @@ import { Fragment, useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { FadeContainer, FadeItem } from "../hooks/animations"
 import { Button } from "./button"
+import ToggleTheme from "../hooks/toggleTheme";
 
 function NavBar() {
     // const [darkMode, setDarkMode] = useState(() => {
@@ -10,26 +11,12 @@ function NavBar() {
     //   return savedMode === 'true';
     // })
 
-  const [darkMode, setDarkMode] = useState(false);
-
-
-    // useEffect(() => {
-    //   const root = window.document.documentElement
-    //   console.log("Dark mode", darkMode)
-    //   if(darkMode) {
-    //     root.classList.add('dark')
-    //   } else {
-    //     root.classList.remove('dark')
-    //   }
-    //   localStorage.setItem('darkMode', darkMode.toString());
-    // }, [darkMode])
-
-      useEffect(() => {
-        document.documentElement.classList.toggle('dark', darkMode);
-        localStorage.setItem('theme', 'dark')
-      }, [darkMode]);
-
-    const toggleDarkMode = () => setDarkMode(prev => !prev)
+  const [darkMode, setDarkMode] = useState(() => {
+    const stored = localStorage.getItem('theme')
+    if (stored === 'dark') return 'dark'
+    if (stored === 'light') return 'light'
+    return 'system' // fallback to OS
+  });
 
 
     return <Fragment>
@@ -87,7 +74,7 @@ function NavBar() {
       </motion.ul> 
       <motion.ul variants={FadeItem} id="nav_part3" className="lg:flex flex-row relative lg:absolute lg:right-0 lg:px-10 text-lg text-medium text-center items-center hidden">
         <Button 
-        onClick={toggleDarkMode}
+        onClick={ToggleTheme}
         icon={darkMode ? (
           <i className='bxr  bx-sun'  ></i>
         ) : (
