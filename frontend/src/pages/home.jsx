@@ -200,8 +200,8 @@ function Footer() {
     initial="hidden"
     whileInView="show"
     viewport={{ once: true, amount: 0.3 }}
-  className="flex flex-row px-10 py-4 h-auto text-center items-center justify-center bg-black dark:bg-gray-900  text-white relative ">
-    <div className="flex flex-col sm:flex-row justify-between">
+  className="flex flex-col h-auto text-center items-center justify-center bg-black dark:bg-gray-900  text-white relative ">
+    <div className="flex flex-col sm:flex-row justify-between px-10 py-5">
       <div>
         <h3 className="text-lg font-semibold">Fertilia</h3>
         <p className="text-sm mt-2">La technologie au service de votre terre.</p>
@@ -216,6 +216,17 @@ function Footer() {
           <i className="fab fa-whatsapp"></i>   
         </div>
       </div>
+    </div>
+
+    <div className="w-full bg-red-500 flex flex-row justify-between x-10 py-5">
+      <ul>
+        <p>&copy; 2025 Fertilia. Tous droits réservés. </p>
+      </ul>
+      <ul className="flex flex-row">
+        <li className="m-2">Terms of service</li>
+        <li className="m-2">Privacy policy</li>
+        <li className="m-2">Cookies</li>
+      </ul>
     </div>
   </motion.footer>
 }
