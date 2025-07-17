@@ -200,7 +200,7 @@ function Footer() {
     initial="hidden"
     whileInView="show"
     viewport={{ once: true, amount: 0.3 }}
-  className="flex flex-col h-auto text-center items-center justify-center bg-black dark:bg-gray-900  text-white relative ">
+  className="flex flex-col h-auto text-center items-center justify-center bg-gray-900  text-white relative ">
     <div className="w-full flex flex-row px-10 py-5 justify-between">
       <div className="flex flex-col">
         <div>
