@@ -14,7 +14,7 @@ export default function Avis() {
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
         id="avis" 
-        className="bg-white dark:bg-gray-800 w-full p-10 text-center items-center justify-center flex flex-col ">
+        className="bg-white dark:bg-gray-800 w-full p-5 lg:p-10 text-center items-center justify-center flex flex-col ">
         <motion.h3 variants={FadeItem} className="text-gray-900 dark:text-white text-2xl lg:text-3xl text-center font-bold m-5">Avis et Notations</motion.h3>
         <div id="" className="w-full items-center justify-center content-center flex flex-wrap relative lg:w-9/12">
 

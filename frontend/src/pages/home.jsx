@@ -158,13 +158,13 @@ function BringsYou() {
       
       <motion.div 
       variants={FadeItem}
-      className="w-full h-auto flex px-5 flex-wrap justify-center items-center my-5">
+      className="w-full h-auto flex flex-wrap justify-center items-center my-5">
         {adds.map((index, key) => {
           return (
             <motion.div
             variants={FadeItem}
             key={key}
-            className="bg-gray-100 dark:bg-gray-800 opacity-90 my-2 md:m-3 md:px-3 py-2 w-full md:w-96 h-24 flex flex-col text-gray-900 dark:text-white rounded-lg">
+            className="bg-gray-100 dark:bg-gray-800 opacity-90 my-2 md:m-3 px-2 md:px-3 py-2 w-full md:w-96 h-24 flex flex-col text-gray-900 dark:text-white rounded-lg">
               <motion.h5 className="font-bold text-lg"> {index.title} </motion.h5>
               <p> {index.text} </p>
             </motion.div>
