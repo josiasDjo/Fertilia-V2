@@ -201,79 +201,80 @@ function Footer() {
     whileInView="show"
     viewport={{ once: true, amount: 0.3 }}
   className="flex flex-col h-auto text-center items-center justify-center bg-gray-900  text-white relative ">
-    <div className="w-full flex flex-row px-10 py-5 justify-between">
-      <div className="flex flex-row">
-        <div>
-          <img src="/images/logo_only.webp"
-          className="w-12 h-auto mx-4"
-          alt="Logo de fertilia" />
-        </div>
-        <div className="text-left">
-          <h3 className="hidden text-lg font-semibold">Fertilia</h3>
-          <p className="text-2xl mt-2">La technologie au service de votre terre.</p>
-        </div>
-        <div>
-          
+    <div className="w-full flex flex-row px-5 py-5 justify-center">
+      <div className="flex flex-col text-left lg:mx-10">
+        <div className="flex my-3">
+          <div className="mt-6 sm:mt-0">
+            <p>Contact : <a href="mailto:support@fertilia.app" className="underline">support@fertilia.app</a></p>
+            <div className="flex gap-8 mt-2 text-2xl cursor-pointer">
+              <i className="fab fa-facebook"></i>
+              <i className="fab fa-x-twitter"></i>
+              <i className="fab fa-linkedin"></i>
+              <i className="fab fa-telegram"></i>   
+              <i className="fab fa-whatsapp"></i>   
+            </div>
+          </div>
         </div>
       </div>
 
-      <div>
+      <div className="mx-10">
         <div className="flex flex-row">
-          <motion.a variants={FadeItem}  href="#header" className="p-2">
-            <ul className="flex flex-row w-full lg:flex-col lg:pr-4">
-              <li className="mr-6">Accueil</li>              
-            </ul>
-          </motion.a>
-          <motion.a variants={FadeItem}  href="#avantages" className="p-2">
-            <ul className="lg:pr-4 flex flex-row w-full lg:flex-col">
-              <li className="mr-6">Fonctionnalités</li>
-            </ul>
-          </motion.a>        
-          <motion.a variants={FadeItem} href="#avis" className="p-2">
-            <ul className="pr-4 flex flex-row w-full lg:flex-col">
-              <li className="mr-6">A propos</li>
-            </ul>
-          </motion.a>        
-          <motion.a variants={FadeItem} href="#" className="p-2">
-            <ul className="pr-4 flex flex-row w-full lg:flex-col">       
-              <li className="mr-6">Contacts</li>
-            </ul>
-          </motion.a>
+          <div className="my-3 pr-5">
+            <img src="/images/logo_only.webp"
+            className="w-12 h-auto"
+            alt="Logo de fertilia" />
+          </div>
+          <div className="text-left my-3">
+            <h3 className="hidden text-lg font-semibold">Fertilia</h3>
+            <p className="text-2xl mt-2">La technologie au service de votre terre.</p>
+          </div>
         </div>
-        <div className="flex flex-row">
-          <motion.a variants={FadeItem} href="#" className="p-2">
-            <ul className="pr-4 flex flex-row w-full lg:flex-col">       
-              <li className="mr-6">Blog</li>
-            </ul>
-          </motion.a>
-          <motion.a variants={FadeItem} href="#" className="p-2">
-            <ul className="pr-4 flex flex-row w-full lg:flex-col">       
-              <li className="mr-6">Future</li>
-            </ul>
-          </motion.a>
-          <motion.a variants={FadeItem} href="#" className="p-2">
-            <ul className="pr-4 flex flex-row w-full lg:flex-col">       
-              <li className="mr-6">A propos</li>
-            </ul>
-          </motion.a>
-          <motion.a variants={FadeItem} href="#" className="p-2">
-            <ul className="pr-4 flex flex-row w-full lg:flex-col">       
-              <li className="mr-6">Documentation</li>
-            </ul>
-          </motion.a>
-        </div>
-      </div>
-    </div>
-    
-    <div className="w-full items-center justify-center flex">
-      <div className="mt-6 sm:mt-0">
-        <p>Contact : <a href="mailto:support@fertilia.app" className="underline">support@fertilia.app</a></p>
-        <div className="flex gap-8 mt-2 text-2xl cursor-pointer">
-          <i className="fab fa-facebook"></i>
-          <i className="fab fa-x-twitter"></i>
-          <i className="fab fa-linkedin"></i>
-          <i className="fab fa-telegram"></i>   
-          <i className="fab fa-whatsapp"></i>   
+
+        <div>
+          <div className="flex flex-row">
+            <motion.a variants={FadeItem}  href="#header" className="p-2">
+              <ul className="flex flex-row w-full lg:flex-col lg:pr-4">
+                <li className="">Accueil</li>              
+              </ul>
+            </motion.a>
+            <motion.a variants={FadeItem}  href="#avantages" className="p-2">
+              <ul className="lg:pr-4 flex flex-row w-full lg:flex-col">
+                <li className="">Fonctionnalités</li>
+              </ul>
+            </motion.a>        
+            <motion.a variants={FadeItem} href="#avis" className="p-2">
+              <ul className="pr-4 flex flex-row w-full lg:flex-col">
+                <li className="">A propos</li>
+              </ul>
+            </motion.a>        
+            <motion.a variants={FadeItem} href="#" className="p-2">
+              <ul className="pr-4 flex flex-row w-full lg:flex-col">       
+                <li className="">Contacts</li>
+              </ul>
+            </motion.a>
+          </div>
+          <div className="flex flex-row">
+            <motion.a variants={FadeItem} href="#" className="p-2">
+              <ul className="pr-4 flex flex-row w-full lg:flex-col">       
+                <li className="">Blog</li>
+              </ul>
+            </motion.a>
+            <motion.a variants={FadeItem} href="#" className="p-2">
+              <ul className="pr-4 flex flex-row w-full lg:flex-col">       
+                <li className="">Future</li>
+              </ul>
+            </motion.a>
+            <motion.a variants={FadeItem} href="#" className="p-2">
+              <ul className="pr-4 flex flex-row w-full lg:flex-col">       
+                <li className="">A propos</li>
+              </ul>
+            </motion.a>
+            <motion.a variants={FadeItem} href="#" className="p-2">
+              <ul className="pr-4 flex flex-row w-full lg:flex-col">       
+                <li className="">Documentation</li>
+              </ul>
+            </motion.a>
+          </div>
         </div>
       </div>
     </div>
