@@ -6,7 +6,7 @@ export default function Step({ number, title, image}) {
         <motion.div 
         variants={FadeItem}
         whileHover={{ scale: 1.1}}
-        className="flex flex-col bg-white h-56 w-64 mx-5 items-center justify-center rounded-lg">
+        className="flex flex-col bg-white h-56 w-full md:w-64 mx-2 lg:mx-5 my-3 items-center justify-center rounded-lg">
             <div className="w-full h-36 flex items-center justify-center">
                 <img src={image} alt="" className="object-contain h-full w-auto"/>
             </div>

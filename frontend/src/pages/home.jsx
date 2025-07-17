@@ -158,13 +158,13 @@ function BringsYou() {
       
       <motion.div 
       variants={FadeItem}
-      className="w-full h-auto flex flex-wrap justify-center items-center my-5">
+      className="w-full h-auto flex px-5 flex-wrap justify-center items-center my-5">
         {adds.map((index, key) => {
           return (
             <motion.div
             variants={FadeItem}
             key={key}
-            className="bg-gray-100 dark:bg-gray-800 opacity-90 m-3 px-3 py-2 w-96 h-24 flex flex-col text-gray-900 dark:text-white rounded-lg">
+            className="bg-gray-100 dark:bg-gray-800 opacity-90 my-2 md:m-3 md:px-3 py-2 w-full md:w-96 h-24 flex flex-col text-gray-900 dark:text-white rounded-lg">
               <motion.h5 className="font-bold text-lg"> {index.title} </motion.h5>
               <p> {index.text} </p>
             </motion.div>
@@ -184,7 +184,7 @@ function HowDoesItWork() {
     viewport={{ once: true, amount: 0.3 }}
     className="py-20 lg:px-20 bg-gray-100 dark:bg-gray-800">
       <motion.h2 variants={FadeItem} className="text-3xl font-bold text-center text-green-600">Comment ça marche ?</motion.h2>
-      <motion.div variants={FadeItem} className="mt-10 flex flex-wrap text-center items-center justify-center">
+      <motion.div variants={FadeItem} className="px-5 mt-10 flex flex-wrap text-center items-center justify-center">
         <Step number={1} title="Créer votre compte" image="/images/account login.webp" />
         <Step number={2} title="Configurer votre champ" image="/images/paramtrer.webp" />
         <Step number={3} title="Suivre vos cultures" image="/images/Working_illustration.webp" />
