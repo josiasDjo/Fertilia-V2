@@ -14,8 +14,8 @@ export default function Avis() {
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
         id="avis" 
-        className="w-full p-5 my-2 text-center items-center justify-center flex flex-col ">
-        <motion.h3 variants={FadeItem} className="text-2xl lg:text-3xl text-center font-bold m-5">Avis et Notations</motion.h3>
+        className="bg-white dark:bg-gray-800 w-full p-10 text-center items-center justify-center flex flex-col ">
+        <motion.h3 variants={FadeItem} className="text-gray-900 dark:text-white text-2xl lg:text-3xl text-center font-bold m-5">Avis et Notations</motion.h3>
         <div id="" className="w-full items-center justify-center content-center flex flex-wrap relative lg:w-9/12">
 
         {temps.map((index, key) => {
@@ -23,10 +23,6 @@ export default function Avis() {
             <Testimony key={key} name={index.nameUser} role={index.role} text={index.text} />
           )
         })}
-
-      </div>
-
-      <div id="testColor" className="w-96 h-96">
 
       </div>
     </motion.section>
