@@ -200,7 +200,7 @@ function Footer() {
     initial="hidden"
     whileInView="show"
     viewport={{ once: true, amount: 0.3 }}
-  className="flex flex-row px-10 py-4 h-auto text-center items-center justify-center bg-black bg-opacity-90 text-white relative ">
+  className="flex flex-row px-10 py-4 h-auto text-center items-center justify-center bg-black dark:bg-gray-900  text-white relative ">
     <div className="flex flex-col sm:flex-row justify-between">
       <div>
         <h3 className="text-lg font-semibold">Fertilia</h3>
