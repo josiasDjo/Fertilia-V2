@@ -35,9 +35,7 @@ function Header() {
       className="text-right px-7 py-6 flex flex-row relative mt-28 lg:px-20"
       id="header"
     >
-      <div className="w-full h-10 bg-amber-600 dark:bg-green-600">
-        Dark
-      </div>
+
       <div className="hidden lg:block lg:w-5/12"></div>
 
       <div className="relative lg:px-6 w-full sm:px-2 lg:w-7/12 flex flex-col lg:items-end">
@@ -64,7 +62,7 @@ function Header() {
 
         <motion.div
           variants={FadeItem}
-          className="bg-black bg-opacity-30 p-2 relative lg:overflow-hidden"
+          className="backdrop-blur-sm bg-opacity-10 p-2 relative lg:overflow-hidden"
         >
           <p className="text-white text-xl font-light">
             <span className="text-lg">
@@ -156,7 +154,7 @@ function BringsYou() {
     viewport={{ once: true, amount: 0.3 }}
     id="BringsYou" 
     className="px-6 py-16 bg-white dark:bg-gray-900 p-2 lg:py-7 w-full lg:px-20">
-      <motion.h3 variants={FadeItem} className="text-3xl mt-8 font-bold lg:text-3xl text-center">Ce que Fertilia vous apporte</motion.h3>
+      <motion.h3 variants={FadeItem} className="text-gray-900 dark:text-white text-3xl mt-8 font-bold lg:text-3xl text-center">Ce que Fertilia vous apporte</motion.h3>
       
       <motion.div 
       variants={FadeItem}
@@ -166,7 +164,7 @@ function BringsYou() {
             <motion.div
             variants={FadeItem}
             key={key}
-            className="bg-gray-100 opacity-90 m-3 px-3 py-2 w-96 h-24 flex flex-col text-gray-900 rounded-lg">
+            className="bg-gray-100 dark:bg-gray-800 opacity-90 m-3 px-3 py-2 w-96 h-24 flex flex-col text-gray-900 dark:text-white rounded-lg">
               <motion.h5 className="font-bold text-lg"> {index.title} </motion.h5>
               <p> {index.text} </p>
             </motion.div>
