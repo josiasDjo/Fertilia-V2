@@ -12,11 +12,11 @@ export default function Step({ number, title, image}) {
             </div>
             <div className="flex flex-row items-center justify-center">
                 <div className="bg-green-600 text-center items-center justify-center flex rounded-full h-10 w-10 m-2">
-                    <a href="" className="">
+                    <a href="#" className="">
                         <motion.h5 variants={FadeItem} className="cursor-pointer font-bold text-2xl text-center text-white p-2">{number}</motion.h5>
                     </a>
                 </div>
-                <a href="" className="hover:text-green-600">
+                <a href="#" className="hover:text-green-600">
                     <motion.p variants={FadeItem}>{title}</motion.p>
                 </a>
             </div>
