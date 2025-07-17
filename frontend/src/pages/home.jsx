@@ -210,8 +210,10 @@ function Footer() {
         <p>Contact : <a href="mailto:support@fertilia.app" className="underline">support@fertilia.app</a></p>
         <div className="flex gap-4 mt-2">
           <i className="fab fa-facebook"></i>
-          <i className="fab fa-twitter"></i>
+          <i className="fab fa-x-twitter"></i>
           <i className="fab fa-linkedin"></i>
+          <i className="fab fa-telegram"></i>   
+          <i className="fab fa-whatsapp"></i>   
         </div>
       </div>
     </div>
