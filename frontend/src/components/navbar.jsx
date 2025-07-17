@@ -1,24 +1,33 @@
 import { Fragment, useEffect, useState } from "react"
-import { motion } from "motion/react"
+// import { motion } from "motion/react"
+import { motion } from "framer-motion"
 import { FadeContainer, FadeItem } from "../hooks/animations"
 import { Button } from "./button"
 
 function NavBar() {
-    const [darkMode, setDarkMode] = useState(() => {
-      const savedMode = localStorage.getItem('darkMode');
-      return savedMode === 'true';
-    })
+    // const [darkMode, setDarkMode] = useState(() => {
+    //   const savedMode = localStorage.getItem('darkMode');
+    //   return savedMode === 'true';
+    // })
 
-    useEffect(() => {
-      const root = window.document.documentElement
-      console.log("Dark mode", darkMode)
-      if(darkMode) {
-        root.classList.add('dark')
-      } else {
-        root.classList.remove('dark')
-      }
-      localStorage.setItem('darkMode', darkMode.toString());
-    }, [darkMode])
+  const [darkMode, setDarkMode] = useState(false);
+
+
+    // useEffect(() => {
+    //   const root = window.document.documentElement
+    //   console.log("Dark mode", darkMode)
+    //   if(darkMode) {
+    //     root.classList.add('dark')
+    //   } else {
+    //     root.classList.remove('dark')
+    //   }
+    //   localStorage.setItem('darkMode', darkMode.toString());
+    // }, [darkMode])
+
+      useEffect(() => {
+        document.documentElement.classList.toggle('dark', darkMode);
+        localStorage.setItem('theme', 'dark')
+      }, [darkMode]);
 
     const toggleDarkMode = () => setDarkMode(prev => !prev)
 
@@ -29,7 +38,7 @@ function NavBar() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
-        id="navbar" className="animate_nav w-full flex flex-col px-10 py-2 bg-skin-bgSec  text-gray-900 dark:text-white h-16 
+        id="navbar" className="animate_nav w-full flex flex-col px-10 py-2 bg-skin-bg text-skin-text h-16 
     lg:text-center lg:items-center lg:justify-center lg:w-full lg:flex lg:flex-row lg:px-10 z-20 fixed top-0 inset-0 shadow-lg backdrop-blur-xs">
 
       <motion.button variants={FadeItem} id="hideNav" className="hidden text-black sm:h-12 md:p-2 md:w-24 md:h-24 sm:justify-center sm:content-center sm:align-center absolute top-4 right-7 z-10">

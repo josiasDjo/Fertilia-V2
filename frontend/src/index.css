@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: 255 255 255;
+  --color-bg-sec: 243 244 246;
+  --color-text: 31 41 55;
+  --color-accent: 22 163 74;
+  --color-accent-sec: 255 181 42;
+}
+
+.dark {
+  --color-bg: 31 41 55;
+  --color-text: 255 255 255;
+  --color-accent: 22 163 74;
+  --color-accent-sec: 255 181 42;
+}
