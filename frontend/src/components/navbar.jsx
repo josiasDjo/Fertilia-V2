@@ -115,10 +115,12 @@ function NavBar() {
           <i className="fa-solid fa-moon" ></i>
         )} 
         classMa="dark_mode_color text-white text-center flex items-center justify-center my-5 lg:mx-5 w-10 h-10 rounded-full" />
-        <Button 
+        <a href="/login">
+          <Button 
           titre="Se connecter" 
           icon={<i className="fa-solid fa-arrow-right-to-bracket"></i>} 
           classMa="openSignin pr-4 backgroud_btn_h text-white px-3 py-2 rounded-lg hover:bg-yellow-400 focus:outline-none focus:ring-opacity-50" />
+        </a>
       </motion.ul>
     </motion.nav>
     </Fragment>

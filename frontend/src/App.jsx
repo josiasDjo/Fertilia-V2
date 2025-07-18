@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import './index.css';
 import NavBar from './components/navbar';
 import Home from './pages/home';
+import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
+import { Signin } from './pages/signin';
 
 export default function App() {
 
@@ -15,6 +17,12 @@ export default function App() {
   }
 
   return (
-    <Home />
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route path='/login' element={<Signin />} />
+      </Routes>
+    </Router>
   );
 }
