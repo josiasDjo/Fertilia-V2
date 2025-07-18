@@ -10,9 +10,17 @@ function NavBar() {
 
   useEffect(() => {
     const navMobile = document.getElementById("nav_part2")
+    const hideNav = document.getElementById("hideNav")
+    const showNav = document.getElementById("showNav")
+
+    if(navBarOpen) {
+
+    } else {
+      
+    }
 
     console.log('Navbar', navBarOpen)
-  })
+  }, [navBarOpen])
 
 
   const [darkMode, setDarkMode] = useState(() => {
@@ -37,7 +45,7 @@ function NavBar() {
           <i className="fa-solid fa-xmark"></i>
         </li>
       </motion.button>
-      <motion.button variants={FadeItem} id="showNav" className="flex lg:hidden sm:h-12 md:p-2 md:w-24 md:h-24 sm:justify-center sm:content-center sm:align-center absolute top-4 right-7 z-10">
+      <motion.button variants={FadeItem} onClick={() => setNavBarOpen(!navBarOpen)} id="showNav" className="flex lg:hidden sm:h-12 md:p-2 md:w-24 md:h-24 sm:justify-center sm:content-center sm:align-center absolute top-4 right-7 z-10">
         <li className="list-none text-4xl lg:hidden">
           <i className="fa-solid fa-bars"></i>
         </li>
