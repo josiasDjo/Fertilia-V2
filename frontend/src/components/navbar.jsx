@@ -77,7 +77,7 @@ function NavBar() {
         <motion.img variants={FadeItem} className="h-12 w-auto lg:w-44 hidden lg:block object-contain" src="/images/logo&name.webp" alt="Logo de Fertilia" />
         <motion.img variants={FadeItem} className="h-12 w-auto sm:block lg:hidden lg:w-44 object-contain" src="/images/logo_only.webp" alt="Logo de Fertilia" />
       </ul>
-      <motion.ul id="nav_part2" className="relative text-lg text-medium flex-col hidden py-10 lg:flex
+      <motion.ul id="nav_part2" className="relative text-lg text-medium flex-col hidden pt-10 lg:flex
       lg:text-center lg:items-center lg:flex-row lg:justify-center lg:self-center lg:content-center lg:py-0 lg:px-10
       ">
         <motion.a variants={FadeItem} whileHover={{ scale: 0.9 }}  href="#header" className="my-2 p-2">
