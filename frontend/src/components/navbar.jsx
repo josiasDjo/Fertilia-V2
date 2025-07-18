@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { FadeContainer, FadeItem } from "../hooks/animations"
 import { Button } from "./button"
 import ToggleTheme from "../hooks/toggleTheme";
+import { scrollToPrograms } from "../hooks/scroll";
 
 function NavBar() {
   const [navBarOpen, setNavBarOpen] = useState(false)
@@ -80,30 +81,30 @@ function NavBar() {
       <motion.ul id="nav_part2" className="relative text-lg text-medium flex-col hidden pt-10 lg:flex
       lg:text-center lg:items-center lg:flex-row lg:justify-center lg:self-center lg:content-center lg:py-0 lg:px-10
       ">
-        <motion.a variants={FadeItem} whileHover={{ scale: 0.9 }}  href="#header" className="my-2 p-2">
+        <motion.button variants={FadeItem} whileHover={{ scale: 0.9 }} className="my-2 p-2" onClick={() => scrollToPrograms('header')}>
           <ul className="flex flex-row w-full lg:flex-col lg:pr-4">
             <li className="mr-6"><i className="fa-solid fa-house"></i></li>
             <li className="mr-6">Accueil</li>              
           </ul>
-        </motion.a>
-        <motion.a variants={FadeItem} whileHover={{ scale: 0.9}} href="#avantages" className="my-2 p-2">
+        </motion.button>
+        <motion.button variants={FadeItem} whileHover={{ scale: 0.9}} className="my-2 p-2" onClick={() => scrollToPrograms('avantages')}>
           <ul className="lg:pr-4 flex flex-row w-full lg:flex-col">
             <li className="mr-6"><i className="fa-solid fa-chart-simple"></i></li>
             <li className="mr-6">Fonctionnalités</li>
           </ul>
-        </motion.a>        
-        <motion.a variants={FadeItem} whileHover={{ scale: 0.9}} href="#avis" className="my-2 p-2">
+        </motion.button>        
+        <motion.button variants={FadeItem} whileHover={{ scale: 0.9}} className="my-2 p-2" onClick={() => scrollToPrograms('avis')}>
           <ul className="pr-4 flex flex-row w-full lg:flex-col">
             <li className="mr-6"><i className="fa-solid fa-circle-info"></i></li>
             <li className="mr-6">A propos</li>
           </ul>
-        </motion.a>        
-        <motion.a variants={FadeItem} whileHover={{ scale: 0.9}} href="#" className="my-2 p-2">
+        </motion.button>        
+        <motion.button variants={FadeItem} whileHover={{ scale: 0.9}} className="my-2 p-2"onClick={() => scrollToPrograms('contact')}>
           <ul className="pr-4 flex flex-row w-full lg:flex-col">       
             <li className="mr-6"><i className="fa-solid fa-phone-volume"></i></li>
             <li className="mr-6">Contacts</li>
           </ul>
-        </motion.a>
+        </motion.button>
 
       </motion.ul> 
       <motion.ul variants={FadeItem} id="nav_part3" className="lg:flex flex-row relative lg:absolute lg:right-0 lg:px-10 text-lg text-medium lg:text-center items-center hidden">

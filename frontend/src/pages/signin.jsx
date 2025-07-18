@@ -58,9 +58,9 @@ export function Signin () {
                 </form>
 
             </motion.div>
-            <div className="lg:w-6/12 lg:flex hidden h-full items-center justify-center relative">
+            <motion.div variants={FadeItem} className="lg:w-6/12 lg:flex hidden h-full items-center justify-center relative">
                 <img className="w-full h-full justify-center items-center flex m-auto object-cover relative" src="/images/background_connexion.webp" alt="landscape" />
-            </div>
+            </motion.div>
         </motion.div>
     </>
 }

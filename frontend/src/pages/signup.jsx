@@ -15,9 +15,9 @@ export function Signup() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
-        id="signup" class="flex shadow-xl h-screen bg-skin-bg text-skin-text w-full lg:p-3 lg:m-auto lg:7/12 lg:flex-row relative">
-            <motion.div variants={FadeItem} class="lg:w-5/12 lg:flex hidden h-full pt-4 items-center justify-center rounded-3xl relative overflow-hidden">
-                <img class="w-auto h-full justify-center items-center flex rounded-3xl m-auto object-cover relative" src="/images/background_connexion.webp" alt="landscape" />
+        id="signup" class="flex shadow-xl w-full h-screen backdrop-blur-md bg-skin-bg text-skin-text lg:flex-row relative">
+            <motion.div variants={FadeItem} className="lg:w-6/12 lg:flex hidden h-full items-center justify-center relative">
+                <img className="w-full h-full justify-center items-center flex m-auto object-cover relative" src="/images/background_connexion.webp" alt="landscape" />
             </motion.div>
 
             <motion.div variants={FadeItem} className="flex flex-col w-full lg:w-6/12 px-7 lg:px-16 py-3 md:py-4 justify-center items-center relative">
