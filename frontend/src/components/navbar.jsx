@@ -106,7 +106,7 @@ function NavBar() {
         </motion.a>
 
       </motion.ul> 
-      <motion.ul variants={FadeItem} id="nav_part3" className="lg:flex flex-row relative lg:absolute lg:right-0 lg:px-10 text-lg text-medium text-center items-center hidden">
+      <motion.ul variants={FadeItem} id="nav_part3" className="lg:flex flex-row relative lg:absolute lg:right-0 lg:px-10 text-lg text-medium lg:text-center items-center hidden">
         <Button 
         onClick={ToggleTheme}
         icon={darkMode ? (
@@ -114,7 +114,7 @@ function NavBar() {
         ) : (
           <i className="fa-solid fa-moon" ></i>
         )} 
-        classMa="dark_mode_color text-white text-center flex items-center justify-center mx-5 w-10 h-10 rounded-full" />
+        classMa="dark_mode_color text-white text-center flex items-center justify-center my-5 lg:mx-5 w-10 h-10 rounded-full" />
         <Button 
           titre="Se connecter" 
           icon={<i className="fa-solid fa-arrow-right-to-bracket"></i>} 
