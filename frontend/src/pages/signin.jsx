@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import { FadeContainer, FadeItem } from "../hooks/animations"
 
-export function Signin () {
+export default function Signin () {
     const navigate = useNavigate()
     const handleNavigate = () => {
         navigate(-1)
