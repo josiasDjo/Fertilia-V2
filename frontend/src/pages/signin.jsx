@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import { FadeContainer, FadeItem } from "../hooks/animations"
 
@@ -50,7 +50,7 @@ export function Signin () {
             
                     <ul className="flex flex-col w-full">
                         <motion.button variants={FadeItem} className="bg-skin-accentSec text-white rounded-lg my-5 p-2 border-2 border-solid border-yellow-500 border-opacity-30" type="submit">Se connecter</motion.button>
-                        <motion.p variants={FadeItem} className="text-sm text-center">Vous n'avez pas un compte ? <button type="button" className="openSignup text-blue-500 font-medium">S'inscrire</button></motion.p>
+                        <motion.p variants={FadeItem} className="text-sm text-center">Vous n'avez pas un compte ? <Link to="/register"><button type="button" className="openSignup text-blue-500 font-medium">S'inscrire</button></Link></motion.p>
                     </ul>            
                 </form>
 
