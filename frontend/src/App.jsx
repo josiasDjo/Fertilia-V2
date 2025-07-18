@@ -6,6 +6,9 @@ import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
 import { Signin } from './pages/signin';
 import { Signup } from './pages/signup';
 import { ResetPass } from './pages/resetPassword';
+import GestionDesCulturesPage from './pages/gestionCulture';
+import { IrrigationAutomatiquePage } from './pages/irrigation';
+import { AnalyseRendementsPage } from './pages/analyseRendement';
 
 export default function App() {
 
@@ -25,6 +28,9 @@ export default function App() {
         <Route path='/login' element={<Signin />} />
         <Route path='/register' element={<Signup />} />
         <Route path='/reset-password' element={<ResetPass />} />
+        <Route path='/gestion-des-cultures' element={<GestionDesCulturesPage />} />
+        <Route path='irrigation-automatique' element={<IrrigationAutomatiquePage />} />
+        <Route path='analyse-rendement' element={<AnalyseRendementsPage />} />
       </Routes>
     </Router>
   );

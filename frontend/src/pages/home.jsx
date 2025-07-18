@@ -100,17 +100,20 @@ function Avantages() {
     {
       titre: "Gestion Des Cultures", 
       para: "Optimisez chaque étape de vos plantations avec notre module dédié. Suivez l'évolution de vos cultures en temps réel et recevez des recommandations personnalisées pour adapter vos pratiques agricoles et améliorer vos rendements.",
-      image: "/images/gestion_culture/image1.webp"
+      image: "/images/gestion_culture/image1.webp",
+      link: "gestion-des-cultures"
     },
     {
       titre: "Irrigation Automatique", 
       para: "Réalisez une gestion de l'eau intelligente grâce à notre système d'irrigation automatique. Les capteurs mesurent l'humidité du sol et activent l'irrigation au moment optimal, garantissant une utilisation efficace de l'eau et favorisant une croissance optimale des cultures.",
-      image: "/images/irrigations/irrigation.webp"
+      image: "/images/irrigations/irrigation.webp",
+      link: "irrigation-automatique"
     },
     {
       titre: "Analyse des rendements", 
       para: "Transformez vos données en actions concrètes avec notre outil d'analyse des rendements. Visualisez l'évolution de vos récoltes, identifiez les tendances et ajustez vos stratégies pour maximiser vos profits et pérenniser la performance de votre exploitation.",
-      image: "/images/image2.webp"
+      image: "/images/image2.webp",
+      link: "analyse-rendement"
     },
   ]
     return <motion.section
@@ -129,7 +132,7 @@ function Avantages() {
       className="bg-white dark:bg-gray-800 w-full flex flex-wrap items-center justify-center my:2 lg:my-10">
         {avantangesTab.map((index, key) => {
           return (
-            <FeatureCard index={index} key={key} titre={index.titre} image={index.image} para={index.para}  />
+            <FeatureCard index={index} key={key} titre={index.titre} image={index.image} para={index.para} link={index.link} />
           )
         })}  
         

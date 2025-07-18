@@ -1,8 +1,9 @@
 import { motion } from "framer-motion"
 import { FadeItem } from "../hooks/animations"
 import { Button } from "./button"
+import { Link } from "react-router-dom"
 
-export function FeatureCard({titre, image, para, index, icon}) {
+export function FeatureCard({titre, image, para, index, icon, link}) {
     return (
         <motion.div variants={FadeItem} className="w-96 lg:w-80 h-auto bg-white dark:bg-gray-700 text-black dark:text-white m-2 lg:m-5 rounded-lg shadow-xl p-2">
             <div id="" className="w-full h-48">
@@ -11,7 +12,9 @@ export function FeatureCard({titre, image, para, index, icon}) {
             <h4 className="mt-2 font-medium"> {titre} </h4>
             <p className="font-light"> {para} </p>
             {/* <button className="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg text-lg text-white font-bold w-full">Voir Plus   </button> */}
-            <Button titre="Voir Plus  " icon={icon} classMa="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg text-lg text-white font-bold w-full" />
+            <Link to={link}>
+                <Button titre="Voir Plus  " icon={icon} classMa="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg text-lg text-white font-bold w-full" />
+            </Link>
         </motion.div>
     )
 }
