@@ -2,15 +2,15 @@
 
 export function Signin () {
     return <>
-        <div id="signin" className="flex shadow-xl w-full h-screen backdrop-blur-md bg-skin-bg text-skin-text rounded-3xl lg:flex-row relative">
+        <div id="signin" className="flex shadow-xl w-full h-screen backdrop-blur-md bg-skin-bg text-skin-text lg:flex-row relative">
             <div className="flex flex-col w-full lg:w-6/12 px-7 lg:px-16 py-3 md:py-4 justify-center items-center relative">
                 {/* <button type="button" id="closeSignin" className="closeSignin absolute top-2 left-2 text-2xl text-yellow-400"><i className="fa-solid fa-rectangle-xmark" id="closeConnexion"></i></button> */}
                 
-                <h4 className="font_header text-center text-xl md:text-3xl font-bold">Ravie de vous revoir</h4>
+                <h4 className="text-center text-xl md:text-3xl font-bold">Ravie de vous revoir</h4>
                 <form id="connexion_page_send" className="w-full md:w-9/12 px-2 md:px-10 items-center relative justify-center flex flex-col lg:p-5">
                     <ul className="flex flex-col w-full text-center">
-                        <span className="font-medium">Entrez vos informations</span>
-                        <button type="button" className="rounded-xl p-2 border-2 border-solid font-medium border-black border-opacity-10 shadow-lg my-3 focus:outline-none 
+                        <span className="text-sm">Entrez vos informations</span>
+                        <button type="button" className="rounded-xl p-2 border-2 dark:bg-gray-600 border-solid font-medium border-black border-opacity-10 shadow-lg my-3 focus:outline-none 
                         flex flex-row items-center justify-center">
                             <img src="/images/google.png" alt="google image" className="h-6 w-auto mr-3" />
                             Continuer avec Google
