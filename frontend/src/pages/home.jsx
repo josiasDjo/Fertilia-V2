@@ -85,8 +85,9 @@ function Header() {
               <i className="fas fa-quote-right"></i>
             </span>
           </p>
-
-          <Button titre="Nous rejoindre" icon={<i className="fa-solid fa-arrow-right"></i>} classMa="openSignup w-44 pr-4 backgroud_btn_h mt-2 px-3 py-2 text-lg text-white rounded-lg" />
+          <a href="/register">
+            <Button titre="Nous rejoindre" icon={<i className="fa-solid fa-arrow-right"></i>} classMa="openSignup w-44 pr-4 backgroud_btn_h mt-2 px-3 py-2 text-lg text-white rounded-lg" />
+          </a>
         </motion.div>
       </div>
     </motion.div>
