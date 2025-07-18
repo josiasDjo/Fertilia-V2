@@ -11,7 +11,7 @@
 }
 
 .dark {
-  --color-bg: 31 41 55; 
+  --color-bg: 31 41 55; /* gray-800 */
   --color-text: 255 255 255; /* white */
   --color-bg-sec2: 31 41 55; /* gray-800 */
   --color-accent: 22 163 74; /* green-600 */

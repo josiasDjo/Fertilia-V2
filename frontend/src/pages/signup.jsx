@@ -2,7 +2,7 @@ import { Input } from "../components/input"
 
 export function Signup() {
     return <>
-        <div id="signup" class="flex shadow-xl lg:height_sign height_sign_sm md:height_sign backdrop-blur-md bg-white rounded-3xl w-11/12 m-auto md:w-7/12 lg:p-3 lg:m-auto lg:7/12 lg:flex-row relative">
+        <div id="signup" class="flex shadow-xl h-screen bg-skin-bg w-full lg:p-3 lg:m-auto lg:7/12 lg:flex-row relative">
             <div class="lg:w-5/12 lg:flex hidden h-full pt-4 items-center justify-center rounded-3xl relative overflow-hidden">
                 <img class="w-auto h-full justify-center items-center flex rounded-3xl m-auto object-cover relative" src="/images/background_connexion.webp" alt="landscape" />
             </div>
@@ -13,8 +13,7 @@ export function Signup() {
                     <ul className="flex flex-col w-full text-center">
                         <span className="font-medium">Enregistrez-vous</span>
                     </ul>
-                    <ul className="flex flex-col sm:my-4 md:my-4 lg:my-2 w-full">
-
+                    <ul className="text-gray-900 flex flex-col sm:my-4 md:my-4 lg:my-2 w-full">
                         <Input icon={<i className="fa-solid fa-user-tie"></i>} type="text" placeholder="Nom" name="nom" id="nom" />
                         <Input icon={<i className="fa-solid fa-user-tie"></i>} type="text" placeholder="Prenom" name="prenom" id="prenom" />
                         <Input icon={<i className="fa-solid fa-square-phone"></i>} type="tel" placeholder="Telephone" name="phone" id="phone" />
