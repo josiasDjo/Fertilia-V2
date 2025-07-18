@@ -1,10 +1,20 @@
-
+import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { motion } from "framer-motion"
+import { FadeContainer } from "../hooks/animations"
 
 export function Signin () {
+    const navigate = useNavigate()
+    const handleNavigate = () => {
+        navigate(-1)
+    }
+
     return <>
-        <div id="signin" className="flex shadow-xl w-full h-screen backdrop-blur-md bg-skin-bg text-skin-text lg:flex-row relative">
+        <motion.div id="signin" 
+        variants={FadeContainer}
+        className="flex shadow-xl w-full h-screen backdrop-blur-md bg-skin-bg text-skin-text lg:flex-row relative">
             <div className="flex flex-col w-full lg:w-6/12 px-7 lg:px-16 py-3 md:py-4 justify-center items-center relative">
-                <button type="button" id="closeSignin" className="bg-gray-600 p-2 rounded-full text-center items-center justify-center flex w-10 h-10 closeSignin absolute top-16 left-6 text-2xl text-skin-text"><i className="fa-solid fa-arrow-left"></i></button>
+                <button type="button" id="closeSignin" onClick={handleNavigate} className="bg-gray-200 dark:bg-gray-600 p-2 rounded-full text-center items-center justify-center flex w-10 h-10 closeSignin absolute top-16 left-6 text-2xl text-skin-text"><i className="fa-solid fa-arrow-left"></i></button>
                 
                 <h4 className="text-center text-xl md:text-3xl font-bold">Ravie de vous revoir</h4>
                 <form id="connexion_page_send" className="w-full md:w-9/12 px-2 md:px-10 items-center relative justify-center flex flex-col lg:p-5">
@@ -48,6 +58,6 @@ export function Signin () {
             <div className="lg:w-6/12 lg:flex hidden h-full items-center justify-center relative">
                 <img className="w-full h-full justify-center items-center flex m-auto object-cover relative" src="/images/background_connexion.webp" alt="landscape" />
             </div>
-        </div>
+        </motion.div>
     </>
 }
