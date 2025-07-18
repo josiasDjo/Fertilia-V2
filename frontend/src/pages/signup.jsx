@@ -18,8 +18,8 @@ export function Signup() {
             <div className="flex flex-col w-full lg:w-7/12 lg:px-16 py-3 md:py-4 justify-center items-center relative">
                 <motion.button variants={FadeItem} type="button" id="closeSignin" onClick={handleNavigate} className="bg-gray-200 dark:bg-gray-600 p-2 rounded-full text-center items-center justify-center flex w-10 h-10 closeSignin absolute top-16 left-6 text-2xl text-skin-text"><i className="fa-solid fa-arrow-left"></i></motion.button>
 
-                <form id="inscription_page_submit" className="lg:w-full sm:w-full md:w-full sm:px-3 md:px-10 items-center relative justify-center flex flex-col lg:p-5">
-                    <ul className="flex flex-col w-full text-center">
+                <form id="inscription_page_submit" className="w-full md:w-9/12 sm:px-3 md:px-10 items-center relative justify-center flex flex-col lg:p-5">
+                    <ul className="flex flex-col w-full text-center mb-7">
                         <span className="font-medium">Enregistrez-vous</span>
                     </ul>
                     <ul className="text-gray-900 flex flex-col sm:my-4 md:my-4 lg:my-2 w-full">
