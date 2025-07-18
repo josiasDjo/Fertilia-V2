@@ -12,6 +12,9 @@ export function Signin () {
     return <>
         <motion.div id="signin" 
         variants={FadeContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
         className="flex shadow-xl w-full h-screen backdrop-blur-md bg-skin-bg text-skin-text lg:flex-row relative">
             <motion.div variants={FadeItem} className="flex flex-col w-full lg:w-6/12 px-7 lg:px-16 py-3 md:py-4 justify-center items-center relative">
                 <motion.button variants={FadeItem} type="button" id="closeSignin" onClick={handleNavigate} className="bg-gray-200 dark:bg-gray-600 p-2 rounded-full text-center items-center justify-center flex w-10 h-10 closeSignin absolute top-16 left-6 text-2xl text-skin-text"><i className="fa-solid fa-arrow-left"></i></motion.button>
@@ -45,7 +48,7 @@ export function Signin () {
                         <p className="text-sm" id="message_error"></p>
                     </motion.ul>
                     <motion.ul variants={FadeItem} className="flex flex-col w-full text-right">
-                        <a href="#" className="text-sm hover:text-blue-500">Mot de passe oublié</a>
+                        <Link to="/reset-password" className="text-sm hover:text-blue-500">Mot de passe oublié</Link>
                     </motion.ul>
             
                     <ul className="flex flex-col w-full">

@@ -10,15 +10,20 @@ export function Signup() {
         navigate(-1)
     }
     return <>
-        <div id="signup" class="flex shadow-xl h-screen bg-skin-bg text-skin-text w-full lg:p-3 lg:m-auto lg:7/12 lg:flex-row relative">
-            <div class="lg:w-5/12 lg:flex hidden h-full pt-4 items-center justify-center rounded-3xl relative overflow-hidden">
+        <motion.div 
+        variants={FadeContainer} 
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+        id="signup" class="flex shadow-xl h-screen bg-skin-bg text-skin-text w-full lg:p-3 lg:m-auto lg:7/12 lg:flex-row relative">
+            <motion.div variants={FadeItem} class="lg:w-5/12 lg:flex hidden h-full pt-4 items-center justify-center rounded-3xl relative overflow-hidden">
                 <img class="w-auto h-full justify-center items-center flex rounded-3xl m-auto object-cover relative" src="/images/background_connexion.webp" alt="landscape" />
-            </div>
+            </motion.div>
 
-            <div className="flex flex-col w-full lg:w-7/12 lg:px-16 py-3 md:py-4 justify-center items-center relative">
+            <motion.div variants={FadeItem} className="flex flex-col w-full lg:w-6/12 px-7 lg:px-16 py-3 md:py-4 justify-center items-center relative">
                 <motion.button variants={FadeItem} type="button" id="closeSignin" onClick={handleNavigate} className="bg-gray-200 dark:bg-gray-600 p-2 rounded-full text-center items-center justify-center flex w-10 h-10 closeSignin absolute top-16 left-6 text-2xl text-skin-text"><i className="fa-solid fa-arrow-left"></i></motion.button>
 
-                <form id="inscription_page_submit" className="w-full md:w-9/12 sm:px-3 md:px-10 items-center relative justify-center flex flex-col lg:p-5">
+                <form id="inscription_page_submit" className="w-full md:w-9/12 px-2 md:px-10 items-center relative justify-center flex flex-col lg:p-5">
                     <ul className="flex flex-col w-full text-center mb-7">
                         <span className="font-medium">Enregistrez-vous</span>
                     </ul>
@@ -38,7 +43,7 @@ export function Signup() {
                     </ul>            
                 </form>
 
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     </>
 }

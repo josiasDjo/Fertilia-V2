@@ -5,6 +5,7 @@ import Home from './pages/home';
 import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
 import { Signin } from './pages/signin';
 import { Signup } from './pages/signup';
+import { ResetPass } from './pages/resetPassword';
 
 export default function App() {
 
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path='/login' element={<Signin />} />
         <Route path='/register' element={<Signup />} />
+        <Route path='/reset-password' element={<ResetPass />} />
       </Routes>
     </Router>
   );
