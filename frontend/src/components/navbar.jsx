@@ -9,14 +9,36 @@ function NavBar() {
   const [navBarOpen, setNavBarOpen] = useState(false)
 
   useEffect(() => {
+    const navbar = document.getElementById("navbar")
     const navMobile = document.getElementById("nav_part2")
     const hideNav = document.getElementById("hideNav")
     const showNav = document.getElementById("showNav")
+    const nav_part3 = document.getElementById("nav_part3")
 
     if(navBarOpen) {
+      navbar.classList.add("h-auto")
 
+      navMobile.classList.remove('hidden')
+      navMobile.classList.add('flex')
+
+      hideNav.classList.remove('hidden')
+      hideNav.classList.add('flex')
+      showNav.classList.remove('flex')
+      showNav.classList.add('hidden')
+
+      nav_part3.classList.remove('hidden')
     } else {
-      
+      navbar.classList.remove("h-auto")
+
+      navMobile.classList.add('hidden')
+      navMobile.classList.remove('flex')
+
+      hideNav.classList.add('hidden')
+      hideNav.classList.remove('flex')
+      showNav.classList.add('flex')
+      showNav.classList.remove('hidden')
+
+      nav_part3.classList.add('hidden')
     }
 
     console.log('Navbar', navBarOpen)
@@ -40,7 +62,7 @@ function NavBar() {
         id="navbar" className="animate_nav w-full flex flex-col px-10 py-2 bg-skin-bg text-skin-text h-16 
     lg:text-center lg:items-center lg:justify-center lg:w-full lg:flex lg:flex-row lg:px-10 z-20 fixed top-0 inset-0 shadow-lg backdrop-blur-xs">
 
-      <motion.button variants={FadeItem} onClick={() => setNavBarOpen(!navBarOpen)} id="hideNav" className="hidden text-black sm:h-12 md:p-2 md:w-24 md:h-24 sm:justify-center sm:content-center sm:align-center absolute top-4 right-7 z-10">
+      <motion.button variants={FadeItem} onClick={() => setNavBarOpen(!navBarOpen)} id="hideNav" className="hidden sm:h-12 md:p-2 md:w-24 md:h-24 sm:justify-center sm:content-center sm:align-center absolute top-4 right-7 z-10">
         <li className="list-none text-4xl">
           <i className="fa-solid fa-xmark"></i>
         </li>
@@ -55,8 +77,8 @@ function NavBar() {
         <motion.img variants={FadeItem} className="h-12 w-auto lg:w-44 hidden lg:block object-contain" src="/images/logo&name.webp" alt="Logo de Fertilia" />
         <motion.img variants={FadeItem} className="h-12 w-auto sm:block lg:hidden lg:w-44 object-contain" src="/images/logo_only.webp" alt="Logo de Fertilia" />
       </ul>
-      <motion.ul id="nav_part2" className="relative text-lg text-medium flex-col hidden lg:flex
-      lg:text-center lg:items-center lg:flex-row lg:justify-center lg:self-center lg:content-center lg:px-10
+      <motion.ul id="nav_part2" className="relative text-lg text-medium flex-col hidden py-10 lg:flex
+      lg:text-center lg:items-center lg:flex-row lg:justify-center lg:self-center lg:content-center lg:py-0 lg:px-10
       ">
         <motion.a variants={FadeItem} whileHover={{ scale: 0.9 }}  href="#header" className="my-2 p-2">
           <ul className="flex flex-row w-full lg:flex-col lg:pr-4">
