@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { motion } from "framer-motion"
 import { FadeContainer, FadeItem } from "../hooks/animations"
 
-export function Signup() {
+export default function Signup() {
     const navigate = useNavigate()
     const handleNavigate = () => {
         navigate(-1)
