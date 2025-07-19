@@ -11,25 +11,6 @@ export default function Footer() {
       className="bg-gray-900 text-white flex flex-col items-center justify-center px-6 py-10"
     >
       <div className="w-full max-w-7xl flex flex-col lg:flex-row justify-between gap-10">
-        {/* Bloc contact et réseaux */}
-        <div className="flex flex-col gap-4">
-          <p>
-            Contact :{" "}
-            <a href="mailto:support@fertilia.app" className="underline">
-              support@fertilia.app
-            </a>
-          </p>
-          <p>
-            📍 Adresse : RD Congo, Nord-Kivu, Goma, Keshero
-          </p>
-          <div className="flex gap-6 text-2xl">
-            <i className="fab fa-facebook" aria-label="Facebook"></i>
-            <i className="fab fa-x-twitter" aria-label="Twitter"></i>
-            <i className="fab fa-linkedin" aria-label="LinkedIn"></i>
-            <i className="fab fa-telegram" aria-label="Telegram"></i>
-            <i className="fab fa-whatsapp" aria-label="WhatsApp"></i>
-          </div>
-        </div>
 
         {/* Bloc branding */}
         <div className="flex items-start gap-4">
@@ -44,7 +25,27 @@ export default function Footer() {
             </p>
           </div>
         </div>
-
+        {/* Bloc contact et réseaux */}
+        <div className="flex flex-col gap-4">
+          <p>
+            Contact :{" "}
+            <a href="mailto:support@fertilia.app" className="underline">
+              support@fertilia.app
+            </a>
+          </p>
+          <p>
+            <span className="pr-3"><i class="fa-solid fa-location-dot"></i></span>
+            RD Congo, Nord-Kivu, Goma, Keshero
+          </p>
+          <div className="flex gap-6 text-2xl">
+            <i className="fab fa-facebook" aria-label="Facebook"></i>
+            <i className="fab fa-x-twitter" aria-label="Twitter"></i>
+            <i className="fab fa-linkedin" aria-label="LinkedIn"></i>
+            <i className="fab fa-telegram" aria-label="Telegram"></i>
+            <i className="fab fa-whatsapp" aria-label="WhatsApp"></i>
+          </div>
+        </div>
+        
         {/* Liens de navigation */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {[
