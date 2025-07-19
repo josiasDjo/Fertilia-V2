@@ -1,3 +1,4 @@
+import BackButton from "../components/backButton";
 import Footer from "../components/footer";
 import NavBar from "../components/navbar";
 
@@ -5,7 +6,8 @@ export default function GestionDesCulturesPage() {
   return (
     <div className="w-full">
       {/* <NavBar /> */}
-      <div className="bg-white text-gray-800 dark:bg-gray-900 dark:text-white min-h-screen py-12 px-4 md:px-12">
+      <BackButton />
+      <div className="bg-skin-bg text-skin-text min-h-screen py-12 px-4 md:px-12">
         <div className="max-w-5xl mx-auto mt-14">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-green-600 dark:text-green-400">
             🌱 Gestion des Cultures

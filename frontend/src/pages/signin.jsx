@@ -2,12 +2,9 @@ import { useEffect, useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import { FadeContainer, FadeItem } from "../hooks/animations"
+import BackButton from "../components/backButton"
 
 export default function Signin () {
-    const navigate = useNavigate()
-    const handleNavigate = () => {
-        navigate(-1)
-    }
 
     return <>
         <motion.div id="signin" 
@@ -17,9 +14,7 @@ export default function Signin () {
         viewport={{ once: true, amount: 0.3 }}
         className="flex shadow-xl w-full h-screen backdrop-blur-md bg-skin-bg text-skin-text lg:flex-row relative">
             <motion.div variants={FadeItem} className="flex flex-col w-full lg:w-6/12 px-7 lg:px-16 py-3 md:py-4 justify-center items-center relative">
-                <motion.button variants={FadeItem} type="button" id="closeSignin" onClick={handleNavigate} className="bg-gray-200 dark:bg-gray-600 p-2 rounded-full text-center items-center justify-center flex w-10 h-10 closeSignin absolute top-16 left-6 text-2xl text-skin-text"><i className="fa-solid fa-arrow-left"></i></motion.button>
-                
-                {/* <h4 variants={FadeItem} className="text-center text-xl md:text-3xl font-bold">Ravie de vous revoir</h4> */}
+                <BackButton />
                 <form variants={FadeItem} id="connexion_page_send" className="w-full md:w-9/12 px-2 md:px-10 items-center relative justify-center flex flex-col lg:p-5">
                     <motion.ul variants={FadeItem} className="flex flex-col w-full text-center">
                         <span className="">Entrez vos informations</span>
