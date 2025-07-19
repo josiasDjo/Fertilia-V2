@@ -74,7 +74,7 @@ export default function GestionDesCulturesPage() {
           </section>
 
           <section className="mb-12 text-center">
-            <h2 className="text-2xl font-semibold mb-4">🚀 Essayez dès maintenant</h2>
+            <h2 className="text-2xl font-semibold mb-4"><span className="text-skin-accentSec mr-3"><i className="fa-solid fa-chart-gantt"></i></span> Essayez dès maintenant</h2>
             <p className="mb-6">
               Rejoignez les agriculteurs qui boostent leur productivité avec notre module de gestion des cultures.
             </p>
