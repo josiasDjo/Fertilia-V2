@@ -6,6 +6,7 @@ import Avis from "../components/avisPage";
 import { FeatureCard } from "../components/FeatureCard";
 import Step from "../components/step";
 import Footer from "../components/footer";
+import Newsletter from "../components/newsletters";
 
 export default function Home() {
     return <div className="scroll-smooth text-gray-900">
@@ -21,6 +22,7 @@ export default function Home() {
         <BringsYou />
         <HowDoesItWork />
         <Avis />
+        <Newsletter />
         <Footer />
     </div>
 }
