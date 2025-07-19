@@ -1,6 +1,8 @@
 import BackButton from "../components/backButton";
 import Footer from "../components/footer";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { FadeContainer, FadeItem } from "../hooks/animations";
 
 export function IrrigationAutomatiquePage() {
   return (
