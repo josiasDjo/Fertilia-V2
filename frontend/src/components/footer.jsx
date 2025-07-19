@@ -2,98 +2,106 @@ import { motion } from "framer-motion"
 import { FadeContainer, FadeItem } from "../hooks/animations"
 
 export default function Footer() {
-  return   <motion.footer 
-  variants={FadeContainer}
-    initial="hidden"
-    whileInView="show"
-    viewport={{ once: true, amount: 0.3 }}
-  className="flex flex-col h-auto text-center items-center justify-center bg-gray-900  text-white relative ">
-    <div className="w-full flex flex-col lg:flex-row px-5 py-5 justify-center">
-      <div className="flex flex-col text-left lg:mx-10">
-        <div className="flex my-3">
-          <div className="mt-6 sm:mt-0">
-            <p>Contact : <a href="mailto:support@fertilia.app" className="underline">support@fertilia.app</a></p>
-            <div className="flex gap-8 mt-2 text-2xl cursor-pointer">
-              <i className="fab fa-facebook"></i>
-              <i className="fab fa-x-twitter"></i>
-              <i className="fab fa-linkedin"></i>
-              <i className="fab fa-telegram"></i>   
-              <i className="fab fa-whatsapp"></i>   
-            </div>
+  return (
+    <motion.footer
+      variants={FadeContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }}
+      className="bg-gray-900 text-white flex flex-col items-center justify-center px-6 py-10"
+    >
+      <div className="w-full max-w-7xl flex flex-col lg:flex-row justify-between gap-10">
+        {/* Bloc contact et réseaux */}
+        <div className="flex flex-col gap-4">
+          <p>
+            Contact :{" "}
+            <a href="mailto:support@fertilia.app" className="underline">
+              support@fertilia.app
+            </a>
+          </p>
+          <p>
+            📍 Adresse : RD Congo, Nord-Kivu, Goma, Keshero
+          </p>
+          <div className="flex gap-6 text-2xl">
+            <i className="fab fa-facebook" aria-label="Facebook"></i>
+            <i className="fab fa-x-twitter" aria-label="Twitter"></i>
+            <i className="fab fa-linkedin" aria-label="LinkedIn"></i>
+            <i className="fab fa-telegram" aria-label="Telegram"></i>
+            <i className="fab fa-whatsapp" aria-label="WhatsApp"></i>
           </div>
         </div>
-      </div>
 
-      <div className="mx-10">
-        <div className="flex flex-row">
-          <div className="my-3 pr-5">
-            <img src="/images/logo_only.webp"
+        {/* Bloc branding */}
+        <div className="flex items-start gap-4">
+          <img
+            src="/images/logo_only.webp"
+            alt="Logo Fertilia"
             className="w-12 h-auto"
-            alt="Logo de fertilia" />
-          </div>
-          <div className="text-left my-3">
-            <h3 className="hidden text-lg font-semibold">Fertilia</h3>
-            <p className="text-2xl mt-2">La technologie au service de votre terre.</p>
+          />
+          <div>
+            <p className="text-xl font-medium">
+              La technologie au service de votre terre.
+            </p>
           </div>
         </div>
 
-        <div className="w-full lg:w-2/4">
-          <div className="flex flex-wrap">
-            <motion.a variants={FadeItem}  href="#header" className="p-2">
-              <ul className="flex flex-row w-full lg:flex-col lg:pr-4">
-                <li className="">Accueil</li>              
-              </ul>
+        {/* Liens de navigation */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          {[
+            ["Accueil", "#header"],
+            ["Fonctionnalités", "#avantages"],
+            ["À propos", "#avis"],
+            ["Contacts", "#"],
+            ["Blog", "#"],
+            ["Innovations", "#"],
+            ["Documentation", "#"],
+            ["Support", "#"],
+          ].map(([label, href], i) => (
+            <motion.a
+              key={i}
+              variants={FadeItem}
+              href={href}
+              className="hover:underline"
+            >
+              {label}
             </motion.a>
-            <motion.a variants={FadeItem}  href="#avantages" className="p-2">
-              <ul className="lg:pr-4 flex flex-row w-full lg:flex-col">
-                <li className="">Fonctionnalités</li>
-              </ul>
-            </motion.a>        
-            <motion.a variants={FadeItem} href="#avis" className="p-2">
-              <ul className="pr-4 flex flex-row w-full lg:flex-col">
-                <li className="">A propos</li>
-              </ul>
-            </motion.a>        
-            <motion.a variants={FadeItem} href="#" className="p-2">
-              <ul className="pr-4 flex flex-row w-full lg:flex-col">       
-                <li className="">Contacts</li>
-              </ul>
-            </motion.a>
-
-            <motion.a variants={FadeItem} href="#" className="p-2">
-              <ul className="pr-4 flex flex-row w-full lg:flex-col">       
-                <li className="">Blog</li>
-              </ul>
-            </motion.a>
-            <motion.a variants={FadeItem} href="#" className="p-2">
-              <ul className="pr-4 flex flex-row w-full lg:flex-col">       
-                <li className="">Future</li>
-              </ul>
-            </motion.a>
-            <motion.a variants={FadeItem} href="#" className="p-2">
-              <ul className="pr-4 flex flex-row w-full lg:flex-col">       
-                <li className="">A propos</li>
-              </ul>
-            </motion.a>
-            <motion.a variants={FadeItem} href="#" className="p-2">
-              <ul className="pr-4 flex flex-row w-full lg:flex-col">       
-                <li className="">Documentation</li>
-              </ul>
-            </motion.a>
-          </div>
+          ))}
         </div>
       </div>
-    </div>
 
-    <div className="w-full flex flex-row justify-between px-5 py-2">
-      <ul>
-        <p>&copy; 2025 Fertilia. Tous droits réservés. </p>
-      </ul>
-      <ul className="flex flex-row">
-        <li className="m-2">Terms of service</li>
-        <li className="m-2">Privacy policy</li>
-        <li className="m-2">Cookies</li>
-      </ul>
-    </div>
-  </motion.footer>
+      {/* Ligne de séparation */}
+      <div className="w-full h-px bg-gray-700 my-8" />
+
+      {/* Bas de page */}
+      <div className="w-full max-w-7xl flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4">
+        <p>&copy; 2025 Fertilia. Tous droits réservés.</p>
+
+        <div className="flex flex-wrap gap-4">
+          <a href="#" className="hover:underline">
+            Conditions d'utilisation
+          </a>
+          <a href="#" className="hover:underline">
+            Politique de confidentialité
+          </a>
+          <a href="#" className="hover:underline">
+            Cookies
+          </a>
+          <a href="#" className="hover:underline">
+            Mentions légales
+          </a>
+        </div>
+
+        {/* Sélecteur de langue */}
+        <div>
+          <select
+            className="bg-gray-800 text-white border border-gray-600 rounded-md px-2 py-1"
+            aria-label="Sélection de la langue"
+          >
+            <option value="fr">Français</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+      </div>
+    </motion.footer>
+  );
 }
