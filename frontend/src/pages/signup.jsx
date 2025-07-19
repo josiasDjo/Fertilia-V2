@@ -34,7 +34,7 @@ export default function Signup() {
                         <p className="text-sm" id="message_error_in"></p>
                     </motion.ul>
                     <motion.ul variants={FadeItem} className="flex flex-col w-full">
-                        <button className="bg-skin-accentSec text-white rounded-3xl lg:my-5 my-2 p-2 border-2 border-solid border-yellow-500 border-opacity-30" type="submit">Envoyer</button>
+                        <button className="bg-skin-accentSec text-white rounded-lg lg:my-5 my-2 p-2 border-2 border-solid border-yellow-500 border-opacity-30" type="submit">Envoyer</button>
                         <p className="text-sm text-center">Vous avez déjà un compte ? <Link to="/login" ><button id="" class="openSignin text-blue-500 font-medium" type="button">Se connecter</button></Link></p>
                     </motion.ul>            
                 </form>

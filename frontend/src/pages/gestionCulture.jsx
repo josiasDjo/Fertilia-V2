@@ -8,13 +8,13 @@ export default function GestionDesCulturesPage() {
   return (
     <motion.div 
       variants={FadeContainer}
-      initial="hidden"
+      // initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.3 }}
       className="w-full">
       {/* <NavBar /> */}
       <BackButton />
-      <motion.div variants={FadeItem} className="bg-skin-bg text-skin-text min-h-screen py-12 px-4 md:px-12">
+      <div className="bg-skin-bg text-skin-text min-h-screen py-12 px-4 md:px-12">
         <div className="max-w-5xl mx-auto mt-14">
           <motion.h1 variants={FadeItem} className="text-2xl md:text-3xl font-bold mb-6 text-skin-accent">
             🌱 Gestion des Cultures
@@ -102,7 +102,7 @@ export default function GestionDesCulturesPage() {
 
 
         </div>
-      </motion.div>
+      </div>
       <Footer />
     </motion.div>
   );
