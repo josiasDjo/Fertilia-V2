@@ -9,7 +9,7 @@ export default function Newsletter() {
             <input
             type="email"
             placeholder="Votre adresse e-mail"
-            className="px-4 py-2 rounded-md w-full text-black"
+            className="px-4 py-2 rounded-md w-full bg-gray-200 text-black"
             />
             {/* <Input placeholder="Votre adresse e-mail" /> */}
             <button
