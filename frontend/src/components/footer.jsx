@@ -8,7 +8,7 @@ export default function Footer() {
     whileInView="show"
     viewport={{ once: true, amount: 0.3 }}
   className="flex flex-col h-auto text-center items-center justify-center bg-gray-900  text-white relative ">
-    <div className="w-full flex flex-row px-5 py-5 justify-center">
+    <div className="w-full flex flex-col lg:flex-row px-5 py-5 justify-center">
       <div className="flex flex-col text-left lg:mx-10">
         <div className="flex my-3">
           <div className="mt-6 sm:mt-0">
@@ -37,8 +37,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div>
-          <div className="flex flex-row">
+        <div className="w-full lg:w-2/4">
+          <div className="flex flex-wrap">
             <motion.a variants={FadeItem}  href="#header" className="p-2">
               <ul className="flex flex-row w-full lg:flex-col lg:pr-4">
                 <li className="">Accueil</li>              
@@ -59,8 +59,7 @@ export default function Footer() {
                 <li className="">Contacts</li>
               </ul>
             </motion.a>
-          </div>
-          <div className="flex flex-row">
+
             <motion.a variants={FadeItem} href="#" className="p-2">
               <ul className="pr-4 flex flex-row w-full lg:flex-col">       
                 <li className="">Blog</li>
