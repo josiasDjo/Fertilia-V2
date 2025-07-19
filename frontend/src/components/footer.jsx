@@ -45,7 +45,7 @@ export default function Footer() {
             <i className="fab fa-whatsapp" aria-label="WhatsApp"></i>
           </div>
         </div>
-        
+
         {/* Liens de navigation */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {[
@@ -74,7 +74,7 @@ export default function Footer() {
       <div className="w-full h-px bg-gray-700 my-8" />
 
       {/* Bas de page */}
-      <div className="w-full max-w-7xl flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4">
+      <div className="w-full max-w-7xl flex flex-wrap md:flex-row justify-between items-center text-sm text-gray-400 gap-4">
         <p>&copy; 2025 Fertilia. Tous droits réservés.</p>
 
         <div className="flex flex-wrap gap-4">
@@ -100,6 +100,7 @@ export default function Footer() {
           >
             <option value="fr">Français</option>
             <option value="en">English</option>
+            <option value="en">Swahili</option>
           </select>
         </div>
       </div>
