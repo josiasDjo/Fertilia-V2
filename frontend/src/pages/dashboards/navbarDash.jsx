@@ -2,7 +2,9 @@
 
 export default function NavBarDash() {
     return (
-        <nav class="relative h-16 m-3 lg:ml-6 px-5 shadow-lg flex flex-row justify-between items-center bg-white rounded-lg">
+        <nav class="relative h-16 w-screen-[56px] m-3 lg:ml-6 px-5 shadow-lg flex flex-row justify-between items-center bg-white rounded-lg
+        lg:fixed lg:right-0 lg:top-0
+        ">
             {/* <!-- Logo --> */}
             <div class="lg:w-28 sm:w-12 h-12 lg:h-24 flex items-center justify-center">
                 {/* <!-- <img class="h-full w-auto lg:w-44 hidden lg:flex object-contain" src="/images/logo&name.webp" alt="Logo de Fertilia"> --> */}

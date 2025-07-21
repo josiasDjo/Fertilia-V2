@@ -92,6 +92,9 @@ hr {
 .width_nav {
   width: calc(100vw - 14rem);
 }
+.height_sideBar {
+  height: calc(100vh - 10rem);
+}
 .height_sign {
   height: calc(100vh - 4px);
 }
