@@ -2,7 +2,7 @@
 
 export default function NavBarDash() {
     return (
-        <nav class="relative h-16 w-screen-[56px] m-3 lg:ml-6 px-5 shadow-lg flex flex-row justify-between items-center bg-white rounded-lg
+        <nav class="relative h-16 w-screen m-3 lg:ml-6 px-5 shadow-lg flex flex-row justify-between items-center bg-gray-700 rounded-lg
         lg:fixed lg:right-0 lg:top-0
         ">
             {/* <!-- Logo --> */}
@@ -13,7 +13,7 @@ export default function NavBarDash() {
 
             {/* <!-- Texte + Profil --> */}
             <div class="flex flex-row items-center ml-auto w-auto h-16">
-                <div class="flex flex-row text-center items-center justify-center mr-2">
+                <div class="flex flex-row text-center items-center justify-center mr-2 text-skin-text">
                     <p>Bonjour 👋,</p>
                     <h2 class="font-bold ml-1">Jean</h2>
                 </div>
