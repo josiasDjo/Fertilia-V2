@@ -1,6 +1,6 @@
 const passport = require('passport');
 const Utilisateur = require('../models/Utilisateurs');
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const { where } = require('sequelize');
 
 exports.createUtilisateur = async (req, res) => {

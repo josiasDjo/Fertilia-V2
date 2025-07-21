@@ -1,5 +1,10 @@
 require('dotenv').config();
 
+console.log("✅ .env chargé ? dans app.js");
+console.log("DB_USER =", process.env.DB_USER);
+console.log("DB_PASSWORD =", process.env.DB_PASSWORD);
+console.log("DB_NAME =", process.env.DB_NAME)
+
 const sequelize = require('./backend/models/index'); 
 const createError = require('http-errors');
 const express = require('express');
@@ -14,6 +19,9 @@ const jwt = require('jsonwebtoken');
 // const helmet = require('helmet');
 const xssClean = require('xss-clean');
 const rateLimit = require('express-rate-limit');
+
+const app = express();
+
 
 //importer les modèles
 const Utilisateurs = require('./backend/models/Utilisateurs');
@@ -41,7 +49,6 @@ const EntreeSortieRoutes = require('./backend/routes/EntreeSortieRoutes.js');
 // test d'api
 const sensorApi = require('./backend/routes/sensorApiTest')
 
-const app = express();
 const port = process.env.PORT || 5001;
 
 const limiter = rateLimit({
@@ -50,25 +57,25 @@ const limiter = rateLimit({
 });
 
 // Configuration du moteur de vues
-app.set('views', [
-  path.join(__dirname, 'views'),
-  path.join(__dirname, 'views/clients'),
-  path.join(__dirname, 'views/modals'),
-  path.join(__dirname, 'views/agriculteurs'),
-  path.join(__dirname, 'includes'),
-  path.join(__dirname, 'views/components'),
-  path.join(__dirname, 'views/components/fields'),
-  path.join(__dirname, 'views/components/livraisons'),
-  path.join(__dirname, 'views/components/stocks'),
-]);
-app.set('view engine', 'ejs');
+// app.set('views', [
+//   path.join(__dirname, 'views'),
+//   path.join(__dirname, 'views/clients'),
+//   path.join(__dirname, 'views/modals'),
+//   path.join(__dirname, 'views/agriculteurs'),
+//   path.join(__dirname, 'includes'),
+//   path.join(__dirname, 'views/components'),
+//   path.join(__dirname, 'views/components/fields'),
+//   path.join(__dirname, 'views/components/livraisons'),
+//   path.join(__dirname, 'views/components/stocks'),
+// ]);
+// app.set('view engine', 'ejs');
 
 // Middlewares globaux
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 // app.use(cors());
 app.use(bodyParser.json());
 // app.use(xssClean());
@@ -137,5 +144,11 @@ app.listen(port,() => {
 sequelize.sync({ force: false })
     .then(() => console.log('✅ Base de données synchronisée avec Sequelize !'))
     .catch(err => console.error('❌ Erreur de synchronisation de la BDD :', err));
+
+// console.log("Sequelize credentials:", {
+//   DB_USER: process.env.DB_USER,
+//   DB_PASSWORD: process.env.DB_PASSWORD,
+//   DB_NAME: process.env.DB_NAME,
+// });
 
 module.exports = app;
