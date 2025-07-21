@@ -10,7 +10,7 @@ export default function SideBar() {
     ]
 
     return (
-        <aside id="container_aside" class="bg-gray-700 text-skin-text list-none relative h-16 flex flex-row m-2
+        <aside id="container_aside" class="bg-white dark:bg-gray-700 text-skin-text list-none relative h-16 flex flex-row m-2
         rounded-tr-xl rounded-tl-xl shadow-lg
         lg:top-1 lg:fixed lg:h-[calc(100%-2rem)] lg:w-56 lg:px-4 lg:py-4 lg:flex lg:flex-col lg:rounded-lg lg:border-none">
             
