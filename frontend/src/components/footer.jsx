@@ -1,8 +1,14 @@
 import { motion } from "framer-motion"
 import { FadeContainer, FadeItem } from "../hooks/animations"
 import { Link } from "react-router-dom"
+import { useTranslation } from "react-i18next"; 
 
 export default function Footer() {
+  const { i18n } = useTranslation()
+
+  const changeLang = (lang) => {
+    i18n.changeLanguage(lang)
+  }
   return (
     <motion.footer
       variants={FadeContainer}
@@ -98,6 +104,7 @@ export default function Footer() {
         {/* Sélecteur de langue */}
         <div>
           <select
+            onChange={(e) => changeLang(e.target.value)}
             className="bg-gray-800 text-white border border-gray-600 rounded-md px-2 py-1"
             aria-label="Sélection de la langue"
           >

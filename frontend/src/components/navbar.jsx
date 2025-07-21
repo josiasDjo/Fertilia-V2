@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from "react"
-// import { motion } from "motion/react"
+import { useTranslation } from "react-i18next"
 import { motion } from "framer-motion"
 import { FadeContainer, FadeItem } from "../hooks/animations"
 import { Button } from "./button"
@@ -8,7 +8,7 @@ import { scrollToPrograms } from "../hooks/scroll";
 
 function NavBar() {
   const [navBarOpen, setNavBarOpen] = useState(false)
-
+  const { t } = useTranslation()
   useEffect(() => {
     const navbar = document.getElementById("navbar")
     const navMobile = document.getElementById("nav_part2")
@@ -84,25 +84,25 @@ function NavBar() {
         <motion.button variants={FadeItem} whileHover={{ scale: 0.9 }} className="my-2 p-2" onClick={() => scrollToPrograms('header')}>
           <ul className="flex flex-row w-full lg:flex-col lg:pr-4">
             <li className="mr-6"><i className="fa-solid fa-house"></i></li>
-            <li className="mr-6">Accueil</li>              
+            <li className="mr-6">{t("nav.home")}</li>              
           </ul>
         </motion.button>
         <motion.button variants={FadeItem} whileHover={{ scale: 0.9}} className="my-2 p-2" onClick={() => scrollToPrograms('avantages')}>
           <ul className="lg:pr-4 flex flex-row w-full lg:flex-col">
             <li className="mr-6"><i className="fa-solid fa-chart-simple"></i></li>
-            <li className="mr-6">Fonctionnalités</li>
+            <li className="mr-6">{t("nav.features")}</li>
           </ul>
         </motion.button>        
         <motion.button variants={FadeItem} whileHover={{ scale: 0.9}} className="my-2 p-2" onClick={() => scrollToPrograms('about')}>
           <ul className="pr-4 flex flex-row w-full lg:flex-col">
             <li className="mr-6"><i className="fa-solid fa-circle-info"></i></li>
-            <li className="mr-6">A propos</li>
+            <li className="mr-6">{t("nav.about")}</li>
           </ul>
         </motion.button>        
         <motion.button variants={FadeItem} whileHover={{ scale: 0.9}} className="my-2 p-2"onClick={() => scrollToPrograms('contact')}>
           <ul className="pr-4 flex flex-row w-full lg:flex-col">       
             <li className="mr-6"><i className="fa-solid fa-phone-volume"></i></li>
-            <li className="mr-6">Contacts</li>
+            <li className="mr-6">{t("nav.contact")}</li>
           </ul>
         </motion.button>
 
@@ -118,7 +118,7 @@ function NavBar() {
         classMa="dark_mode_color text-white text-center flex items-center justify-center my-5 lg:mx-5 w-10 h-10 rounded-full" />
         <a href="/login">
           <Button 
-          titre="Se connecter" 
+          titre={t("nav.login")} 
           icon={<i className="fa-solid fa-arrow-right-to-bracket"></i>} 
           classMa="openSignin pr-4 backgroud_btn_h text-white px-3 py-2 rounded-lg hover:bg-yellow-400 focus:outline-none focus:ring-opacity-50" />
         </a>

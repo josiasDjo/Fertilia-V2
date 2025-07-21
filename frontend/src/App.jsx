@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './index.css';
+import './i18n';
 import NavBar from './components/navbar';
 import Home from './pages/home';
 import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
