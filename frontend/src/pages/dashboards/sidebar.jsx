@@ -4,7 +4,7 @@ export default function SideBar() {
     return (
         <aside id="container_aside" class="bg-white list-none relative h-16 text-black flex flex-row
         rounded-tr-xl rounded-tl-xl shadow-lg
-        lg:top-3 lg:fixed lg:h-auto lg:w-56 lg:bg-white lg:px-4 lg:py-4 lg:text-black lg:flex lg:flex-col lg:rounded-lg lg:border-none">
+        lg:top-3 lg:fixed lg:h-screen lg:w-56 lg:bg-white lg:px-4 lg:py-4 lg:text-black lg:flex lg:flex-col lg:rounded-lg lg:border-none">
             
             <div class="lg:w-28 sm:w-12 h-12 lg:h-24 flex items-center justify-center">
                 <img class="h-full w-auto lg:w-44 hidden lg:flex object-contain" src="/images/logo&name.webp" alt="Logo de Fertilia" />
