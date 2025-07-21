@@ -21,7 +21,7 @@ export default function Footer() {
           />
           <div>
             <p className="text-xl font-medium">
-              La technologie au service de votre terre.
+              La technologie au service de votre terre
             </p>
           </div>
         </div>
@@ -35,7 +35,7 @@ export default function Footer() {
           </p>
           <p>
             <span className="pr-3"><i class="fa-solid fa-location-dot"></i></span>
-            RD Congo, Nord-Kivu, Goma, Keshero
+            RD Congo, Nord-Kivu, Goma, Keshero, Av Magene 200 
           </p>
           <div className="flex gap-6 text-2xl">
             <i className="fab fa-facebook" aria-label="Facebook"></i>

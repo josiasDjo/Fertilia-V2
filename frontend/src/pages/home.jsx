@@ -7,6 +7,7 @@ import { FeatureCard } from "../components/FeatureCard";
 import Step from "../components/step";
 import Footer from "../components/footer";
 import Newsletter from "../components/newsletters";
+import Contact from "../components/contact";
 
 export default function Home() {
     return <div className="scroll-smooth text-gray-900">
@@ -21,6 +22,7 @@ export default function Home() {
         <Avantages />
         <BringsYou />
         <HowDoesItWork />
+        <Contact />
         <Avis />
         <Newsletter />
         <Footer />
