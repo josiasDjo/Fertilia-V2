@@ -11,8 +11,10 @@ import Contact from "../components/contact";
 import About from "../components/about";
 import { useTranslation } from "react-i18next";
 
+
+
+
 export default function Home() {
-    const { t } = useTranslation()
     return <div className="scroll-smooth text-gray-900">
         <img
           src="/images/bg-hero-header2.webp"
@@ -34,6 +36,8 @@ export default function Home() {
 }
 
 function Header() {
+    const { t } = useTranslation()
+
     return (
 
     <motion.div
@@ -63,9 +67,9 @@ function Header() {
           variants={FadeItem}
           className="font_header mt-8 text-3xl pt-10 text-center z-10 lg:text-5xl text-white lg:mb-3"
         >
-          La technologie au service de{" "}
+          {t("hero.headline1")}{" "}
           <span className="backgroud_text_h bg-opacity-60 text-3xl lg:text-5xl">
-            votre terre
+            {t("hero.headline2")}
           </span>
         </motion.h1>
 
