@@ -2,7 +2,7 @@
 
 export default function NavBarDash() {
     return (
-        <nav class="relative h-16 w-screen m-3 lg:ml-6 px-5 shadow-lg flex flex-row justify-between items-center bg-gray-700 rounded-lg
+        <nav class="relative h-16 w-full lg:w-[calc(100%-16rem)] m-3 lg:ml-6 px-5 shadow-lg flex flex-row justify-between items-center bg-gray-700 rounded-lg
         lg:fixed lg:right-0 lg:top-0
         ">
             {/* <!-- Logo --> */}
