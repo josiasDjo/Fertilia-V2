@@ -1,0 +1,79 @@
+{
+    "nav": {
+        "home": "Home",
+        "features": "Features",
+        "about": "About",
+        "contact": "Contact",
+        "faq": "FAQ",
+        "login": "Login",
+        "innovations": "Innovations",
+        "documentation": "Documentation",
+        "support": "Support"
+    },
+    "hero": {
+        "headline": "Technology at the service of your land",
+        "description": "Transform your farm with our innovative platform. Monitor your crops in real time and optimize irrigation. Discover how technology can breathe new life into your land."
+    },
+    "features": {
+        "title": "Benefits",
+        "cultures.title": "Crop Management",
+        "cultures.text": "Optimize every stage of your plantations. Track crop progress and receive smart advice to improve yield.",
+        "irrigation.title": "Automatic Irrigation",
+        "irrigation.text": "Sensors measure soil moisture and trigger irrigation at the optimal time, saving water and boosting growth.",
+        "yield.title": "Yield Analysis",
+        "yield.text": "Turn data into insights. See trends and maximize your profits through data-driven decisions."
+    },
+    "benefits": {
+        "title": "What Fertilia brings you",
+        "cultures": "Monitor the health of your crops in real time",
+        "stock": "Track your inventory closely",
+        "irrigation": "Save water with smart irrigation",
+        "forecasts": "Tailored recommendations for your region"
+    },
+    "how": {
+        "title": "How does it work?",
+        "step1": "Create your account",
+        "step2": "Configure your field",
+        "step3": "Track your crops"
+    },
+    "about": {
+        "title": "About Fertilia",
+        "description": "Fertilia is a smart agriculture platform helping farmers manage irrigation, analyze yield and optimize land with connected tools."
+    },
+    "contact": {
+        "title": "Contact us",
+        "name": "Full name",
+        "email": "Email address",
+        "message": "Message",
+        "address": "DR Congo, North-Kivu, Goma, Keshero, Av Magene 200"
+    },
+    "testimonial": {
+        "title": "Reviews and Ratings",
+        "jean": {
+        "name": "Mumbere Jean",
+        "title": "Farmer in Congo",
+        "quote": "Thanks to Fertilia, I doubled my production in 6 months."
+        },
+        "kavira": {
+        "name": "Kavira Kav",
+        "title": "Agricultural technician",
+        "quote": "The interface is intuitive and fits our reality perfectly."
+        }
+    },
+    "newsletter": {
+        "title": "Subscribe to our newsletter",
+        "description": "Get farming tips, product updates and more right in your inbox."
+    },
+    "footer": {
+        "slogan": "Technology at the service of your land",
+        "contact": {
+        "email": "support@fertilia.app",
+        "address": "DR Congo, North-Kivu, Goma, Keshero, Av Magene 200"
+        },
+        "rights": "© 2025 Fertilia. All rights reserved.",
+        "terms": "Terms of Service",
+        "privacy": "Privacy Policy",
+        "cookies": "Cookies",
+        "legal": "Legal Notice"
+    }
+}

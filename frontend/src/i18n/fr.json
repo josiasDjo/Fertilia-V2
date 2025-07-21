@@ -1,0 +1,79 @@
+{
+    "nav": {
+        "home": "Accueil",
+        "features": "Fonctionnalités",
+        "about": "À propos",
+        "contact": "Contacts",
+        "faq": "FAQ",
+        "login": "Se connecter",
+        "innovations": "Innovations",
+        "documentation": "Documentation",
+        "support": "Support"
+    },
+    "hero": {
+        "headline": "La technologie au service de votre terre",
+        "description": "Transformez votre exploitation grâce à notre plateforme innovante. Surveillez en temps réel vos cultures et optimisez l'irrigation. Découvrez comment la technologie peut redonner vie à votre terre et propulser votre agriculture vers de nouveaux sommets."
+    },
+    "features": {
+        "title": "Avantages",
+        "cultures.title": "Gestion Des Cultures",
+        "cultures.text": "Optimisez chaque étape de vos plantations avec notre module dédié. Suivez l'évolution de vos cultures en temps réel et recevez des recommandations personnalisées.",
+        "irrigation.title": "Irrigation Automatique",
+        "irrigation.text": "Les capteurs mesurent l'humidité du sol et activent l'irrigation au moment optimal pour économiser l’eau et favoriser la croissance.",
+        "yield.title": "Analyse des rendements",
+        "yield.text": "Transformez vos données en actions concrètes. Visualisez vos récoltes, identifiez les tendances et optimisez vos profits."
+    },
+    "benefits": {
+        "title": "Ce que Fertilia vous apporte",
+        "cultures": "Surveillez la croissance et la santé de vos plantes",
+        "stock": "Surveillez de près votre niveau de stock",
+        "irrigation": "Économisez l’eau grâce à l’irrigation intelligente",
+        "forecasts": "Des recommandations basées sur vos données"
+    },
+    "how": {
+        "title": "Comment ça marche ?",
+        "step1": "Créer votre compte",
+        "step2": "Configurer votre champ",
+        "step3": "Suivre vos cultures"
+    },
+    "about": {
+        "title": "À propos de Fertilia",
+        "description": "Fertilia est une plateforme technologique dédiée à l'agriculture intelligente. Nous croyons en une agriculture moderne, durable et accessible à tous."
+    },
+    "contact": {
+        "title": "Contactez-nous",
+        "name": "Nom complet",
+        "email": "Adresse e-mail",
+        "message": "Message",
+        "address": "RD Congo, Nord-Kivu, Goma, Keshero, Av Magene 200"
+    },
+    "testimonial": {
+        "title": "Avis et Notations",
+        "jean": {
+        "name": "Mumbere Jean",
+        "title": "agriculteur au Congo",
+        "quote": "Grâce à Fertilia, j’ai doublé ma production en 6 mois."
+        },
+        "kavira": {
+        "name": "Kavira Kav",
+        "title": "Technicienne agricole",
+        "quote": "L’interface est intuitive et vraiment adaptée à notre réalité."
+        }
+    },
+    "newsletter": {
+        "title": "Abonnez-vous à notre newsletter",
+        "description": "Recevez des conseils agricoles, des mises à jour produits et plus directement dans votre boîte mail."
+    },
+    "footer": {
+        "slogan": "La technologie au service de votre terre",
+        "contact": {
+        "email": "support@fertilia.app",
+        "address": "RD Congo, Nord-Kivu, Goma, Keshero, Av Magene 200"
+        },
+        "rights": "© 2025 Fertilia. Tous droits réservés.",
+        "terms": "Conditions d'utilisation",
+        "privacy": "Politique de confidentialité",
+        "cookies": "Cookies",
+        "legal": "Mentions légales"
+    }
+}
