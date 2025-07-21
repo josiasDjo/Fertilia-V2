@@ -9,6 +9,7 @@ import { ResetPass } from './pages/resetPassword';
 import GestionDesCulturesPage from './pages/gestionCulture';
 import { IrrigationAutomatiquePage } from './pages/irrigation';
 import { AnalyseRendementsPage } from './pages/analyseRendement';
+import Faq from './pages/faq';
 
 export default function App() {
 
@@ -29,8 +30,9 @@ export default function App() {
         <Route path='/register' element={<Signup />} />
         <Route path='/reset-password' element={<ResetPass />} />
         <Route path='/gestion-des-cultures' element={<GestionDesCulturesPage />} />
-        <Route path='irrigation-automatique' element={<IrrigationAutomatiquePage />} />
-        <Route path='analyse-rendement' element={<AnalyseRendementsPage />} />
+        <Route path='/irrigation-automatique' element={<IrrigationAutomatiquePage />} />
+        <Route path='/analyse-rendement' element={<AnalyseRendementsPage />} />
+        <Route path='/faQ' element={<Faq />} />
       </Routes>
     </Router>
   );

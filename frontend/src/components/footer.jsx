@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { FadeContainer, FadeItem } from "../hooks/animations"
+import { Link } from "react-router-dom"
 
 export default function Footer() {
   return (
@@ -53,19 +54,21 @@ export default function Footer() {
             ["Fonctionnalités", "#avantages"],
             ["À propos", "#about"],
             ["Contacts", "#contact"],
-            ["Blog", "#"],
+            ["FaQ", "#", "/faQ"],
             ["Innovations", "#"],
             ["Documentation", "#"],
             ["Support", "#"],
-          ].map(([label, href], i) => (
-            <motion.a
-              key={i}
-              variants={FadeItem}
-              href={href}
-              className="hover:underline"
-            >
-              {label}
-            </motion.a>
+          ].map(([label, href, link], i) => (
+            <Link to={link}>
+              <motion.a
+                key={i}
+                variants={FadeItem}
+                href={href}
+                className="hover:underline"
+              >
+                {label}
+              </motion.a>
+            </Link>
           ))}
         </div>
       </div>
