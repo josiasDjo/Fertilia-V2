@@ -11,7 +11,8 @@
         "support": "Support"
     },
     "hero": {
-        "headline": "La technologie au service de votre terre",
+        "headline1": "La technologie au service de ",
+        "headline2": "votre terre",
         "description": "Transformez votre exploitation grâce à notre plateforme innovante. Surveillez en temps réel vos cultures et optimisez l'irrigation. Découvrez comment la technologie peut redonner vie à votre terre et propulser votre agriculture vers de nouveaux sommets."
     },
     "features": {

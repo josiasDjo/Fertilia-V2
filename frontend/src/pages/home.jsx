@@ -9,8 +9,10 @@ import Footer from "../components/footer";
 import Newsletter from "../components/newsletters";
 import Contact from "../components/contact";
 import About from "../components/about";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+    const { t } = useTranslation()
     return <div className="scroll-smooth text-gray-900">
         <img
           src="/images/bg-hero-header2.webp"

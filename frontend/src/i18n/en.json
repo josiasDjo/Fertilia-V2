@@ -11,7 +11,8 @@
         "support": "Support"
     },
     "hero": {
-        "headline": "Technology at the service of your land",
+        "headline": "Technology at the service of ",
+        "headline2": "your land",
         "description": "Transform your farm with our innovative platform. Monitor your crops in real time and optimize irrigation. Discover how technology can breathe new life into your land."
     },
     "features": {
