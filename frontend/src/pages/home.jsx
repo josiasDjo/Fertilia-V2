@@ -108,7 +108,7 @@ function Header() {
 }
 
 function Avantages() {
-
+  const {t} = useTranslation()
   const avantangesTab = [
     {
       titre: "Gestion Des Cultures", 
@@ -138,7 +138,7 @@ function Avantages() {
     className="bg-white dark:bg-gray-900 p-2 lg:py-7 w-full lg:px-20">
       <motion.h3 
       variants={FadeItem} 
-      className="dark:text-green-600 text-3xl mt-8 font-bold lg:text-3xl text-center">Avantages</motion.h3>
+      className="dark:text-green-600 text-3xl mt-8 font-bold lg:text-3xl text-center">{t("features.title")}</motion.h3>
   
       <motion.div 
       variants={FadeItem} 
