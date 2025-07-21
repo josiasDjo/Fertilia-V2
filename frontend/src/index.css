@@ -136,7 +136,7 @@ table td, th {
 
 /* DashBoard SideBar */
 @media screen and (min-width: 1024px) { /* Minimum lg */
-  aside button:hover {
+  /* aside button:hover {
     box-shadow: 20px;
     border: 2px solid rgba(188, 214, 255, 0.973);
     background-color: rgba(188, 214, 255, 0.973);
@@ -144,7 +144,7 @@ table td, th {
   }
   .aside_btn {
     color: #000000;
-  } 
+  }  */
 }
 
 .aside_btn.active {
@@ -153,10 +153,10 @@ table td, th {
   font-weight: 500;
   color: #ffb52a;
 }
-.aside_option_set_sm:hover {
+/* .aside_option_set_sm:hover {
   box-shadow: 20px;
   border: 2px solid #000000;
   background-color: #000000;
   color: rgb(255, 181, 42);
   font-weight: 500;
-} 
+}  */

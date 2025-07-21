@@ -22,7 +22,7 @@ export default function SideBar() {
             {buttonSide.map((index, key) => {
                 return (
                     <button id={index.id} class="text-skin-text lg:flex lg:flex-row lg:text-left lg:w-full lg:h-16 lg:rounded-lg lg:border-black lg:p-3 lg:m-2
-                    lg:items-center aside_btn
+                    lg:items-center aside_btn hover:bg-gray-800
                     md:flex md:flex-col md:text-center md:items-center
                     w-3/12 px-4 py-2 mr-2">
                         <li class="text-3xl mr-2 text-skin-text">{index.icon}</li>
