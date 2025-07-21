@@ -11,6 +11,7 @@ import GestionDesCulturesPage from './pages/gestionCulture';
 import { IrrigationAutomatiquePage } from './pages/irrigation';
 import { AnalyseRendementsPage } from './pages/analyseRendement';
 import Faq from './pages/faq';
+import Dashboard from './pages/dashboards/dashbord';
 
 export default function App() {
 
@@ -34,6 +35,8 @@ export default function App() {
         <Route path='/irrigation-automatique' element={<IrrigationAutomatiquePage />} />
         <Route path='/analyse-rendement' element={<AnalyseRendementsPage />} />
         <Route path='/faQ' element={<Faq />} />
+
+        <Route path='/dashboard' element={<Dashboard />} />
       </Routes>
     </Router>
   );

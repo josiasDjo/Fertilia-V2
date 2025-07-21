@@ -15,7 +15,7 @@ export default function Signin () {
         className="flex shadow-xl w-full h-screen backdrop-blur-md bg-skin-bg text-skin-text lg:flex-row relative">
             <motion.div variants={FadeItem} className="flex flex-col w-full lg:w-6/12 px-7 lg:px-16 py-3 md:py-4 justify-center items-center relative">
                 <BackButton />
-                <form variants={FadeItem} id="connexion_page_send" className="w-full md:w-9/12 px-2 md:px-10 items-center relative justify-center flex flex-col lg:p-5">
+                <form variants={FadeItem}  id="connexion_page_send" className="w-full md:w-9/12 px-2 md:px-10 items-center relative justify-center flex flex-col lg:p-5">
                     <motion.ul variants={FadeItem} className="flex flex-col w-full text-center">
                         <span className="">Entrez vos informations</span>
                         <button type="button" className="rounded-xl p-2 border-2 dark:bg-gray-600 border-solid font-medium border-black border-opacity-10 shadow-lg my-3 focus:outline-none 
@@ -47,7 +47,7 @@ export default function Signin () {
                     </motion.ul>
             
                     <ul className="flex flex-col w-full">
-                        <motion.button variants={FadeItem} className="bg-skin-accentSec text-white rounded-lg my-5 p-2 border-2 border-solid border-yellow-500 border-opacity-30" type="submit">Se connecter</motion.button>
+                        <Link to="/dashboard" > <motion.button variants={FadeItem} className="bg-skin-accentSec text-white rounded-lg my-5 p-2 border-2 border-solid border-yellow-500 border-opacity-30" type="submit">Se connecter</motion.button></Link>
                         <motion.p variants={FadeItem} className="text-sm text-center">Vous n'avez pas un compte ? <Link to="/register"><button type="button" className="openSignup text-blue-500 font-medium">S'inscrire</button></Link></motion.p>
                     </ul>            
                 </form>
