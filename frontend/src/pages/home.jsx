@@ -12,8 +12,6 @@ import About from "../components/about";
 import { useTranslation } from "react-i18next";
 
 
-
-
 export default function Home() {
     return <div className="scroll-smooth text-gray-900">
         <img
@@ -111,7 +109,7 @@ function Avantages() {
   const {t} = useTranslation()
   const avantangesTab = [
     {
-      titre: `${t("cultures.title")}`, 
+      titre: t("cultures.title"), 
       para: "Optimisez chaque étape de vos plantations avec notre module dédié. Suivez l'évolution de vos cultures en temps réel et recevez des recommandations personnalisées pour adapter vos pratiques agricoles et améliorer vos rendements.",
       image: "/images/gestion_culture/image1.webp",
       link: "gestion-des-cultures"
