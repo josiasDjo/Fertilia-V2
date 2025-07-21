@@ -1,9 +1,9 @@
 
 
-export default Dashboard() {
+export default function Dashboard() {
     return <>
-        <main class="w-full relative flex flex-row">
+        <div class="w-full relative flex flex-row bg-red-600">
             
-        </main>
+        </div>
     </>
 }
