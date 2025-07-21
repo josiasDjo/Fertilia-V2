@@ -5,7 +5,7 @@ console.log("DB_USER =", process.env.DB_USER);
 console.log("DB_PASSWORD =", process.env.DB_PASSWORD);
 console.log("DB_NAME =", process.env.DB_NAME)
 
-const sequelize = require('./backend/models/index'); 
+const sequelize = require('./models/index'); 
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -24,30 +24,30 @@ const app = express();
 
 
 //importer les modèles
-const Utilisateurs = require('./backend/models/Utilisateurs');
-const Champs = require('./backend/models/Champs');
-const Stocks = require('./backend/models/Stock');
-const Livraisons = require('./backend/models/Livraisons');
-const Capteurs = require('./backend/models/Capteurs');
-const roles = require('./backend/models/Roles');
-const previsions = require('./backend/models/Previsions');
+const Utilisateurs = require('./models/Utilisateurs.js');
+const Champs = require('./models/Champs.js');
+const Stocks = require('./models/Stock.js');
+const Livraisons = require('./models/Livraisons.js');
+const Capteurs = require('./models/Capteurs.js');
+const roles = require('./models/Roles.js');
+const previsions = require('./models/Previsions.js');
 
 //importer les routes
-const indexRouter = require('./backend/routes/index');
-const CapteursRouter = require('./backend/routes/CapteursRoutes');
-const CapteursEquipementRouter = require('./backend/routes/capteursEquipement')
-const ChampsRouter = require('./backend/routes/ChampsRoutes');
-const LivraisonRouter = require('./backend/routes/LivraisonsRoutes');
-const PrevisionsRouter = require('./backend/routes/PrevisionsRoutes');
-const RolesRouter = require('./backend/routes/RolesRoutes');
-const StocksRouter = require('./backend/routes/StocksRoutes');
-const UtilisateursRoutes = require('./backend/routes/UtilisateursRoutes');
-const FournisseurRoutes = require('./backend/routes/FournisseurRoutes');
-const CmdFournisseurRoutes = require('./backend/routes/CommandeFournisseuRoutes.js');
-const EntreeSortieRoutes = require('./backend/routes/EntreeSortieRoutes.js');
+const indexRouter = require('./routes/index');
+const CapteursRouter = require('./routes/CapteursRoutes.js');
+const CapteursEquipementRouter = require('./routes/capteursEquipement.js')
+const ChampsRouter = require('./routes/ChampsRoutes.js');
+const LivraisonRouter = require('./routes/LivraisonsRoutes.js');
+const PrevisionsRouter = require('./routes/PrevisionsRoutes.js');
+const RolesRouter = require('./routes/RolesRoutes.js');
+const StocksRouter = require('./routes/StocksRoutes.js');
+const UtilisateursRoutes = require('./routes/UtilisateursRoutes.js');
+const FournisseurRoutes = require('./routes/FournisseurRoutes.js');
+const CmdFournisseurRoutes = require('./routes/CommandeFournisseuRoutes.js');
+const EntreeSortieRoutes = require('./routes/EntreeSortieRoutes.js');
 
 // test d'api
-const sensorApi = require('./backend/routes/sensorApiTest')
+const sensorApi = require('./routes/sensorApiTest.js')
 
 const port = process.env.PORT || 5001;
 
