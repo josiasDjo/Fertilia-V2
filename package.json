@@ -2,8 +2,11 @@
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.11",
     "framer-motion": "^12.23.0",
+    "i18next": "^25.3.2",
+    "i18next-browser-languagedetector": "^8.2.0",
     "motion": "^12.23.0",
     "postcss": "^8.5.6",
+    "react-i18next": "^15.6.0",
     "react-router-dom": "^7.7.0",
     "tailwindcss": "^4.1.11"
   }
