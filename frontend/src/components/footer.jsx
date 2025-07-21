@@ -51,8 +51,8 @@ export default function Footer() {
           {[
             ["Accueil", "#header"],
             ["Fonctionnalités", "#avantages"],
-            ["À propos", "#avis"],
-            ["Contacts", "#"],
+            ["À propos", "#about"],
+            ["Contacts", "#contact"],
             ["Blog", "#"],
             ["Innovations", "#"],
             ["Documentation", "#"],

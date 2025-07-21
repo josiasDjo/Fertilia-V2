@@ -1,7 +1,7 @@
 
 export default function About() {
     return (
-        <section id="avis" className="bg-white dark:bg-gray-900 px-6 py-16">
+        <section id="about" className="bg-white dark:bg-gray-900 px-6 py-16">
         <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800 dark:text-white">
             À propos de Fertilia

@@ -93,7 +93,7 @@ function NavBar() {
             <li className="mr-6">Fonctionnalités</li>
           </ul>
         </motion.button>        
-        <motion.button variants={FadeItem} whileHover={{ scale: 0.9}} className="my-2 p-2" onClick={() => scrollToPrograms('avis')}>
+        <motion.button variants={FadeItem} whileHover={{ scale: 0.9}} className="my-2 p-2" onClick={() => scrollToPrograms('about')}>
           <ul className="pr-4 flex flex-row w-full lg:flex-col">
             <li className="mr-6"><i className="fa-solid fa-circle-info"></i></li>
             <li className="mr-6">A propos</li>
