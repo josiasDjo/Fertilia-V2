@@ -14,7 +14,7 @@ const jwt = require('jsonwebtoken');
 // const helmet = require('helmet');
 const xssClean = require('xss-clean');
 const rateLimit = require('express-rate-limit');
-
+const crypto = require('crypto')
 const app = express();
 
 
@@ -116,9 +116,9 @@ app.use('/api/mon-compte/historique', EntreeSortieRoutes);
 app.use('/api/random', sensorApi)
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+// app.use(function(req, res, next) {
+//   next(createError(404));
+// });
 
 // error handler
 app.use(function(err, req, res, next) {
