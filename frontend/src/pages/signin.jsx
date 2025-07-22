@@ -5,7 +5,36 @@ import { FadeContainer, FadeItem } from "../hooks/animations"
 import BackButton from "../components/backButton"
 
 export default function Signin () {
+    const [formData, setFormData] = useState({
+        email : "",
+        mot_de_passe : ""
+    })
 
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        })
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log("Form submit : ", formData)
+
+        fetch("/api/utilisateurs/signin", {
+            method: "POST", 
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log("Réponse du serveur :", data);
+            })
+            .catch((error) => {
+                console.error("Erreur lors de l'envoi :", error);
+            });
+    }
     return <>
         <motion.div id="signin" 
         variants={FadeContainer}
@@ -47,7 +76,7 @@ export default function Signin () {
                     </motion.ul>
             
                     <ul className="flex flex-col w-full">
-                        <Link to="/dashboard" > <motion.button variants={FadeItem} className="bg-skin-accentSec text-white rounded-lg my-5 p-2 border-2 border-solid border-yellow-500 border-opacity-30" type="submit">Se connecter</motion.button></Link>
+                        <motion.button variants={FadeItem} className="bg-skin-accentSec text-white rounded-lg my-5 p-2 border-2 border-solid border-yellow-500 border-opacity-30" type="submit">Se connecter</motion.button>
                         <motion.p variants={FadeItem} className="text-sm text-center">Vous n'avez pas un compte ? <Link to="/register"><button type="button" className="openSignup text-blue-500 font-medium">S'inscrire</button></Link></motion.p>
                     </ul>            
                 </form>
