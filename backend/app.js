@@ -1,10 +1,5 @@
 require('dotenv').config();
 
-console.log("✅ .env chargé ? dans app.js");
-console.log("DB_USER =", process.env.DB_USER);
-console.log("DB_PASSWORD =", process.env.DB_PASSWORD);
-console.log("DB_NAME =", process.env.DB_NAME)
-
 const sequelize = require('./models/index'); 
 const createError = require('http-errors');
 const express = require('express');
@@ -136,6 +131,10 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+const sessionKey = crypto.randomBytes(64).toString('hex');
+
+console.log('Clé de session forte :', sessionKey);
+
 app.listen(port,() => {
   console.log(`✅ App is listening on port ${port}`)
 })
@@ -145,10 +144,5 @@ sequelize.sync({ force: false })
     .then(() => console.log('✅ Base de données synchronisée avec Sequelize !'))
     .catch(err => console.error('❌ Erreur de synchronisation de la BDD :', err));
 
-// console.log("Sequelize credentials:", {
-//   DB_USER: process.env.DB_USER,
-//   DB_PASSWORD: process.env.DB_PASSWORD,
-//   DB_NAME: process.env.DB_NAME,
-// });
 
 module.exports = app;

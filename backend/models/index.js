@@ -1,12 +1,6 @@
 require('dotenv').config()
 const { Sequelize } = require('sequelize');
 
-
-console.log("✅ .env chargé dans index.js ?");
-console.log("DB_USER =", process.env.DB_USER);
-console.log("DB_PASSWORD =", process.env.DB_PASSWORD);
-console.log("DB_NAME =", process.env.DB_NAME)
-
 // Création de l'instance Sequelize
 const sequelize = new Sequelize(
     process.env.DB_NAME,
