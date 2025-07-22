@@ -40,7 +40,7 @@ exports.getUtilisateur = async (req, res) => {
         const utilisateur = await Utilisateur.findOne({ where: { email }});
         if (!utilisateur) {
             res.locals.error_conn = error;
-            return res.status(500).json({ success: false, message: error});
+            return res.json({ success: false, message: error});
         }
         const mdp_user = await Utilisateur.findOne({where : { mot_de_passe }});
         if (!mdp_user)  {

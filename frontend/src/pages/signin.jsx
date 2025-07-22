@@ -44,7 +44,7 @@ export default function Signin () {
         className="flex shadow-xl w-full h-screen backdrop-blur-md bg-skin-bg text-skin-text lg:flex-row relative">
             <motion.div variants={FadeItem} className="flex flex-col w-full lg:w-6/12 px-7 lg:px-16 py-3 md:py-4 justify-center items-center relative">
                 <BackButton />
-                <form variants={FadeItem}  id="connexion_page_send" className="w-full md:w-9/12 px-2 md:px-10 items-center relative justify-center flex flex-col lg:p-5">
+                <form variants={FadeItem} onSubmit={handleSubmit}  id="connexion_page_send" className="w-full md:w-9/12 px-2 md:px-10 items-center relative justify-center flex flex-col lg:p-5">
                     <motion.ul variants={FadeItem} className="flex flex-col w-full text-center">
                         <span className="">Entrez vos informations</span>
                         <button type="button" className="rounded-xl p-2 border-2 dark:bg-gray-600 border-solid font-medium border-black border-opacity-10 shadow-lg my-3 focus:outline-none 
@@ -61,11 +61,11 @@ export default function Signin () {
                     <ul className="flex flex-col my-3 w-full text-gray-900">
                         <motion.div variants={FadeItem} className="rounded-lg p-2 px-4 border-2 border-solid bg-white border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
                             <i className='bx bxs-envelope'></i>
-                            <input type="email" placeholder="Votre Email" name="email" id="email_signin" className="ml-3 border-none ring-transparent focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" />
+                            <input type="email" placeholder="Votre Email" onChange={handleChange} name="email" id="email_signin" className="ml-3 border-none ring-transparent focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" />
                         </motion.div>
                         <motion.div variants={FadeItem} className="rounded-lg p-2 px-4 border-2 border-solid bg-white border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
                             <i className="fa-solid fa-lock"></i>
-                            <input className="ml-2 border-none ring-transparent focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="password" placeholder="Votre mot de passe" name="mot_de_passe" id="password_signin" />
+                            <input onChange={handleChange} className="ml-2 border-none ring-transparent focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="password" placeholder="Votre mot de passe" name="mot_de_passe" id="password_signin" />
                         </motion.div>
                     </ul>
                     <motion.ul variants={FadeItem} className="flex flex-col w-full text-center">
