@@ -39,14 +39,13 @@ exports.getUtilisateur = async (req, res) => {
         const error = "Email ou mot de passe incorrect";
         const utilisateur = await Utilisateur.findOne({ where: { email }});
         if (!utilisateur) {
-            res.locals.error_conn = error;
-            return res.json({ success: false, message: error});
+        return res.json({ success: false, message: error });
         }
-        const mdp_user = await Utilisateur.findOne({where : { mot_de_passe }});
-        if (!mdp_user)  {
-            res.locals.error_conn = error;
-            return res.json({ success: false, message: error});
-            // return res.render('index', { error_conn:  error});
+
+        const motDePasseValide = await bcrypt.compare(mot_de_passe, utilisateur.mot_de_passe);
+
+        if (!motDePasseValide) {
+        return res.json({ success: false, message: error });
         }
 
         req.session.users = {
