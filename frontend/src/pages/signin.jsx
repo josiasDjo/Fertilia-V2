@@ -5,6 +5,8 @@ import { FadeContainer, FadeItem } from "../hooks/animations"
 import BackButton from "../components/backButton"
 
 export default function Signin () {
+    const [message, setMessage] = useState(null)
+    const [isError, setIsError] = useState(false)
     const [formData, setFormData] = useState({
         email : "",
         mot_de_passe : ""
@@ -30,6 +32,14 @@ export default function Signin () {
             .then((res) => res.json())
             .then((data) => {
                 console.log("Réponse du serveur :", data);
+                if(data.success) {
+                    setIsError(false)
+                    setMessage(data.message)
+                    window.location.href="/dashboard"
+                } else {
+                    setIsError(true)
+                    setMessage(data.message)
+                }
             })
             .catch((error) => {
                 console.error("Erreur lors de l'envoi :", error);
@@ -69,7 +79,9 @@ export default function Signin () {
                         </motion.div>
                     </ul>
                     <motion.ul variants={FadeItem} className="flex flex-col w-full text-center">
-                        <p className="text-sm" id="message_error"></p>
+                        {message &&
+                            <p className={`text-sm ${isError ? 'text-red-500' : 'text-skin-accent'}`} id="message_error">{message}</p>
+                        }
                     </motion.ul>
                     <motion.ul variants={FadeItem} className="flex flex-col w-full text-right">
                         <Link to="/reset-password" className="text-sm hover:text-blue-500">Mot de passe oublié</Link>

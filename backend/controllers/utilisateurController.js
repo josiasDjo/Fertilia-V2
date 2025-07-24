@@ -45,7 +45,7 @@ exports.getUtilisateur = async (req, res) => {
         const motDePasseValide = await bcrypt.compare(mot_de_passe, utilisateur.mot_de_passe);
 
         if (!motDePasseValide) {
-        return res.json({ success: false, message: error });
+            return res.json({ success: false, message: error });
         }
 
         req.session.users = {
@@ -56,7 +56,7 @@ exports.getUtilisateur = async (req, res) => {
             role_id: utilisateur.role_id
         }
         console.log('Connexion Reussie !!')
-        if (utilisateur.role_id === 1) return res.json({ success: true, message: 'Connexion Reussie !! '});
+        return res.json({ success: true, message: 'Connexion Reussie !! '});
     } catch (err) {
         console.log(`Erreur lors de la récupération de l\'utilisateur, ${err} `);
         res.status(500).json({ success: false, error: 'Erreur lors de la récupération de l\'utilisateur', err });
