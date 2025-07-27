@@ -34,7 +34,6 @@ export default function App() {
   }, [location])
 
   return (
-    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/login' element={<Signin />} />
@@ -47,6 +46,5 @@ export default function App() {
 
         <Route path='/dashboard' element={<Dashboard />} />
       </Routes>
-    </Router>
   );
 }
