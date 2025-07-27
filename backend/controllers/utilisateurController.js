@@ -1,7 +1,9 @@
+require('dotenv').config()
 const passport = require('passport');
 const Utilisateur = require('../models/Utilisateurs');
 const bcrypt = require("bcryptjs");
 const { where } = require('sequelize');
+
 
 exports.createUtilisateur = async (req, res) => {
     try {
@@ -55,6 +57,14 @@ exports.getUtilisateur = async (req, res) => {
             email: utilisateur.email,
             role_id: utilisateur.role_id
         }
+
+        const payload = {
+            name: utilisateur.prenom,
+            role: utilisateur.role_id,
+        };
+
+        const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' });
+        
         console.log('Connexion Reussie !!')
         return res.json({ success: true, message: 'Connexion Reussie !! '});
     } catch (err) {
