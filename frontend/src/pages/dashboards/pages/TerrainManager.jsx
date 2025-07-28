@@ -2,12 +2,14 @@ import {motion} from 'framer-motion'
 import { FadeContainer, FadeItem } from '../../../hooks/animations'
 import { AddField } from './components/add_field'
 import Fields from './components/fields'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function TerrainManager() {
     const [openAddField,setOpenAddField] = useState(false)
-    const handleOpenAddField = () => {
-        setOpenAddField
+
+    const toggleAddField = () => {
+        setOpenAddField(prev => !prev)
+        console.log("Toggled!", openAddField)
     }
     return <>
         <motion.div 
@@ -19,7 +21,7 @@ export default function TerrainManager() {
             <h3 className="text-left font-medium">Gestion des terrains</h3>
             <div id="champs" className="w-full flex flex-wrap">
                 <div id="container_fields_action" className="w-full flex flex-row items-center relative justify-between overflow-x-auto">
-                    <button type="button" id="show_adding_field" className="h-12 p-2 px-4 rounded-lg shadow-lg text-sm md:text-lg dark:bg-gray-600 green_color_text flex flex-row items-center justify-center">
+                    <button type="button" id="show_adding_field" onClick={toggleAddField} className="h-12 p-2 px-4 rounded-lg shadow-lg text-sm md:text-lg dark:bg-gray-600 green_color_text flex flex-row items-center justify-center">
                         <li id="label_add_field" className="flex mr-2">Ajouter un terrain</li> 
                         <i className="fa-solid fa-plus"></i>
                     </button>
@@ -35,8 +37,8 @@ export default function TerrainManager() {
                         </button>
                     </ul>
                 </div>
-                <div id="modals_addFields" className="w-full h-screen z-40 backdrop-blur fixed inset-0 justify-center items-center 
-                content-center hidden">
+                <div id="modals_addFields" className={`w-full h-screen z-40 backdrop-blur fixed inset-0 justify-center items-center 
+                content-center ${openAddField ? 'flex' : 'hidden'}`}>
                     {/* <%- include('add_field') %> */}
                     <AddField />
                 </div>
