@@ -1,5 +1,6 @@
 import {motion} from 'framer-motion'
 import { FadeContainer, FadeItem } from '../../../hooks/animations'
+import { AddField } from './components/add_field'
 
 export default function TerrainManager() {
     return <>
@@ -31,6 +32,7 @@ export default function TerrainManager() {
                 <div id="modals_addFields" className="w-full h-screen z-40 backdrop-blur fixed inset-0 justify-center items-center 
                 content-center hidden">
                     {/* <%- include('add_field') %> */}
+                    <AddField />
                 </div>
                 {/* <%- include('fields') %> %> */}
             </div>
