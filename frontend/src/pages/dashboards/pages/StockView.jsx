@@ -1,6 +1,6 @@
 
 export default function StockView() {
-    return (
+    return <>
         <div>Stock</div>
-    )
+    </>
 }

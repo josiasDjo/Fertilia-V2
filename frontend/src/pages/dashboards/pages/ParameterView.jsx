@@ -1,7 +1,7 @@
 
 
 export default function Parameter() {
-    return (
+    return <>
         <div>Parameter</div>
-    )
+    </>
 }

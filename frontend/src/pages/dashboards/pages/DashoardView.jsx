@@ -1,7 +1,7 @@
 
 
 export default function DashboardView() {
-    return (
+    return <>
         <div>Dashboard</div>
-    )
+    </>
 }

@@ -1,7 +1,7 @@
 
 
 export default function Logout() {
-    return (
+    return <>
         <div>Logout</div>
-    )
+    </>
 }

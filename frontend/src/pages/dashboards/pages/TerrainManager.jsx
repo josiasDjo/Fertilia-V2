@@ -1,6 +1,6 @@
 
 export default function TerrainManager() {
-    return (
+    return <>
         <div>Terrain manager</div>
-    )
+    </>
 }
