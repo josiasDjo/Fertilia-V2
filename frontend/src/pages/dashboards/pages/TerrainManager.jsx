@@ -1,8 +1,14 @@
 import {motion} from 'framer-motion'
 import { FadeContainer, FadeItem } from '../../../hooks/animations'
 import { AddField } from './components/add_field'
+import Fields from './components/fields'
+import { useState } from 'react'
 
 export default function TerrainManager() {
+    const [openAddField,setOpenAddField] = useState(false)
+    const handleOpenAddField = () => {
+        setOpenAddField
+    }
     return <>
         <motion.div 
                 variants={FadeContainer}
@@ -35,6 +41,7 @@ export default function TerrainManager() {
                     <AddField />
                 </div>
                 {/* <%- include('fields') %> %> */}
+                <Fields />
             </div>
         </motion.div>
     </>
