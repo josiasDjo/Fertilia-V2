@@ -8,6 +8,8 @@
   --color-text: 31 41 55; /* gray-800 */
   --color-accent: 22 163 74; /* green-600 */
   --color-accent-sec: 255 181 42; /* orange perso */
+  --color-btn-dash: 255 255 255; /* blanc */
+  --color-btn-hover-dash: 125 211 252; /* sky-300 */
 }
 
 .dark {
@@ -15,6 +17,8 @@
   --color-text: 255 255 255; /* white */
   --color-accent: 22 163 74; /* green-600 */
   --color-accent-sec: 255 181 42; /* orange perso */
+  --color-btn-dash: 75 85 99; /* gray-600 */
+  --color-btn-hover-dash: 31 41 55; /* sky-300 */
 }
 
 
@@ -67,7 +71,7 @@
   background-color: #00B8F5;
 }
 .backgroud_btn_h{
-  background-color: #ffb52a;
+  background-color: rgb(255, 181, 42);
 }
 .green_color_text {
   color: #009444;

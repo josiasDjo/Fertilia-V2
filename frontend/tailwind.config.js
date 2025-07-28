@@ -10,6 +10,8 @@ export default {
           text: 'rgb(var(--color-text) / <alpha-value>)',
           accent: 'rgb(var(--color-accent) / <alpha-value>)',
           accentSec: 'rgb(var(--color-accent-sec) / <alpha-value>)',
+          dashBtn: 'rgb(var(--color-btn-dash) / <alpha-value>)',
+          dashBtnHover: 'rgb(var(--color-btn-hover-dash) / <alpha-value>)',
         }
       }
     }

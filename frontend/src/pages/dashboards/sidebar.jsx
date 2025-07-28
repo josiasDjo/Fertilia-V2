@@ -21,10 +21,12 @@ export default function SideBar(onViewChange, currentView) {
 
             {buttonSide.map((index, key) => {
                 return (
-                    <button id={index.id} class="text-skin-text lg:flex lg:flex-row lg:text-left lg:w-full lg:h-16 lg:rounded-lg lg:border-black lg:p-3 lg:m-2
-                    lg:items-center aside_btn hover:bg-sky-300 dark:hover:bg-gray-800
+                    <button id={index.id}  key={key}
+                    class={`text-skin-text  lg:flex lg:flex-row lg:text-left lg:w-full lg:h-16 lg:rounded-lg lg:border-black lg:p-3 lg:m-2
+                    lg:items-center aside_btn hover:bg-skin-dashBtnHover
                     md:flex md:flex-col md:text-center md:items-center
-                    w-3/12 px-4 py-2 mr-2">
+                    w-3/12 px-4 py-2 mr-2 ${currentView === index.id ? 'bg-skin-dashBtnHover' : 'bg-skin-dashBtn'} `}
+                    onClick={() => onViewChange(index.id)}>
                         <li class="text-3xl mr-2 text-skin-text">{index.icon}</li>
                         <li id="btn_label" class="hidden lg:flex text-skin-text">{index.text}</li>
                     </button>
