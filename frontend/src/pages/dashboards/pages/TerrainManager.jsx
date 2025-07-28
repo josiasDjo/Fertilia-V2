@@ -8,7 +8,7 @@ export default function TerrainManager() {
                 // initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.3 }}
-        id="field_management_cont" className="w-full p-4 flex-col text-white">
+        id="field_management_cont" className="w-full p-4 flex-col text-skin-text">
             <h3 className="text-left font-medium">Gestion des terrains</h3>
             <div id="champs" className="w-full flex flex-wrap">
                 <div id="container_fields_action" className="w-full flex flex-row items-center relative justify-between overflow-x-auto">
