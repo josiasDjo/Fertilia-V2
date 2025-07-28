@@ -12,8 +12,8 @@ export default function MainPage( {view}) {
             { view === 'field_management' && <TerrainManager />}
             { view === 'stock' && <StockView />}
             { view === 'delivery' && <LivraisonView />}
-            { view === '' && <Parameter />}
-
+            { view === 'parameter' && <Parameter />}
+            { view === 'logout' && <Parameter />}
         </main>
     )
 }
