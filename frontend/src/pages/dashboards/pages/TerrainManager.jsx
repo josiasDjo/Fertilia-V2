@@ -1,11 +1,18 @@
+import {motion} from 'framer-motion'
+import { FadeContainer, FadeItem } from '../../../hooks/animations'
 
 export default function TerrainManager() {
     return <>
-        <div id="field_management_cont" className="w-full p-4 flex-col text-white">
+        <motion.div 
+                variants={FadeContainer}
+                // initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.3 }}
+        id="field_management_cont" className="w-full p-4 flex-col text-white">
             <h3 className="text-left font-medium">Gestion des terrains</h3>
             <div id="champs" className="w-full flex flex-wrap">
                 <div id="container_fields_action" className="w-full flex flex-row items-center relative justify-between overflow-x-auto">
-                    <button type="button" id="show_adding_field" className="h-12 p-2 px-4 rounded-lg shadow-lg text-sm md:text-lg bg-gray-600 green_color_text flex flex-row items-center justify-center">
+                    <button type="button" id="show_adding_field" className="h-12 p-2 px-4 rounded-lg shadow-lg text-sm md:text-lg dark:bg-gray-600 green_color_text flex flex-row items-center justify-center">
                         <li id="label_add_field" className="flex mr-2">Ajouter un terrain</li> 
                         <i className="fa-solid fa-plus"></i>
                     </button>
@@ -27,6 +34,6 @@ export default function TerrainManager() {
                 </div>
                 {/* <%- include('fields') %> %> */}
             </div>
-        </div>
+        </motion.div>
     </>
 }
