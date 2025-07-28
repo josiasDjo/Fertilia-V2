@@ -4,7 +4,7 @@ export function AddField() {
     return <>
         <div id="show_addField" className="bg-gray-200 relative w-80 p-4 items-center justify-center flex-col shadow-lg z-50">
             <button type="button" className="absolute top-2 left-2 text-2xl text-yellow-400" id="hide_adding_field"><i className="fa-solid fa-rectangle-xmark" id="closeConnexion"></i></button>
-            <h3 className="font-medium m-2">Ajouter un terrain</h3>
+            <h3 className="font-medium m-2 text-center">Ajouter un terrain</h3>
             <form id="form_add_field" className="flex flex-col">
                 <input type="text" name="nom" id="nom" placeholder="Nom du champ" className="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" />
                 <input type="text" name="type_culture" id="type_culture" placeholder="Type de culture" className="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" />
