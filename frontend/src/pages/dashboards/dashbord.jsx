@@ -14,31 +14,34 @@ import Logout from "./pages/logout";
 export default function Dashboard() {
     const [currentView, setCurrentView] = useState('dashboard')
 
-    const renderView = () => {
-        switch(currentView) {
-            case "dashboard":
-                return <DashboardView />
-            case "terrain":
-                return <TerrainManager />
-            case "stock":
-                return <StockView />
-            case "livraison":
-                return <LivraisonView />
-            case "parametre":
-                return <Parameter />
-            case "deconnexion":
-                return <Logout />
-            default:
-                return <DashboardView />
-        }
+    // const renderView = () => {
+    //     switch(currentView) {
+    //         case "dashboard":
+    //             return <DashboardView />
+    //         case "terrain":
+    //             return <TerrainManager />
+    //         case "stock":
+    //             return <StockView />
+    //         case "livraison":
+    //             return <LivraisonView />
+    //         case "parametre":
+    //             return <Parameter />
+    //         case "deconnexion":
+    //             return <Logout />
+    //         default:
+    //             return <DashboardView />
+    //     }
+    // }
+
+    const handleViewChange = (viewName) => {
+        setCurrentView(viewName)
     }
+
     return <>
         <div class="w-full h-screen relative flex flex-row bg-gray-200 dark:bg-skin-bg">
-            {/* {toast.success("Connexion réussie !")} */}
-            {/* {alert("Connexion réussie")} */}
             <NavBarDash />
-            <SideBar />
-            <MainPage />
+            <SideBar onViewChange={handleViewChange} currentView={currentView} />
+            <MainPage view={currentView} />
         </div>
     </>
 }

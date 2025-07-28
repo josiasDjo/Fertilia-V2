@@ -1,6 +1,6 @@
 
 
-export default function SideBar() {
+export default function SideBar(onViewChange, currentView) {
 
     const buttonSide = [
         {icon: <i class='bx bxs-dashboard'></i>, text:"Tableau de bord", id:"dashboard" },
