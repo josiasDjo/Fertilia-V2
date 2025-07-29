@@ -2,6 +2,7 @@ require('dotenv').config()
 const passport = require('passport');
 const Utilisateur = require('../models/Utilisateurs');
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken")
 const { where } = require('sequelize');
 
 
