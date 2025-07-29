@@ -41,7 +41,7 @@ export default function TerrainManager() {
                 <div id="modals_addFields" className={`w-full h-screen z-40 backdrop-blur fixed inset-0 justify-center items-center 
                 content-center ${openAddField ? 'flex' : 'hidden'}`}>
                     <ErrorBoundary>
-                        <AddField />
+                        <AddField close={toggleAddField} />
                     </ErrorBoundary>
                 </div>
                 <ErrorBoundary>
