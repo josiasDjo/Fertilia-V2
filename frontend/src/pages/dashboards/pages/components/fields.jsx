@@ -4,11 +4,11 @@ export default function Fields () {
         <div id="container_fields" className="w-full mx-2 flex flex-wrap relative">
             {/* <% if (MesChamps.length > 0) { %>
                 <% MesChamps.forEach((champ) => { %> */}
-                    <div className="field_card w-full h-80 md:w-64 lg:h-72 lg:w-72 mx-2 my-10 lg:m-3 bg-gray-200 shadow-lg rounded-lg flex flex-col relative">
-                        <div className="backdrop-blur bg-white h-10 w-10 absolute top-2 right-2 z-30 rounded-lg py-2 text-center justify-center items-center flex">
+                    <div className="field_card w-full h-80 md:w-64 lg:h-72 lg:w-72 mx-2 my-10 lg:m-3 bg-gray-200 dark:bg-gray-600 shadow-lg rounded-lg flex flex-col relative">
+                        <div className="backdrop-blur bg-white text-gray-900 h-10 w-10 absolute top-2 right-2 z-30 rounded-lg py-2 text-center justify-center items-center flex">
                             <button type="button" id="show_details" className="btn_show_option h-full w-full text-xl text-center justify-center items-center flex"><i className="fa-solid fa-ellipsis-vertical"></i></button>
                         </div>
-                        <div id="show_details_div" className="show_details_div w-72 hidden flex-col items-start p-5 rounded-lg shadow-lg bg-gray-100 absolute top-16 right-2 z-30">
+                        <div id="show_details_div" className="show_details_div w-72 hidden flex-col items-start p-5 rounded-lg shadow-lg bg-gray-100 dark:bg-gray-600 absolute top-16 right-2 z-30">
                             <button className="flex flex-row text-lg my-2 mx-2">
                                 <p><i className="fa-solid fa-arrow-up-right-from-square"></i></p>
                                 <p className="px-3">Détails sur le terrain</p>
@@ -22,7 +22,7 @@ export default function Fields () {
                                 <p className="px-3">Supprimer le terrain</p>
                             </button>
                         </div>
-                        <div className="bg-gray-200 w-full h-4/12 my-2 relative z-10">
+                        <div className="bg-gray-200 dark:bg-gray-600 w-full h-4/12 my-2 relative z-10">
                             <div className="w-full flex flex-row relative items-center justify-center">
                                 <h2 className="font-bold text-xl">Riz</h2>
                                 <p className="italic ml-3">Type : <span id="cultureType" class="font-medium not-italic">Graine</span></p>
