@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 export default function Fields () {
-    const fields = [1,2,3,4,5,6,7]
+    const fields = [1,2,3]
     const [openIndex, setOpenIndex] = useState(null);
 
     const handleOpenDetailField = (index) => {
@@ -11,20 +11,20 @@ export default function Fields () {
         <div id="container_fields" className="w-full mx-2 flex flex-wrap relative">
                 {fields.map((index, key) => {
                     return (
-                        <div className="field_card w-full h-80 md:w-64 lg:h-72 lg:w-72 mx-2 my-10 lg:m-3 bg-gray-200 dark:bg-gray-600 shadow-lg rounded-lg flex flex-col relative">
+                        <div key={key} className="field_card w-full h-80 md:w-64 lg:h-72 lg:w-72 mx-2 my-10 lg:m-3 bg-gray-200 dark:bg-gray-600 shadow-lg rounded-lg flex flex-col relative">
                             <div className="backdrop-blur bg-white text-gray-900 h-10 w-10 absolute top-2 right-2 z-30 rounded-lg py-2 text-center justify-center items-center flex">
-                                <button type="button" id="show_details" onClick={handleOpenDetailField} className="btn_show_option h-full w-full text-xl text-center justify-center items-center flex"><i className="fa-solid fa-ellipsis-vertical"></i></button>
+                                <button type="button" id="show_details" onClick={() => handleOpenDetailField(index)} className="btn_show_option h-full w-full text-xl text-center justify-center items-center flex"><i className="fa-solid fa-ellipsis-vertical"></i></button>
                             </div>
                             <div id="show_details_div" className={`${openIndex === index ? 'flex' : 'hidden'} show_details_div w-72 flex-col items-start p-5 rounded-lg shadow-lg bg-gray-100 dark:bg-gray-600 absolute top-16 right-2 z-30`}>
-                                <button className="flex flex-row text-lg my-2 mx-2">
+                                <button className="flex flex-row text-md my-2 mx-2">
                                     <p><i className="fa-solid fa-arrow-up-right-from-square"></i></p>
                                     <p className="px-3">Détails sur le terrain</p>
                                 </button>
-                                <button className="flex flex-row text-lg my-2 mx-2">
+                                <button className="flex flex-row text-md my-2 mx-2">
                                     <p className="text-3xl"><i class='bx bx-edit-alt'></i></p>
                                     <p className="px-3">Modifier le terrain</p>
                                 </button>
-                                <button className="flex flex-row text-lg my-2 mx-2 text-red-500">
+                                <button className="flex flex-row text-md my-2 mx-2 text-red-500">
                                     <p className="text-3xl"><i className='bx bxs-trash'></i></p>
                                     <p className="px-3">Supprimer le terrain</p>
                                 </button>
