@@ -25,7 +25,7 @@ export function AddField({close}) {
         console.log('SUbmit : ', formData)
 
         fetch("/api/champs/nouveau-champ", {
-                        method: "POST", 
+            method: "POST", 
             headers: {
                 "Content-Type": "application/json",
             },
@@ -33,16 +33,20 @@ export function AddField({close}) {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log('REponse du serveur : ', data)
+                console.log('Reponse du serveur : ', data)
 
                 if(data.success) {
-                    
+                    setError(false)
+                    setMessage(data.message)
                 } else {
-
+                    setError(true)
+                    setMessage(data.message)
                 }
             })
             .catch((error) => {
                 console.error("Erreur lors de l'envoi :", error);
+                setError(true)
+                setMessage(error.message)
             })
     }
     return <>
@@ -90,9 +94,11 @@ export function AddField({close}) {
                     <input type="number" onChange={handleChange} name="latitude" id="latitude" className="dark:bg-gray-800 rounded-lg p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" />
                 </ul>    
                 <button onClick={handleSubmit} className="backgroud_btn_h dark:bg-skin-accent text-white rounded-lg p-2 border-2 border-solid border-yellow-500 dark:border-green-500 border-opacity-30" type="submit">Enregistrer</button>
-                <ul className="flex flex-col w-full text-center">
-                    <p className="text-sm" id="message_error"></p>
-                </ul>
+                <div className="flex flex-col w-full text-center">
+                    {message && 
+                        <p className={`${isError ? 'text-red-500' : 'text-skin-accent'} text-sm`} id="message_error">{message}</p>
+                    }
+                </div>
             </form>
         </div>
     </>
