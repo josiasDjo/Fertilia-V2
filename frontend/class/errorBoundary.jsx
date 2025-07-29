@@ -19,13 +19,12 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="text-red-500 p-4 bg-red-100 rounded">
-          <h2>Une erreur est survenue.</h2>
+        <div className="text-red-500 text-center items-center justify-center flex p-4 bg-red-100 rounded relative">
+          <h2>Oops 🥶, Une erreur est survenue.</h2>
           <pre>{this.state.error?.toString()}</pre>
         </div>
       );
     }
-
     return this.props.children;
   }
 }
