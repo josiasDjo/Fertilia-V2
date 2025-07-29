@@ -1,6 +1,50 @@
+import { m } from "framer-motion"
+import { useState } from "react"
 
 
 export function AddField({close}) {
+    const [message, setMessage] = useState(null)
+    const [isError, setError] = useState(false)
+    const [formData, setFormData] = useState({
+        nom: "",
+        type_culture: "",
+        surface: "",
+        etat: "",
+        longitude: "",
+        latitude: ""
+    })
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        })
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log('SUbmit : ', formData)
+
+        fetch("/api/champs/nouveau-champ", {
+                        method: "POST", 
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log('REponse du serveur : ', data)
+
+                if(data.success) {
+                    
+                } else {
+
+                }
+            })
+            .catch((error) => {
+                console.error("Erreur lors de l'envoi :", error);
+            })
+    }
     return <>
         <div id="show_addField" className="bg-gray-200 dark:bg-gray-900 relative w-11/12 lg:w-96 p-4 items-center justify-center flex-col rounded-lg shadow-lg z-50">
             <button type="button" onClick={close} className="absolute top-2 left-2 text-2xl text-skin-text" id="hide_adding_field"><i className="fa-solid fa-rectangle-xmark" id="closeConnexion"></i></button>
@@ -9,25 +53,29 @@ export function AddField({close}) {
                 <input 
                 type="text" 
                 name="nom" 
-                id="nom" 
+                id="nom"
+                onChange={handleChange}
                 placeholder="Nom du champ" 
                 className="dark:bg-gray-800 rounded-lg p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" />
                 
                 <input 
                 type="text" 
                 name="type_culture" 
-                id="type_culture" 
+                id="type_culture"
+                onChange={handleChange}
                 placeholder="Type de culture" 
                 className="dark:bg-gray-800 rounded-lg p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" />
                 
                 <input 
                 type="number" 
                 name="surface" 
-                id="surface" 
+                id="surface"
+                onChange={handleChange}
                 placeholder="Surface" 
                 className="dark:bg-gray-800 rounded-lg p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" />
                 
-                <select name="etat" id="etat" className="dark:bg-gray-800 rounded-lg p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                
+                <select name="etat" onChange={handleChange} id="etat" className="dark:bg-gray-800 rounded-lg p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
                     <option value="Ensemencer">Ensemencer</option>
                     <option value="Croissance">Croissance</option>
                     <option value="Recolte">Recolte</option>
@@ -38,10 +86,10 @@ export function AddField({close}) {
                     <span>Localiser mon champs</span>
                 </button>
                 <ul className="hidden">
-                    <input type="number" name="longitude" id="longitude" className="dark:bg-gray-800 rounded-lg p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" />
-                    <input type="number" name="latitude" id="latitude" className="dark:bg-gray-800 rounded-lg p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" />
+                    <input type="number" onChange={handleChange} name="longitude" id="longitude" className="dark:bg-gray-800 rounded-lg p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" />
+                    <input type="number" onChange={handleChange} name="latitude" id="latitude" className="dark:bg-gray-800 rounded-lg p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" />
                 </ul>    
-                <button className="backgroud_btn_h dark:bg-skin-accent text-white rounded-lg p-2 border-2 border-solid border-yellow-500 dark:border-green-500 border-opacity-30" type="submit">Enregistrer</button>
+                <button onClick={handleSubmit} className="backgroud_btn_h dark:bg-skin-accent text-white rounded-lg p-2 border-2 border-solid border-yellow-500 dark:border-green-500 border-opacity-30" type="submit">Enregistrer</button>
                 <ul className="flex flex-col w-full text-center">
                     <p className="text-sm" id="message_error"></p>
                 </ul>
