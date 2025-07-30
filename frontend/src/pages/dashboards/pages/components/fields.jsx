@@ -6,7 +6,9 @@ export default function Fields () {
 
     const handleOpenDetailField = (index) => {
         setOpenIndex(prev => prev === index ? null : index);
-    };
+    }
+
+    
     return <>
         <div id="container_fields" className="w-full mx-2 flex flex-wrap relative">
                 {fields.map((index, key) => {
