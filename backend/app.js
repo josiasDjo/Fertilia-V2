@@ -131,10 +131,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-const sessionKey = crypto.randomBytes(64).toString('hex');
-
-console.log('Clé de session forte :', sessionKey);
-
 app.listen(port,() => {
   console.log(`✅ App is listening on port ${port}`)
 })
