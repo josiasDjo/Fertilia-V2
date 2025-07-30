@@ -22,7 +22,6 @@ export function AddField({close}) {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log('SUbmit : ', formData)
         const token = localStorage.getItem("token")
         const doubleNumber = 22.51413673
         fetch("/api/champs/nouveau-champ", {
@@ -56,6 +55,7 @@ export function AddField({close}) {
             <button type="button" onClick={close} className="absolute top-2 left-2 text-2xl text-skin-text" id="hide_adding_field"><i className="fa-solid fa-rectangle-xmark" id="closeConnexion"></i></button>
             <h3 className="font-medium m-2 text-center">Ajouter un terrain</h3>
             <form id="form_add_field" className="flex flex-col">
+                <input type="reset" value="reset" className="hidden" />
                 <input 
                 type="text" 
                 name="nom" 
