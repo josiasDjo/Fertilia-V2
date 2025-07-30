@@ -23,10 +23,12 @@ export function AddField({close}) {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log('SUbmit : ', formData)
-
+        const token = localStorage.getItem("token")
+        const doubleNumber = 22.51413673
         fetch("/api/champs/nouveau-champ", {
             method: "POST", 
             headers: {
+                "Authorization": `Bearer ${token}`,
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(formData),
@@ -79,7 +81,7 @@ export function AddField({close}) {
                 className="dark:bg-gray-800 rounded-lg p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" />
                 
                 
-                <select name="etat" onChange={handleChange} id="etat" className="dark:bg-gray-800 rounded-lg p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                <select name="etat" onChange={handleChange} defaultValue="Ensemencer" id="etat" className="dark:bg-gray-800 rounded-lg p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
                     <option value="Ensemencer">Ensemencer</option>
                     <option value="Croissance">Croissance</option>
                     <option value="Recolte">Recolte</option>

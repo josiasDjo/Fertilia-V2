@@ -5,9 +5,10 @@ exports.createChamp = async (req, res) => {
     try {	
         const utilisateur_id = req.session.users.id_user;
         const is_champs = uuidv4();
+        const doubleNumber = 22.51413673
         // nom, surface, type_culture, etat, longitude, latitude
         const { nom, surface, type_culture, etat, longitude, latitude  } = req.body;
-        const champ = await Champ.create({ is_champs, utilisateur_id, nom, surface, type_culture, etat, longitude, latitude   });
+        const champ = await Champ.create({ is_champs, utilisateur_id, nom, surface, type_culture, etat, doubleNumber, doubleNumber   });
         console.log('Champ Ajouté');
         return res.json({ success: true, message: "Champ ajouté avec succès" });
     } catch (err) {
