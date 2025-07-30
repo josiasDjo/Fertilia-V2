@@ -5,7 +5,7 @@ const isAuthenticated = (req, res, next) => {
         return next();
     }
     req.flash('error_msg', 'Vous avez été déconnecter');
-    return res.redirect("/");
+    return res.json({ success: false, message: 'Veillez vous reconnecter'});
 };
 
 module.exports = { isAuthenticated };
