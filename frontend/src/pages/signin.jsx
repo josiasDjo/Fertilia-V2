@@ -33,9 +33,12 @@ export default function Signin () {
             .then((data) => {
                 console.log("Réponse du serveur :", data);
                 if(data.success) {
-                    setIsError(false)
-                    setMessage(data.message)
-                    window.location.href="/dashboard"
+                    if(data.token) {
+                        localStorage.setItem("token", data.token)
+                        setIsError(false)
+                        setMessage(data.message)
+                        window.location.href="/dashboard"
+                    }
                 } else {
                     setIsError(true)
                     setMessage(data.message)

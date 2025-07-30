@@ -60,6 +60,7 @@ exports.getUtilisateur = async (req, res) => {
         }
 
         const payload = {
+            id: utilisateur.id_utilisateurs,
             name: utilisateur.prenom,
             role: utilisateur.role_id,
         };
@@ -67,7 +68,7 @@ exports.getUtilisateur = async (req, res) => {
         const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' });
         
         console.log('Connexion Reussie !!')
-        return res.json({ success: true, message: 'Connexion Reussie !! '});
+        return res.json({ success: true, message: 'Connexion Reussie !! ', token: token});
     } catch (err) {
         console.log(`Erreur lors de la récupération de l\'utilisateur, ${err} `);
         res.status(500).json({ success: false, error: 'Erreur lors de la récupération de l\'utilisateur', err });
