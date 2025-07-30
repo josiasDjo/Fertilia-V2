@@ -18,15 +18,16 @@ exports.createChamp = async (req, res) => {
 
 exports.getAllChamps = async (req, res) => {
     try {
-        const utilisateur_id = req.users_id;
+        const utilisateur_id = req.user.id;
+        console.log('utilisateur_id : ', utilisateur_id)
         const champs = await Champ.findAll({where: {utilisateur_id: utilisateur_id}});
-        return champs;
+        return res.json({success: true, champs: champs})
     } catch (err) {
         console.log('Erreur lors de la récupération des champs', err);
-        return {
+        return res.json({
             success: false,
             message: 'Erreur lors de la récupération des champs',
-        }
+        })
     }
 };
 

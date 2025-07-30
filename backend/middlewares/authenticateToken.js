@@ -6,13 +6,14 @@ const authenticateToken = (req, res, next) => {
 
     if (!token) {
         req.flash('error_msg', 'Token manquant');
-        return res.redirect("/");
+        return res.json({success: false, message: 'Token manquant', redirectTo: "/signin"});
     }
 
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
         if (err) {
             req.flash('error_msg', 'Token invalide ou expiré');
-            return res.redirect("/");
+            return res.json({success: false, message: "Token invalide ou expiré", redirectTo: "/signin"});
+
         }
         req.user = user;
         next();

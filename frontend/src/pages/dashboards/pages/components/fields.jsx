@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 
 export default function Fields () {
+    const token = localStorage.getItem("token")
     const fields = [1,2,3]
     const [openIndex, setOpenIndex] = useState(null);
 
@@ -8,7 +9,20 @@ export default function Fields () {
         setOpenIndex(prev => prev === index ? null : index);
     }
 
-    
+    fetch("/api/champs/terrain/getAll", {
+        method: "GET", 
+        headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json",
+        },
+    })
+        .then((res) => res.json())
+        .then((data) => {
+            console.log("Data : ", data)
+        })
+        .catch((error) => {
+            console.log("Erreur lors de la recup des terrains : ", error)
+        })
     return <>
         <div id="container_fields" className="w-full mx-2 flex flex-wrap relative">
                 {fields.map((index, key) => {

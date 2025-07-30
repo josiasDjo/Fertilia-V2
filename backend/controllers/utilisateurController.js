@@ -67,7 +67,7 @@ exports.getUtilisateur = async (req, res) => {
 
         const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' });
         
-        console.log('Connexion Reussie !!')
+        console.log('Connexion Reussie !!', 'Payload : ', payload.id)
         return res.json({ success: true, message: 'Connexion Reussie !! ', token: token});
     } catch (err) {
         console.log(`Erreur lors de la récupération de l\'utilisateur, ${err} `);
